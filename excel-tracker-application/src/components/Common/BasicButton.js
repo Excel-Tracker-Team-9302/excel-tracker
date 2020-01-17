@@ -18,7 +18,7 @@ class BasicButton extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Button  size='medium' color='secondary' variant='contained' onClick={ () => this.props.onClick }>
+        <Button  size='medium' color='secondary' variant='contained' onClick={ this.props.onClick }>
           {this.props.label}
         </Button>
       </ThemeProvider>
