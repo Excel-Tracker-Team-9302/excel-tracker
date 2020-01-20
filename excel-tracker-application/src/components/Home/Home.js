@@ -4,10 +4,18 @@ import competencies from './../../assets/images/competencies.png'
 import './../../styles/Home.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Dashboard from './../Dashboard.js'
 
 
 import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Home extends Component {
 
@@ -30,21 +38,10 @@ class Home extends Component {
           >
             Hello, {this.props.currentUser}
           </a>
-          <br></br>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={competencies} />
-            <Card.Body>
-              <Card.Title>Competencies</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-          <br></br>
+      
         </header>
       </div>
+      
     );
   }
 }
