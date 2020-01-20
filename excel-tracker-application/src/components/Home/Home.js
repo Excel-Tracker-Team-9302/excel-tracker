@@ -19,6 +19,7 @@ class Home extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
+            Hello, user. <br></br>
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
