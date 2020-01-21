@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import CardColumns from 'react-bootstrap/Card';
 
 import competencies from './../assets/images/competencies.png'
 import reports from './../assets/images/reports.png'
@@ -24,12 +25,13 @@ export default function ImgMediaCard() {
 
   return (
     <div>
+    <CardColumns style = {{display: 'grid',  'grid-template-columns': 'repeat(2,fr)', 'justify-content':'center', 'grid-gap': '10px'}}>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           component="img"
           alt="Competencies"
-          height="150"
+          height= "100%"
           image={competencies}
           title="Contemplative Reptile"
         />
@@ -56,7 +58,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="150"
+        height="100%"
         image={users}
         title="Contemplative Reptile"
       />
@@ -81,7 +83,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="150"
+        height="100%"
         image={courses}
         title="Contemplative Reptile"
       />
@@ -106,7 +108,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="150"
+        height="100%"
         image={reports}
         title="Contemplative Reptile"
       />
@@ -125,6 +127,7 @@ export default function ImgMediaCard() {
       </Button>
     </CardActions>
   </Card>
+  </CardColumns>
   </div>
   );
 }

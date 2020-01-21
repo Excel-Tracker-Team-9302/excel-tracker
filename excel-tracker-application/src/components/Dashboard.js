@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-          <div className="Home">
+          <div className="Dashboard">
       
               <br></br>
               <CoolCard />
