@@ -13,7 +13,7 @@ import competencies from './../assets/images/competencies.png'
 import reports from './../assets/images/reports.png'
 import users from './../assets/images/users.png'
 import courses from './../assets/images/courses.png'
-
+import {Container, Row, Col } from 'react-bootstrap'
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
@@ -25,7 +25,13 @@ export default function ImgMediaCard() {
 
   return (
     <div>
-    <CardColumns style = {{display: 'grid',  'grid-template-columns': 'repeat(2,fr)', 'justify-content':'center', 'grid-gap': '10px'}}>
+    <Button size="small" color="black" style = {{'background-color': '#003057', 'color': '#ffff', 'float':'right'}}>
+        Logout
+    </Button>
+    <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
+    {/* <Container>
+      <Row>
+        <Col> */}
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
@@ -50,9 +56,10 @@ export default function ImgMediaCard() {
         </Button>
       </CardActions>
     </Card>
+    {/* </Col> */}
 
     <br></br>
-
+    {/* <Col> */}
   <Card className={classes.card}>
     <CardActionArea>
       <CardMedia
@@ -77,7 +84,11 @@ export default function ImgMediaCard() {
       </Button>
     </CardActions>
   </Card>
+  {/* </Col> */}
   <br></br>
+  {/* </Row>
+  <Row>
+    <Col> */}
   <Card className={classes.card}>
     <CardActionArea>
       <CardMedia
@@ -102,7 +113,9 @@ export default function ImgMediaCard() {
       </Button>
     </CardActions>
   </Card>
+  {/* </Col> */}
   <br></br>
+  {/* <Col> */}
   <Card className={classes.card}>
     <CardActionArea>
       <CardMedia
@@ -127,7 +140,12 @@ export default function ImgMediaCard() {
       </Button>
     </CardActions>
   </Card>
-  </CardColumns>
+  {/* </Col>
+  </Row> */}
+
+  </Container>
+  {/* </Container> */}
+  
   </div>
   );
 }
