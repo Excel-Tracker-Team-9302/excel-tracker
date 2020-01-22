@@ -25,9 +25,6 @@ export default function ImgMediaCard() {
 
   return (
     <div>
-    <Button size="small" color="black" style = {{'background-color': '#003057', 'color': '#ffff', 'float':'right', 'margin-right': '30px'}}>
-        Logout
-    </Button>
     <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
     {/* <Container>
       <Row>

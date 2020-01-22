@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 
-import Colors from './../assets/text/Colors';
-import Card from 'react-bootstrap/Card';
-import CoolCard from './coolcard.js'
+import CoolCard from './coolcard.js';
+import Button from '@material-ui/core/Button';
 
 import './../styles/Dashboard.css';
-import logo from './../assets/images/logo.svg';
-import competencies from './../assets/images/competencies.png'
 
-import Button from 'react-bootstrap/Button'
 
 class Dashboard extends React.Component {
 
     render() {
         return (
           <div className="Dashboard">
+
+            <Button size="small" color="black" style = {{'background-color': '#003057', 'color': '#ffff', 'float':'right', 'margin-right': '30px'}}>
+                Logout
+            </Button>
       
-              <br></br>
-              <CoolCard />
-              <br></br>
+            <br></br>
+            <CoolCard />
+            <br></br>
             
           </div>
         );
