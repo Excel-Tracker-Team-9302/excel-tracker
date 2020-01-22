@@ -1,0 +1,10 @@
+.Register {
+    background-image: url('./../assets/images/bg.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
