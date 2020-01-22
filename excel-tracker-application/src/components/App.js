@@ -5,7 +5,8 @@ import './../styles/App.css';
 import ACTIONS from '../redux/action'
 import { connect } from 'react-redux';
 import Home from './Home/Home.js';
-import Dashboard from './Dashboard.js'
+import Dashboard from './Dashboard.js';
+import Register from './Register.js';
 
 import {
   BrowserRouter as Router,
@@ -36,7 +37,24 @@ class App extends Component {
             </Route>
           </Switch>
         </div>
-      </Router> 
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/register">
+              <Register />
+            </Route>
+          </Switch>
+        </div>
+    </Router> 
     );
   }
 }
