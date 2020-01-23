@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import logo from './../../assets/images/logo.svg';
+import competencies from './../../assets/images/competencies.png'
 import './../../styles/Home.css';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import Dashboard from './../Dashboard.js'
 
 
 import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Home extends Component {
 
@@ -16,11 +27,6 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -29,8 +35,9 @@ class Home extends Component {
           >
             Hello, {this.props.currentUser}
           </a>
-        </header>
+      
       </div>
+      
     );
   }
 }
