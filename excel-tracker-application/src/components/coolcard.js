@@ -17,7 +17,8 @@ import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345,
+    maxWidth: 265,
+    maxHeight: 420,
   },
 });
 
@@ -28,7 +29,7 @@ export default function ImgMediaCard() {
     <div>
     <div className='flex-auto'>
 
-    <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
+    <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px', 'marginTop': '70px'}}>
 
     <Card className={classes.card}>
       <CardActionArea>

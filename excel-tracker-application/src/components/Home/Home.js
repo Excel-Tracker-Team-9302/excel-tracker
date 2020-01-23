@@ -27,9 +27,6 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>Dashboard</h1>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -39,7 +36,6 @@ class Home extends Component {
             Hello, {this.props.currentUser}
           </a>
       
-        </header>
       </div>
       
     );
