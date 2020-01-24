@@ -26,7 +26,7 @@ export default function ImgMediaCard() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div style={{height: '100%'}}>
 
     <Container style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
     <Card className={classes.card}>
