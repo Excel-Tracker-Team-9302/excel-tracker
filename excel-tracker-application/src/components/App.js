@@ -42,25 +42,11 @@ class App extends Component {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-            <Route path="/">
-              <Login />
-            </Route>
-          </Switch>
-        </div>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/register">Register</Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/register">
+             <Route path="/register">
               <Register />
+              </Route>
+              <Route path="/">
+              <Login />
             </Route>
           </Switch>
         </div>
