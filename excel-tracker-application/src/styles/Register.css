@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
 
-    height: 80vh;
+    height: 100vh;
     font-family: Roboto;
 
     display: flex;
@@ -15,4 +15,8 @@
 
 h1 {
     text-decoration: underline;
+}
+
+div {
+    margin: 0px 0px 10px 0px;
 }
