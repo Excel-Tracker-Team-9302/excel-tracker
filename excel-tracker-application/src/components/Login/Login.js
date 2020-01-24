@@ -8,7 +8,9 @@ import Colors from '../../assets/text/Colors.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
+import {
+  withRouter
+} from 'react-router-dom'
 
 import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
@@ -29,7 +31,9 @@ class Login extends Component {
   };
 
   handleLogin = event => {
-    alert('Username: ' + this.username + '\nPassword: ' + this.password);
+    this.props.setCurrentUser(this.username);
+    this.props.history.push('/dashboard');
+
   };
 
   render() {
@@ -79,4 +83,4 @@ const styles = {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

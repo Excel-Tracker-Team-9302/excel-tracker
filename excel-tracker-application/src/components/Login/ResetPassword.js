@@ -4,7 +4,7 @@ import './../styles/ResetPassword.css'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
-import Colors from '../assets/text/Colors.js';
+import Colors from '../../assets/text/Colors.js';
 
 import { 
   createMuiTheme, 
@@ -12,7 +12,7 @@ import {
 
 
 
-import ACTIONS from '../redux/action'
+import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 
 

@@ -9,10 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardColumns from 'react-bootstrap/Card';
 
-import competencies from './../assets/images/competencies.png'
-import reports from './../assets/images/reports.png'
-import users from './../assets/images/users.png'
-import courses from './../assets/images/courses.png'
+import competencies from './../../assets/images/competencies.png'
+import reports from './../../assets/images/reports.png'
+import users from './../../assets/images/users.png'
+import courses from './../../assets/images/courses.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({

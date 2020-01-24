@@ -4,9 +4,9 @@ import './../styles/App.css';
 
 import ACTIONS from '../redux/action'
 import { connect } from 'react-redux';
-import Home from './Home/Home.js';
+import Header from './Home/Header.js';
 import Login from './Login/Login.js';
-import Dashboard from './Dashboard.js'
+import Dashboard from './Home/Dashboard.js'
 
 import {
   BrowserRouter as Router,
@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
+          {/* <nav>
             <ul>
               <li>
                 <Link to="/dashboard">Dashboard</Link>
@@ -30,7 +30,7 @@ class App extends Component {
                 <Link to="/login">Login</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -38,7 +38,7 @@ class App extends Component {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-            <Route path="/login">
+            <Route path="/">
               <Login />
             </Route>
           </Switch>
