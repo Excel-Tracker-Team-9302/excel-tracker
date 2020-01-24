@@ -16,10 +16,10 @@ import courses from './../../assets/images/courses.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
-  card: {
-    maxWidth: 205,
-    maxHeight: 380,
-  },
+  // card: {
+  //   maxWidth: 205,
+  //   maxHeight: 380,
+  // },
 });
 
 export default function ImgMediaCard() {
@@ -28,12 +28,7 @@ export default function ImgMediaCard() {
   return (
     <div>
 
-    <div className='flex-auto'>
-
-    <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
-    {/* <Container>
-      <Row>
-        <Col> */}
+    <Container style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
@@ -136,8 +131,6 @@ export default function ImgMediaCard() {
 
   </Container>
 
-  
-    </div>
   </div>
   );
 }

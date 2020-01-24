@@ -29,7 +29,12 @@ class Dashboard extends React.Component {
           
     
           <br></br>
-          <CoolCard />
+          <div style={{display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}>
+           <CoolCard />
+          </div>
+          
           <br></br>
           
           </div>
