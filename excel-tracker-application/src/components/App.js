@@ -6,6 +6,7 @@ import ACTIONS from '../redux/action'
 import { connect } from 'react-redux';
 import Home from './Home/Home.js';
 import Login from './Login/Login.js';
+import Dashboard from './Dashboard.js'
 
 import {
   BrowserRouter as Router,
@@ -23,7 +24,7 @@ class App extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/home">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
                 <Link to="/login">Login</Link>
@@ -34,8 +35,8 @@ class App extends Component {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/home">
-              <Home />
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/login">
               <Login />
