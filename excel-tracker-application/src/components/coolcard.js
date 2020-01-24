@@ -18,7 +18,7 @@ import {Container, Row, Col } from 'react-bootstrap'
 const useStyles = makeStyles({
   card: {
     maxWidth: 205,
-    maxHeight: 300,
+    maxHeight: 380,
   },
 });
 
@@ -44,9 +44,9 @@ export default function ImgMediaCard() {
           <Typography gutterBottom variant="h5" component="h2">
             Competencies
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          {/* <Typography variant="body2" color="textSecondary" component="p">
             View all existing competencies.
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -69,9 +69,9 @@ export default function ImgMediaCard() {
         <Typography gutterBottom variant="h5" component="h2">
           Users
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        {/* <Typography variant="body2" color="textSecondary" component="p">
           View all existing users.
-        </Typography>
+        </Typography> */}
       </CardContent>
     </CardActionArea>
     <CardActions>
@@ -94,9 +94,9 @@ export default function ImgMediaCard() {
         <Typography gutterBottom variant="h5" component="h2">
           Courses
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        {/* <Typography variant="body2" color="textSecondary" component="p">
           View all existing courses.
-        </Typography>
+        </Typography> */}
       </CardContent>
     </CardActionArea>
     <CardActions>
@@ -119,9 +119,9 @@ export default function ImgMediaCard() {
         <Typography gutterBottom variant="h5" component="h2">
           Reports
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        {/* <Typography variant="body2" color="textSecondary" component="p">
           View all existing reports.
-        </Typography>
+        </Typography> */}
       </CardContent>
     </CardActionArea>
     <CardActions>
