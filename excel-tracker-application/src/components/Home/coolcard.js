@@ -17,8 +17,8 @@ import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: '80%',
-    maxHeight: '80%',
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
 });
 
@@ -26,15 +26,15 @@ export default function ImgMediaCard() {
   const classes = useStyles();
 
   return (
-    <div style={{height: '100%'}}>
+    <div>
 
-    <Container style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
+    <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea style = {{height: '80%'}}>
         <CardMedia
           component="img"
           alt="Competencies"
-          height= "50%"
+          height= "100%"
           image={competencies}
           title="Contemplative Reptile"
         />
@@ -59,7 +59,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="50%"
+        height="100%"
         image={users}
         title="Contemplative Reptile"
       />
@@ -84,7 +84,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="50%"
+        height="100%"
         image={courses}
         title="Contemplative Reptile"
       />
@@ -109,7 +109,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="50%"
+        height="100%"
         image={reports}
         title="Contemplative Reptile"
       />
