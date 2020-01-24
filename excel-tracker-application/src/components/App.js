@@ -9,8 +9,6 @@ import Header from './Home/Header.js';
 import Login from './Login/Login.js';
 import Dashboard from './Home/Dashboard.js'
 
-import Home from './Home/Home.js';
-import Dashboard from './Dashboard.js';
 import Register from './Register.js';
 
 
