@@ -5,6 +5,7 @@ import './../styles/App.css';
 import ACTIONS from '../redux/action'
 import { connect } from 'react-redux';
 import Home from './Home/Home.js';
+import Login from './Login/Login.js';
 import Dashboard from './Dashboard.js'
 
 import {
@@ -25,6 +26,9 @@ class App extends Component {
               <li>
                 <Link to="/dashboard">Dashboard</Link>
               </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
             </ul>
           </nav>
 
@@ -33,6 +37,9 @@ class App extends Component {
           <Switch>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </div>
