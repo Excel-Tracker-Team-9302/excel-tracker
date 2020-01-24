@@ -2,9 +2,20 @@ import React, {Component} from 'react';
 import './../styles/Register.css';
 import BasicButton from './Common/BasicButton';
 
+import {
+  withRouter
+} from 'react-router-dom'
+
+
 class Register extends Component {
+
+    constructor(props) {
+      super(props);
+
+      this.handleClick = this.handleClick.bind(this);
+    }
     handleClick() {
-        alert("I was clicked!");
+        this.props.history.push('/');
     }
     render() {
         return(
@@ -18,4 +29,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default withRouter(Register);
