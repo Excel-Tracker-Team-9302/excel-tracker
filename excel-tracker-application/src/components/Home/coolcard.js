@@ -34,7 +34,7 @@ export default function ImgMediaCard() {
         <CardMedia
           component="img"
           alt="Competencies"
-          height= "100%"
+          height= "50%"
           image={competencies}
           title="Contemplative Reptile"
         />
@@ -59,7 +59,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="100%"
+        height="50%"
         image={users}
         title="Contemplative Reptile"
       />
@@ -84,7 +84,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="100%"
+        height="50%"
         image={courses}
         title="Contemplative Reptile"
       />
@@ -109,7 +109,7 @@ export default function ImgMediaCard() {
       <CardMedia
         component="img"
         alt="Competencies"
-        height="100%"
+        height="50%"
         image={reports}
         title="Contemplative Reptile"
       />
