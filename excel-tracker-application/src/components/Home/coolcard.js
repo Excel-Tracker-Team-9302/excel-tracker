@@ -16,10 +16,10 @@ import courses from './../../assets/images/courses.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
-  // card: {
-  //   maxWidth: 205,
-  //   maxHeight: 380,
-  // },
+  card: {
+    maxWidth: 300,
+    maxHeight: 400,
+  },
 });
 
 export default function ImgMediaCard() {
