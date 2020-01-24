@@ -19,21 +19,20 @@ class Login extends Component {
   username = '';
   password = '';
   
-  render() {
 
-  const handleChangeUsername = event => {
+  handleChangeUsername = event => {
     this.username = (event.target.value || '');
   };
 
-  const handleChangePassword = event => {
+  handleChangePassword = event => {
     this.password = (event.target.value || '');
   };
 
-  const handleLogin = event => {
-    alert('Username: ');
+  handleLogin = event => {
+    alert('Username: ' + this.username + '\nPassword: ' + this.password);
   };
 
-
+  render() {
 
     return (
       <div className="Login">
@@ -44,10 +43,10 @@ class Login extends Component {
         </header>
         <div className="Login-body">
           <form className = "Login-form">
-            <div className='Login-input' style={{color:Colors.blue}}>Username: <input type="text" className="Login-box" onChange={handleChangeUsername}/></div>
-            <div className='Login-input' style={{color:Colors.blue}}>Password: <input type="text" className="Login-box" onChange={handleChangePassword}/></div>
+            <div className='Login-input' style={{color:Colors.blue}}>Username: <input type="text" className="Login-box" onChange={this.handleChangeUsername}/></div>
+            <div className='Login-input' style={{color:Colors.blue}}>Password: <input type="password" className="Login-box" onChange={this.handleChangePassword}/></div>
 
-            <Button style={{color:Colors.white, 'background-color':Colors.blue, 'border-radius':'50%', width: 'calc(30px + 15vmin)',margin:'10px', padding:'10px', 'font-size': 'calc(5px + 3vmin)'}} onclick={handleLogin}>Log In</Button>
+            <Button style={styles.button} onClick={this.handleLogin}>Log In</Button>
 
           </form>
             <ResetPasswordButton/ >
@@ -65,6 +64,18 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => {
   return {
     setCurrentUser : (currentUser) => dispatch(ACTIONS.setCurrentUser(currentUser))
+  }
+}
+
+const styles = {
+  button: {
+    color:Colors.white, 
+    'background-color':Colors.blue, 
+    'border-radius':'50pt', 
+    width: 'calc(30px + 15vmin)',
+    margin:'10px', 
+    padding:'10px', 
+    'font-size': 'calc(5px + 3vmin)'
   }
 }
 
