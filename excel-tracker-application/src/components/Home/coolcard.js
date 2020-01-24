@@ -17,8 +17,8 @@ import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 300,
-    maxHeight: 400,
+    maxWidth: '80%',
+    maxHeight: '80%',
   },
 });
 
