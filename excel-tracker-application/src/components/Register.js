@@ -48,9 +48,9 @@ class Register extends Component {
           </div>
         </header>
         <div className="Login-body">
-          <form className = "Login-form">
-            <div className='Login-input' style={{color:Colors.blue}}>Username: <input type="text" className="Login-box" onChange={this.handleChangeUsername}/></div>
-            <div className='Login-input' style={{color:Colors.blue}}>Password: <input type="password" className="Login-box" onChange={this.handleChangePassword}/></div>
+          <form className = "Register-form">
+            <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Enter New Username: </div><input type="text" className="Login-box" onChange={this.handleChangeUsername}/></div>
+            <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Enter New password: </div><input type="password" className="Login-box" onChange={this.handleChangePassword}/></div>
 
             <Button style={styles.button} onClick={this.handleRegister}>Register</Button>
             <Button style={styles.button} onClick={this.handleCancel}>Cancel</Button>
@@ -82,6 +82,9 @@ const styles = {
     margin:'10px', 
     padding:'10px', 
     'font-size': 'calc(5px + 3vmin)'
+  },
+  label: {
+    width: 'calc(200px + 40vmin)',
   }
 }
 

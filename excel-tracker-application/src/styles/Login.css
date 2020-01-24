@@ -36,6 +36,15 @@
 
 }
 
+.Register-form {
+  display: flex;
+  flex-direction: column;
+  width: calc(500px + 20vmin);
+  justify-content: center;
+  align-items: center;
+
+}
+
 .Login-box{
   width: 100%;
   padding: 12px 12px;
