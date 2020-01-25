@@ -20,6 +20,7 @@ class Register extends Component {
 
   username = '';
   password = '';
+  passwordConfirm = '';
   
 
   handleChangeUsername = event => {
@@ -30,8 +31,19 @@ class Register extends Component {
     this.password = (event.target.value || '');
   };
 
+  handleChangePasswordConfirm = event => {
+    this.passwordConfirm = (event.target.value || '');
+  };
+
   handleRegister = event => {
-    this.props.history.push('/login');
+    if (this.username == '') {
+      alert('Username cannot be empty');
+    }
+    else if (this.password == this.passwordConfirm && this.password.length > 6) {
+      this.props.history.push('/login');
+    } else {
+      alert("Passwords do not match or are shorter than six characters!");
+    }
   };
 
   handleCancel = event => {
@@ -51,7 +63,7 @@ class Register extends Component {
           <form className = "Register-form">
             <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Enter New Username: </div><input type="text" className="Login-box" onChange={this.handleChangeUsername}/></div>
             <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Enter New password: </div><input type="password" className="Login-box" onChange={this.handleChangePassword}/></div>
-            <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Confirm password  : </div><input type="password" className="Login-box" onChange={this.handleChangePassword}/></div>
+            <div className='Login-input' style={{color:Colors.blue}}><div style={styles.label}>Confirm password: </div><input type="password" className="Login-box" onChange={this.handleChangePasswordConfirm}/></div>
 
             <Button style={styles.button} onClick={this.handleRegister}>Register</Button>
             <Button style={styles.button} onClick={this.handleCancel}>Cancel</Button>
