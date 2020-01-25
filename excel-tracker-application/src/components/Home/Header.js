@@ -26,6 +26,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import InviteUserButton from './../Common/InviteUserButton.js'
 import MenuIcon from '@material-ui/icons/Menu';
 import { MenuItem } from '@material-ui/core';
 
@@ -59,7 +60,10 @@ function Header(props) {
           <Typography variant="h6" className={classes.title}>
             {props.pageName}
           </Typography>
-
+          <div style={{marginRight: 10}}>
+            <InviteUserButton />
+          </div>
+          
           <Button className={classes.menuButton} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>
           <Button className={classes.menuButton}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>Logout</Button>
           
