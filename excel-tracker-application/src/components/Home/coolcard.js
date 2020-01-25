@@ -36,7 +36,7 @@ export default function ImgMediaCard() {
           alt="Competencies"
           height= "100%"
           image={competencies}
-          title="Contemplative Reptile"
+          title="Competencies"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -58,10 +58,10 @@ export default function ImgMediaCard() {
     <CardActionArea>
       <CardMedia
         component="img"
-        alt="Competencies"
+        alt="Users"
         height="100%"
         image={users}
-        title="Contemplative Reptile"
+        title="Users"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
@@ -83,10 +83,10 @@ export default function ImgMediaCard() {
     <CardActionArea>
       <CardMedia
         component="img"
-        alt="Competencies"
+        alt="Courses"
         height="100%"
         image={courses}
-        title="Contemplative Reptile"
+        title="Courses"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
@@ -108,10 +108,10 @@ export default function ImgMediaCard() {
     <CardActionArea>
       <CardMedia
         component="img"
-        alt="Competencies"
+        alt="Reports"
         height="100%"
         image={reports}
-        title="Contemplative Reptile"
+        title="Reports"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
