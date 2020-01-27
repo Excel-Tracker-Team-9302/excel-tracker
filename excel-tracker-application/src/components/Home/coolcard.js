@@ -9,16 +9,16 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardColumns from 'react-bootstrap/Card';
 
-import competencies from './../assets/images/competencies.png'
-import reports from './../assets/images/reports.png'
-import users from './../assets/images/users.png'
-import courses from './../assets/images/courses.png'
+import competencies from './../../assets/images/competencies.png'
+import reports from './../../assets/images/reports.png'
+import users from './../../assets/images/users.png'
+import courses from './../../assets/images/courses.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 205,
-    maxHeight: 380,
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
 });
 
@@ -27,12 +27,10 @@ export default function ImgMediaCard() {
 
   return (
     <div>
-    <div className='flex-auto'>
 
-    <Container style = {{display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px', 'marginTop': '70px'}}>
-
+    <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px'}}>
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea style = {{height: '80%'}}>
         <CardMedia
           component="img"
           alt="Competencies"
@@ -121,8 +119,6 @@ export default function ImgMediaCard() {
 
   </Container>
 
-  
-    </div>
   </div>
   );
 }

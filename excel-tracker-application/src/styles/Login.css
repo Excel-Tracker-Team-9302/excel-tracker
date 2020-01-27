@@ -1,0 +1,62 @@
+.Login {
+  text-align: center;
+  height: 100vh;
+  background-image: url(./../assets/images/LoginBackground.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: 'Roboto';
+
+}
+
+.Login-header {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(30px + 5vmin);
+}
+
+.Login-body {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Login-form {
+  display: flex;
+  flex-direction: column;
+  width: calc(500px + 5vmin);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Register-form {
+  display: flex;
+  flex-direction: column;
+  width: calc(500px + 20vmin);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Login-box{
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Login-input{
+  display: flex;
+  width: 100%;
+  
+}
