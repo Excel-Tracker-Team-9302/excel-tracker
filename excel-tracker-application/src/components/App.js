@@ -4,7 +4,13 @@ import './../styles/App.css';
 
 import ACTIONS from '../redux/action'
 import { connect } from 'react-redux';
-import Home from './Home/Home.js';
+
+import Header from './Home/Header.js';
+import Login from './Login/Login.js';
+import Dashboard from './Home/Dashboard.js'
+
+import Register from './Register.js';
+
 
 import {
   BrowserRouter as Router,
@@ -19,23 +25,32 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
+          {/* <nav>
             <ul>
               <li>
-                <Link to="/home">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/home">
-              <Home />
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+             <Route path="/register">
+              <Register />
+              </Route>
+              <Route path="/">
+              <Login />
             </Route>
           </Switch>
         </div>
-      </Router> 
+    </Router> 
     );
   }
 }
