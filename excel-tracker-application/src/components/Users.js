@@ -18,7 +18,7 @@ class Users extends React.Component {
     super(props);
 
     this.state = {
-        selected: null
+        selected: "All"
     }
 
     this.handleLogout = this.handleLogout.bind(this);
