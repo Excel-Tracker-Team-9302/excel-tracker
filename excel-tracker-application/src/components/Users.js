@@ -8,9 +8,10 @@ import {
 import Header from './Home/Header.js';
 import {dummyData} from './../services/DummyData';
 import UserList from './UserView/UserList';
-import { InputLabel } from '@material-ui/core';
+import { InputLabel, Input } from '@material-ui/core';
 import { Select } from '@material-ui/core';
 import { MenuItem} from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
 class Users extends React.Component {
 
@@ -18,10 +19,12 @@ class Users extends React.Component {
     super(props);
 
     this.state = {
-        selected: "All"
+        selected: "All",
+        username: ""
     }
 
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleChangeUsername = this.handleChangeUsername.bind(this);
   }
 
   handleLogout() {
@@ -30,6 +33,11 @@ class Users extends React.Component {
   handleChange(value) {
     this.setState({selected: value });
   }
+
+  handleChangeUsername(value) {
+    this.setState({username: value})
+    console.log(this.state.username)
+  };
   render() {
       return (
         
@@ -37,6 +45,11 @@ class Users extends React.Component {
           <Header handleLogout={() => this.handleLogout} pageName="Users"/>
           <div className="Users">
           
+        <Input
+        type = "text"
+        placeholder="Search for user"
+        onChange={ event => this.handleChangeUsername(event.target.value) } 
+        />
           <InputLabel id="label">Filter by</InputLabel>
             <Select labelId="label" 
             id="select" 
@@ -53,7 +66,8 @@ class Users extends React.Component {
               
           <h1>UserList</h1>
           <UserList users={dummyData.users.filter(user => {
-    return user.role === this.state.selected || this.state.selected == "All";
+    return (user.role === this.state.selected || this.state.selected == "All") 
+    && (user.name.toLowerCase().includes(this.state.username.toLowerCase()) || this.state.username === "");
 })} /> 
           </div>
           
