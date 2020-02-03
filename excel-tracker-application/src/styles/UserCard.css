@@ -1,0 +1,11 @@
+.userCard {
+    width: 80%;
+    height: 5vh;
+    border: 3px solid black;
+    padding: 3px;
+    margin: 2px;
+}
+
+p {
+    margin: 10px;
+}

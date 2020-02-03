@@ -1,4 +1,4 @@
-dummyData = {
+export const dummyData = {
 
   competencies: {
     1: {
@@ -45,13 +45,15 @@ dummyData = {
     }
   },
 
-  users: {
-    "cking32@gatech.edu": {
+  users: [
+    {
+      email: "cking32@gatech.edu",
       role: "Faculty/Staff",
       name: "Cole King"
     },
 
-    "asullivan@gatech.edu": {
+    {
+      email: "asullivan@gatech.edu",
       name: "Andy Sullivan",
       role: "Student",
       cohort_number: 2,
@@ -59,7 +61,8 @@ dummyData = {
       status: "current"
     },
 
-    "psullivan@gatech.edu": {
+    {
+      email:"psullivan@gatech.edu",
       name: "Perry Sullivan",
       role: "Student",
       cohort_number: 2,
@@ -67,10 +70,11 @@ dummyData = {
       status: "current"
     },
 
-    "bdylan9@gatech.edu": {
+    {
+      email: "bdylan9@gatech.edu",
       name: "Bob Dylan",
       role: "Mentor",
-      student: "asullican@gatech.edu",
+      student: "asullican@gatech.edu"
     }
+  ]
   }
-}
