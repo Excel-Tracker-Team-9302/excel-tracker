@@ -37,10 +37,6 @@ class Dashboard extends React.Component {
            <CoolCard />
           </div>
 
-          <div className='tc'>
-          <h1>UserList</h1>
-          <UserList users={dummyData.users} /> 
-          </div>
           
           <br></br>
           
