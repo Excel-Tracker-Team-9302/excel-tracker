@@ -76,7 +76,7 @@ class Users extends React.Component {
 
           <div className='tc'>
               
-          <h1>UserList</h1>
+          <h1>User List</h1>
           <UserList users={dummyData.users.filter(user => {
     return (user.role === this.state.selected || this.state.selected == "All") 
     && (user.name.toLowerCase().includes(this.state.username.toLowerCase()) || this.state.username === "");
