@@ -42,6 +42,27 @@ dummyData = {
       subcategory: "General Social Skills",
       difficulty: "A",
       frequency: "Sem"
+    },
+    6: {
+      title: "Presents clean, neat and appropriate attire / uniform ",
+      domain: "Employment/Careers",
+      subcategory: "Hygiene & Physical Presentation",
+      difficulty: "B",
+      frequency: "Sem"
+    },
+    7: {
+      title: "Displays good hygiene and grooming: Including body, hair, nails, teeth",
+      domain: "Employment/Careers",
+      subcategory: "Hygiene & Physical Presentation",
+      difficulty: "B",
+      frequency: "Sem"
+    },
+    8: {
+      title: "Utilizes and records an appropriate voicemail message",
+      domain: "Employment/Careers",
+      subcategory: "Job Search Skills (to get the job)",
+      difficulty: "I",
+      frequency: "Sem"
     }
   },
 
@@ -51,11 +72,19 @@ dummyData = {
       name: "Cole King"
     },
 
+    "mtaylor@gatech.edu": {
+      name: "Mason Taylor",
+      role: "Student",
+      cohort_number: 3,
+      mentor: 'fyates33@gatech.edu',
+      status: "current"
+    },
+
     "asullivan@gatech.edu": {
       name: "Andy Sullivan",
       role: "Student",
       cohort_number: 2,
-      mentor: null,
+      mentor: "bdylan9@gatech.edu",
       status: "current"
     },
 
@@ -70,7 +99,46 @@ dummyData = {
     "bdylan9@gatech.edu": {
       name: "Bob Dylan",
       role: "Mentor",
-      student: "asullican@gatech.edu",
+      students: {
+        "asullivan@gatech.edu": {
+          competencies: [6, 8]
+        }
+      }
+    },
+
+    "crands@gatech.edu": {
+      role: "Faculty/Staff",
+      name: "Carly Rands"
+    },
+
+    "rSmith@gatech.edu": {
+      name: "Riley Smith",
+      role: "Admin",
+    },
+
+    "hNeald@gatech.edu": {
+      name: "Hathan Neald",
+      role: "Admin",
+    },
+
+    "ctreaty77@gatech.edu": {
+      name: "Courtney Treaty",
+      role: "Student",
+      cohort_number: 1,
+      mentor: null,
+      status: "current"
+    },
+
+    "fyates33@gatech.edu": {
+      name: "Fred Yates",
+      role: "Mentor",
+      students: {
+        "mtaylor@gatech.edu": {
+          competencies: [6, 7]
+        }
+      }
     }
-  }
+  } 
 }
+
+export default dummyData
