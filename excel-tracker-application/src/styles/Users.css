@@ -1,0 +1,13 @@
+.input-bar, .filter {
+    margin: 35px;
+    margin-left: 325px;
+    width: 100%;
+}
+
+.tc {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1000px;
+    margin-left: 100px;
+    width: 100%;
+}

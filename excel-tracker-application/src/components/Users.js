@@ -13,6 +13,9 @@ import { Select } from '@material-ui/core';
 import { MenuItem} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
+import './../styles/Users.css';
+import {Container, Row, Col } from 'react-bootstrap'
+
 class Users extends React.Component {
 
   constructor(props) {
@@ -44,12 +47,18 @@ class Users extends React.Component {
         <div>
           <Header handleLogout={() => this.handleLogout} pageName="Users"/>
           <div className="Users">
-          
+        
+        <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'left', 'grid-gap': '10px'}}>
+
+        <div className="input-bar">
         <Input
-        type = "text"
-        placeholder="Search for user"
-        onChange={ event => this.handleChangeUsername(event.target.value) } 
-        />
+          type = "text"
+          placeholder="Search for user"
+          onChange={ event => this.handleChangeUsername(event.target.value) } 
+          />
+        </div>
+
+        <div className="filter">
           <InputLabel id="label">Filter by</InputLabel>
             <Select labelId="label" 
             id="select" 
@@ -61,6 +70,9 @@ class Users extends React.Component {
             <MenuItem value="Faculty/Staff">Faculty/Staff</MenuItem>
             <MenuItem value="Admin">Admin</MenuItem>
             </Select>
+        </div>
+        </Container>
+
 
           <div className='tc'>
               
