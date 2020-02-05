@@ -42,6 +42,27 @@ export const dummyData = {
       subcategory: "General Social Skills",
       difficulty: "A",
       frequency: "Sem"
+    },
+    6: {
+      title: "Presents clean, neat and appropriate attire / uniform ",
+      domain: "Employment/Careers",
+      subcategory: "Hygiene & Physical Presentation",
+      difficulty: "B",
+      frequency: "Sem"
+    },
+    7: {
+      title: "Displays good hygiene and grooming: Including body, hair, nails, teeth",
+      domain: "Employment/Careers",
+      subcategory: "Hygiene & Physical Presentation",
+      difficulty: "B",
+      frequency: "Sem"
+    },
+    8: {
+      title: "Utilizes and records an appropriate voicemail message",
+      domain: "Employment/Careers",
+      subcategory: "Job Search Skills (to get the job)",
+      difficulty: "I",
+      frequency: "Sem"
     }
   },
 
@@ -57,7 +78,7 @@ export const dummyData = {
       name: "Andy Sullivan",
       role: "Student",
       cohort_number: 2,
-      mentor: null,
+      mentor: "bdylan9@gatech.edu",
       status: "current"
     },
 
