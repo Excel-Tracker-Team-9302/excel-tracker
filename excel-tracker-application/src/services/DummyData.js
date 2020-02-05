@@ -74,6 +74,15 @@ export const dummyData = {
     },
 
     {
+      email: "mtaylor@gatech.edu",
+      name: "Mason Taylor",
+      role: "Student",
+      cohort_number: 3,
+      mentor: 'fyates33@gatech.edu',
+      status: "current"
+    },
+
+    {
       email: "asullivan@gatech.edu",
       name: "Andy Sullivan",
       role: "Student",
@@ -83,7 +92,7 @@ export const dummyData = {
     },
 
     {
-      email:"psullivan@gatech.edu",
+      email: "psullivan@gatech.edu",
       name: "Perry Sullivan",
       role: "Student",
       cohort_number: 2,
@@ -95,7 +104,49 @@ export const dummyData = {
       email: "bdylan9@gatech.edu",
       name: "Bob Dylan",
       role: "Mentor",
-      student: "asullican@gatech.edu"
+      students: {
+        "asullivan@gatech.edu": {
+          competencies: [6, 8]
+        }
+      }
+    },
+
+    {
+      name: "crands@gatech.edu",
+      role: "Faculty/Staff",
+      name: "Carly Rands"
+    },
+
+    {
+      email: "rSmith@gatech.edu",
+      name: "Riley Smith",
+      role: "Admin",
+    },
+
+    {
+      email: "hNeald@gatech.edu",
+      name: "Hathan Neald",
+      role: "Admin",
+    },
+
+    {
+      email: "ctreaty77@gatech.edu",
+      name: "Courtney Treaty",
+      role: "Student",
+      cohort_number: 1,
+      mentor: null,
+      status: "current"
+    },
+
+    {
+      email: "fyates33@gatech.edu",
+      name: "Fred Yates",
+      role: "Mentor",
+      students: {
+        "mtaylor@gatech.edu": {
+          competencies: [6, 7]
+        }
+      }
     }
   ]
   }
