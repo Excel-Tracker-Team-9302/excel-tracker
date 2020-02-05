@@ -1,4 +1,4 @@
-dummyData = {
+export const dummyData = {
 
   competencies: {
     1: {
@@ -66,21 +66,15 @@ dummyData = {
     }
   },
 
-  users: {
-    "cking32@gatech.edu": {
+  users: [
+    {
+      email: "cking32@gatech.edu",
       role: "Faculty/Staff",
       name: "Cole King"
     },
 
-    "mtaylor@gatech.edu": {
-      name: "Mason Taylor",
-      role: "Student",
-      cohort_number: 3,
-      mentor: 'fyates33@gatech.edu',
-      status: "current"
-    },
-
-    "asullivan@gatech.edu": {
+    {
+      email: "asullivan@gatech.edu",
       name: "Andy Sullivan",
       role: "Student",
       cohort_number: 2,
@@ -88,7 +82,8 @@ dummyData = {
       status: "current"
     },
 
-    "psullivan@gatech.edu": {
+    {
+      email:"psullivan@gatech.edu",
       name: "Perry Sullivan",
       role: "Student",
       cohort_number: 2,
@@ -96,49 +91,11 @@ dummyData = {
       status: "current"
     },
 
-    "bdylan9@gatech.edu": {
+    {
+      email: "bdylan9@gatech.edu",
       name: "Bob Dylan",
       role: "Mentor",
-      students: {
-        "asullivan@gatech.edu": {
-          competencies: [6, 8]
-        }
-      }
-    },
-
-    "crands@gatech.edu": {
-      role: "Faculty/Staff",
-      name: "Carly Rands"
-    },
-
-    "rSmith@gatech.edu": {
-      name: "Riley Smith",
-      role: "Admin",
-    },
-
-    "hNeald@gatech.edu": {
-      name: "Hathan Neald",
-      role: "Admin",
-    },
-
-    "ctreaty77@gatech.edu": {
-      name: "Courtney Treaty",
-      role: "Student",
-      cohort_number: 1,
-      mentor: null,
-      status: "current"
-    },
-
-    "fyates33@gatech.edu": {
-      name: "Fred Yates",
-      role: "Mentor",
-      students: {
-        "mtaylor@gatech.edu": {
-          competencies: [6, 7]
-        }
-      }
+      student: "asullican@gatech.edu"
     }
-  } 
-}
-
-export default dummyData
+  ]
+  }
