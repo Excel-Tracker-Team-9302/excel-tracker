@@ -14,6 +14,15 @@ import reports from './../../assets/images/reports.png'
 import users from './../../assets/images/users.png'
 import courses from './../../assets/images/courses.png'
 import {Container, Row, Col } from 'react-bootstrap'
+import {withStyles } from '@material-ui/core/styles';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 const useStyles = makeStyles({
   card: {
@@ -21,8 +30,7 @@ const useStyles = makeStyles({
     maxHeight: '100%',
   },
 });
-
-export default function ImgMediaCard() {
+function ImgMediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -59,6 +67,7 @@ export default function ImgMediaCard() {
         height="100%"
         image={users}
         title="Users"
+        onClick={() => props.history.push('/users')}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
@@ -122,3 +131,5 @@ export default function ImgMediaCard() {
   </div>
   );
 }
+
+export default withStyles(useStyles)(withRouter(ImgMediaCard));

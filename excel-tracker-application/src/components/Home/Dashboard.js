@@ -7,6 +7,8 @@ import {
 
 import './../../styles/Dashboard.css';
 import Header from './Header.js';
+import {dummyData} from './../../services/DummyData';
+import UserList from './../UserView/UserList';
 
 
 class Dashboard extends React.Component {
@@ -34,6 +36,7 @@ class Dashboard extends React.Component {
             alignItems: "center"}}>
            <CoolCard />
           </div>
+
           
           <br></br>
           
