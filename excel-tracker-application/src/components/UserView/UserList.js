@@ -1,7 +1,7 @@
 import React from 'react';
 import UserCard from './UserCard';
 
-const UserList = ({users}) => {
+const UserList = ({users, prop}) => {
     return(
         <div>
             {
@@ -10,6 +10,7 @@ const UserList = ({users}) => {
                     <UserCard 
                         name={users[i].name} 
                         userType={users[i].role}
+                        prop = {prop}
                     />
                 ); 
             })

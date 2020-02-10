@@ -80,7 +80,7 @@ class Users extends React.Component {
           <UserList users={dummyData.users.filter(user => {
     return (user.role === this.state.selected || this.state.selected == "All") 
     && (user.name.toLowerCase().includes(this.state.username.toLowerCase()) || this.state.username === "");
-})} /> 
+})} prop= {this.props}/> 
           </div>
           
           <br></br>
