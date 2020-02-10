@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Header from './Home/Header.js';
-import {dummyData} from './../services/DummyData';
+import dummyData from './../services/DummyData';
 import UserList from './UserView/UserList';
 import { InputLabel, Input } from '@material-ui/core';
 import { Select } from '@material-ui/core';

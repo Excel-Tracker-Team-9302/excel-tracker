@@ -1,4 +1,4 @@
-export const dummyData = {
+const dummyData = {
 
   competencies: {
     1: {
@@ -150,3 +150,5 @@ export const dummyData = {
     }
   ]
   }
+
+export default dummyData;
