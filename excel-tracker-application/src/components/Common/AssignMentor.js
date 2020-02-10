@@ -7,11 +7,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
-import MenuItem from '@material-ui/core/MenuItem';
+
 import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
+
 import Select from '@material-ui/core/Select';
-import Colors from '../../assets/text/Colors';
+
+
+import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
@@ -115,6 +117,10 @@ class AssignMentor extends React.Component {
     );
   }
   
+}
+
+AssignMentor.propTypes = {
+  studentEmail: PropTypes.string.isRequired
 }
 
 export default withStyles(useStyles)(AssignMentor);
