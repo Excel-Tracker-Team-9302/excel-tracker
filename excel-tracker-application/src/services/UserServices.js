@@ -1,13 +1,26 @@
-function inviteNewUser(userId, type) {
-  return null;
-}
-
-function sendResetPasswordLink(userEmail) {
-  return null;
-}
+import dummyData from './DummyData'
 
 
-module.exports = {
-  inviteNewUser: inviteNewUser,
-  sendResetPasswordLink: sendResetPasswordLink
+const UserServices = {
+  inviteNewUser: function(userId, type) {
+    return null;
+  },
+
+  sendResetPasswordLink: function(userEmail) {
+    return null;
+  },
+
+  getMentors: function() {
+    return dummyData.users.filter((user) => (user.role && user.role == 'Mentor'))
+  },
+
+  assignMentor: function(studentEmail, mentorEmail) {
+    return null
+  },
+
+  getTrackingLocations() {
+    return dummyData.trackingLocations
+  }
 }
+
+export default UserServices;
