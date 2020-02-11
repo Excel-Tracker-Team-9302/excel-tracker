@@ -16,6 +16,10 @@ const UserServices = {
 
   assignMentor: function(studentEmail, mentorEmail) {
     return null
+  },
+
+  getTrackingLocations() {
+    return dummyData.trackingLocations
   }
 }
 
