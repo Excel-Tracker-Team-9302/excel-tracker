@@ -104,11 +104,7 @@ const dummyData = {
       email: "bdylan9@gatech.edu",
       name: "Bob Dylan",
       role: "Mentor",
-      students: {
-        "asullivan@gatech.edu": {
-          competencies: [6, 8]
-        }
-      }
+      students: ["asullivan@gatech.edu"]
     },
 
     {
@@ -142,13 +138,40 @@ const dummyData = {
       email: "fyates33@gatech.edu",
       name: "Fred Yates",
       role: "Mentor",
-      students: {
-        "mtaylor@gatech.edu": {
-          competencies: [6, 7]
-        }
-      }
+      students: ["mtaylor@gatech.edu"]
     }
+  ],
+
+  trackingLocations: [
+    {
+      name: "Communications 2",
+      competencies: [2, 3, 5],
+      locationID: 3,
+      instructors: [],
+      students: []
+    },
+
+    {
+      name: "Workplace Management",
+      competencies: [6, 7, 8],
+      locationID: 2,
+      instructors: ["cking32@gatech.edu"],
+      students: ['ctreaty77@gatech.edu', 'psullivan@gatech.edu']
+
+    },
+
+    {
+      name: "Transportation 1",
+      competencies: [1, 2, 3],
+      locationID: 2,
+      instructors: ["crands@gatech.edu"],
+      students: ['ctreaty77@gatech.edu', 'psullivan@gatech.edu']
+
+    },
+    
+
   ]
-  }
+}
+
 
 export default dummyData;
