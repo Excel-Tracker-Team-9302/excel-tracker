@@ -5,8 +5,9 @@ const TLCard = ({name,competencies,locationID,instructors,students}) => {
 
 return (
         <div className='userCard'>   
-            <p>Name: {name}</p>
-            <p>Instructors: {instructors|| ''}</p>
+            <b><div>{name}</div></b>
+            <br/>
+            <div>Instructors: {instructors|| ''}</div>
         </div>
     );
 }
