@@ -4,6 +4,8 @@
     border: 3px solid #003057;
     padding: 3px;
     margin: 2px;
+    font-size: calc(5px + 1vmin);
+
 }
 
 p {

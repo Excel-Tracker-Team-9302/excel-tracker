@@ -6,11 +6,13 @@ import FormControl from '@material-ui/core/FormControl';
 import Colors from '../assets/text/Colors.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './Home/Header.js';
-import {dummyData} from './../services/DummyData';
+import dummyData from './../services/DummyData.js';
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CompetencyCard from './UserView/CompetencyCard';
-
+import TLCard from './UserView/TLCard';
+import UserServices from '../services/UserServices';
+import AssignMentor from './Common/AssignMentor.js'
 
 
 
@@ -26,14 +28,21 @@ import { connect } from 'react-redux';
 class UserDetails extends Component {
 
 
-  competencies = dummyData.competencies.filter(competency => {
+  competencies = UserServices.getCompetencies().filter(competency => {
     return (competency);
-  }) 
+  }).sort(function(a, b){
+      if (a.domain > b.domain) {
+        return 1;
+      }
+      return -1;
 
-  mentors=dummyData.users.filter(user => {
-    return (user.role == "Mentor");
   })
+ 
 
+  trackingLocations = UserServices.getTrackingLocations().filter(tl => {
+    return (tl);
+  })
+  
   assign = event => {
     alert(event.target.text);
   };
@@ -48,32 +57,43 @@ class UserDetails extends Component {
           <div className="UserDetails">
             <div className ="UD-header" style={{color:Colors.blue}}>
               User: {this.props.location.state.name}
+
             </div>
             <div className = "UD-body">
+            {this.props.location.state.userType == "Student" &&
+                <AssignMentor/>
+              }
               Role = {this.props.location.state.userType}
               {this.props.location.state.userType == "Student" &&
                 <div>
-                  <div className='tc'>
-                    <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      Add Mentor
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      {this.mentors.map((mentor, i) => {
-                        return (<Dropdown.Item onClick = {this.assign}> {this.mentors[i].name} </Dropdown.Item>);
-                      })}
-                      </Dropdown.Menu>
-                    </Dropdown>
+                  <div className='udtc'>
+
+
                       <h1>Competencies</h1>
-                      {this.competencies.map((competency, i) => {
-                          return( <CompetencyCard 
-                                    title={this.competencies[i].title} 
-                                    domain={this.competencies[i].domain}
-                                    subcategory={this.competencies[i].subcategory}
-                                    difficulty={this.competencies[i].difficulty}
-                                  />
-                          ); 
-                      })}
+                      <h1>Tracking Locations</h1>
+                      <div>
+                          {this.competencies.map((competency, i) => {
+                              return( <CompetencyCard 
+                                        title={this.competencies[i].title} 
+                                        domain={this.competencies[i].domain}
+                                        subcategory={this.competencies[i].subcategory}
+                                        difficulty={this.competencies[i].difficulty}
+                                      />
+                              ); 
+                          })}
+                      </div>
+                      <div>
+                          {this.trackingLocations.map((tl, i) => {
+                              return( <TLCard 
+                                        name= {this.trackingLocations[i].name}
+                                        competencies= {this.trackingLocations[i].competencies}
+                                        locationID= {this.trackingLocations[i].locationID}
+                                        instructors= {this.trackingLocations[i].instructors}
+                                        students= {this.trackingLocations[i].students}
+                                      />
+                              ); 
+                          })}
+                      </div>
                   </div>
                 </div>
               }

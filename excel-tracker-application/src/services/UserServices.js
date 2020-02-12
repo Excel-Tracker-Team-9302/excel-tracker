@@ -20,6 +20,10 @@ const UserServices = {
 
   getTrackingLocations() {
     return dummyData.trackingLocations
+  },
+
+  getCompetencies() {
+    return dummyData.competencies
   }
 }
 
