@@ -1,6 +1,5 @@
-.input-bar, .filter {
-    margin: 35px;
-    margin-left: 325px;
+.input-bar, .filter, .invite {
+    margin: 35px 70px;
     width: 100%;
 }
 

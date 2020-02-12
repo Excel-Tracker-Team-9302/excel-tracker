@@ -50,7 +50,7 @@ class Users extends React.Component {
           <div className="Users">
         
           
-        <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px 300px', 'justify-content':'left', 'grid-gap': '100px'}}>
+        <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '250px 250px 250px', 'justify-content':'center', 'grid-gap': '80px'}}>
 
         <div className="input-bar">
         <Input
