@@ -24,6 +24,10 @@ const UserServices = {
 
   getCompetencies() {
     return dummyData.competencies
+  },
+
+  deleteStudent(studentEmail) {
+    return null;
   }
 }
 

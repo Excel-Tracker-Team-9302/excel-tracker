@@ -12,7 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CompetencyCard from './UserView/CompetencyCard';
 import TLCard from './UserView/TLCard';
 import UserServices from '../services/UserServices';
-import AssignMentor from './Common/AssignMentor.js'
+import AssignMentor from './Common/AssignMentor.js';
+import DeleteStudent from './Common/DeleteStudent.js';
+
 
 
 
@@ -61,8 +63,10 @@ class UserDetails extends Component {
             </div>
             <div className = "UD-body">
             {this.props.location.state.userType == "Student" &&
-                <AssignMentor/>
-              }
+                    <AssignMentor/>
+            }
+            <DeleteStudent/>
+
               Role = {this.props.location.state.userType}
               {this.props.location.state.userType == "Student" &&
                 <div>
