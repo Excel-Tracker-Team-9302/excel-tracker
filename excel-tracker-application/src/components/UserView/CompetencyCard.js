@@ -5,8 +5,10 @@ const CompetencyCard = ({title, domain, subcategory, difficulty}) => {
 
 return (
         <div className='userCard'>   
-            <p>Name: {title}</p>
-            <p>Domain: {domain}</p>
+            <b><div>{title}</div></b>
+            <br/>
+            <div>Domain: {domain} </div>
+            <div>Subcategory: {subcategory}</div>
         </div>
     );
 }
