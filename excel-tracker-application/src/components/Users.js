@@ -50,9 +50,10 @@ class Users extends React.Component {
           <div className="Users">
         
           
-        <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '250px 250px 250px', 'justify-content':'center', 'grid-gap': '80px'}}>
+        {/* <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '250px 250px 250px', 'justify-content':'center', 'grid-gap': '80px'}}> */}
 
-        <div className="input-bar">
+        <div className="flex-grid">
+        <div className="col">
         <Input
           type = "text"
           placeholder="Search for user"
@@ -60,7 +61,7 @@ class Users extends React.Component {
           />
         </div>
 
-        <div className="filter">
+        <div className="col">
           <InputLabel id="label">Filter by</InputLabel>
             <Select labelId="label" 
             id="select" 
@@ -74,10 +75,12 @@ class Users extends React.Component {
             </Select>
         </div>
 
-        <div className ="invite">
+        <div className ="col">
             <InviteUserButton />
           </div>
-        </Container>
+
+        </div>
+        {/* </Container> */}
 
 
           <div className='tc'>
