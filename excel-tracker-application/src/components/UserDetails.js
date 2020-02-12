@@ -42,7 +42,7 @@ class UserDetails extends Component {
   trackingLocations = UserServices.getTrackingLocations().filter(tl => {
     return (tl);
   })
-  
+
   assign = event => {
     alert(event.target.text);
   };
@@ -56,7 +56,7 @@ class UserDetails extends Component {
         <div className="Users">
           <div className="UserDetails">
             <div className ="UD-header" style={{color:Colors.blue}}>
-              User: {this.props.location.state.name}
+              {this.props.location.state.name}
 
             </div>
             <div className = "UD-body">
