@@ -10,6 +10,7 @@ const UserList = ({users, prop}) => {
                     <UserCard 
                         name={users[i].name} 
                         userType={users[i].role}
+                        email={users[i].email}
                         prop = {prop}
                     />
                 ); 

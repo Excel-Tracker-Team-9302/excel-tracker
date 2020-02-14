@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import './../../styles/UserCard.css';
 
-const UserCard = ({name, userType, prop}) => {
+const UserCard = ({name, userType, prop, email}) => {
 
 	const gotodetails = event => {
     	prop.history.push({
           pathname : '/userDetails',
           state :{
           name: name,
-          userType: userType
+          userType: userType,
+          email: email
           }
           } 
         );
