@@ -28,6 +28,12 @@ const UserServices = {
 
   deleteStudent(studentEmail) {
     return null;
+  },
+
+  getMentor(studentEmail) {
+    let student = dummyData.users.filter((user) => user.email == studentEmail);
+    console.log("GOODBYE", student)
+    return student[0].mentor;
   }
 }
 

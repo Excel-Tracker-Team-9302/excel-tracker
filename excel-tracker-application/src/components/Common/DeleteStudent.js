@@ -80,7 +80,7 @@ class DeleteStudent extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Delete Student</Button>
+        <Button onClick={this.handleClickOpen} color='secondary'>Delete User</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
 

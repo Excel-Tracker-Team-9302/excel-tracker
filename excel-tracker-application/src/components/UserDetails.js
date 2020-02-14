@@ -49,6 +49,17 @@ class UserDetails extends Component {
     alert(event.target.text);
   };
 
+  getMentor() {
+    let mentor = UserServices.getMentor(this.props.location.state.email);
+    console.log("HELLO",mentor)
+    if (mentor) {
+      return <p>Mentor: {mentor}</p>
+    }
+    return (
+      <AssignMentor studentEmail={this.props.location.state.email}/>
+    );
+  }
+
 
   render() {
 
@@ -62,8 +73,9 @@ class UserDetails extends Component {
 
             </div>
             <div className = "UD-body">
-            {this.props.location.state.userType == "Student" &&
-                    <AssignMentor studentEmail={this.props.location.state.email}/>
+            {this.props.location.state.userType == "Student" ?
+                  
+                    this.getMentor() : null
             }
             <DeleteStudent email={this.props.location.state.email}/>
 
