@@ -34,6 +34,10 @@ const UserServices = {
     let student = dummyData.users.filter((user) => user.email == studentEmail);
     console.log("GOODBYE", student)
     return student[0].mentor;
+  },
+
+  unassignMentor(studentEmail) {
+    return null
   }
 }
 

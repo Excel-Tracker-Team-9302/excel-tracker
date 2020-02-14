@@ -14,6 +14,7 @@ import TLCard from './UserView/TLCard';
 import UserServices from '../services/UserServices';
 import AssignMentor from './Common/AssignMentor.js';
 import DeleteStudent from './Common/DeleteStudent.js';
+import UnAssignMentor from './Common/UnAssignMentor.js'
 
 
 
@@ -51,9 +52,14 @@ class UserDetails extends Component {
 
   getMentor() {
     let mentor = UserServices.getMentor(this.props.location.state.email);
-    console.log("HELLO",mentor)
     if (mentor) {
-      return <p>Mentor: {mentor}</p>
+      return (
+        <div>
+          <p>Mentor: {mentor}</p>
+           <UnAssignMentor studentEmail={this.props.location.state.email} />
+          
+        </div>
+      )
     }
     return (
       <AssignMentor studentEmail={this.props.location.state.email}/>
@@ -73,13 +79,13 @@ class UserDetails extends Component {
 
             </div>
             <div className = "UD-body">
+            {this.props.location.state.userType}
             {this.props.location.state.userType == "Student" ?
                   
                     this.getMentor() : null
             }
-            <DeleteStudent email={this.props.location.state.email}/>
 
-              Role = {this.props.location.state.userType}
+            <DeleteStudent email={this.props.location.state.email}/>
               {this.props.location.state.userType == "Student" &&
                 <div>
                   <div className='udtc'>

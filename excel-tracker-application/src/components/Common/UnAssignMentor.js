@@ -5,10 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import {
-  withRouter
-} from 'react-router-dom'
-import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
@@ -26,8 +23,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-class DeleteStudent extends React.Component {
+class UnAssignMentor extends React.Component {
 
+  componentDidMount() {
+    console.log(UserServices.getMentors())
+  }
   constructor(props) {
     super(props);
 
@@ -59,24 +59,22 @@ class DeleteStudent extends React.Component {
   };
 
   handleSubmit = () => {
-    this.props.history.push('/users');
-    UserServices.deleteStudent(this.props.email)
+    UserServices.unassignMentor(this.props.studentEmail)
     this.setOpen(false)
   }
 
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Delete User</Button>
+        <Button onClick={this.handleClickOpen} color='secondary'>Unassign Mentor</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
-          <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
-
+          <DialogTitle>Unassign this mentor from this student?</DialogTitle>
           <DialogActions>
             <Button onClick={this.handleClose} color="secondary">
               Cancel
             </Button>
             <Button onClick={this.handleSubmit} color="secondary">
-              Delete
+              Unassign
             </Button>
           </DialogActions>
         </Dialog>
@@ -86,9 +84,8 @@ class DeleteStudent extends React.Component {
   
 }
 
-DeleteStudent.propTypes = {
-  email: PropTypes.string.isRequired
+UnAssignMentor.propTypes = {
+  studentEmail: PropTypes.string.isRequired
 }
 
-
-export default withStyles(useStyles)(withRouter(DeleteStudent));
+export default withStyles(useStyles)(UnAssignMentor);
