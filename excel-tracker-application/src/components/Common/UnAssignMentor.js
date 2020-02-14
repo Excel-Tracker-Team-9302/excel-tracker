@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import './../../styles/UserDetails.css';
 
 
 import PropTypes from 'prop-types';
@@ -65,7 +66,7 @@ class UnAssignMentor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className = 'UD-holder'>
         <Button onClick={this.handleClickOpen} color='secondary'>Unassign Mentor</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Unassign this mentor from this student?</DialogTitle>

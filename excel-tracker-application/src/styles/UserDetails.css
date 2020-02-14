@@ -11,6 +11,13 @@
     width: 100%;
 }
 
+.UD-holder {
+    display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
 .UD-header {
   height: 20%;
   display: flex;
