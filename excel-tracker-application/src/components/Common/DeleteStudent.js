@@ -34,15 +34,65 @@ const useStyles = makeStyles(theme => ({
 
 class DeleteStudent extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      type: '',
+      open: false
+    }
+
+  }
+
+  setType(newType) {
+    this.setState({
+      type: newType
+    })
+  }
+
+
+  setOpen(newOpen) {
+    this.setState({
+      open: newOpen
+    })
+  }
+
+
+
+  handleChangeType = event => {
+    this.setType(event.target.value || '');
+  };
+
   handleClickOpen = () => {
+    this.setOpen(true);
+  };
+
+  handleClose = () => {
+    this.setOpen(false);
+  };
+
+  handleSubmit = () => {
     this.props.history.push('/users');
     UserServices.deleteStudent(this.props.studentEmail)
-  };
+    this.setOpen(false)
+  }
 
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Delete User</Button>
+        <Button onClick={this.handleClickOpen} color='secondary'>Delete Student</Button>
+        <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
+          <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
+
+          <DialogActions>
+            <Button onClick={this.handleClose} color="secondary">
+              Cancel
+            </Button>
+            <Button onClick={this.handleSubmit} color="secondary">
+              Delete
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }
