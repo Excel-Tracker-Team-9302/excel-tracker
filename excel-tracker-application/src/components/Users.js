@@ -12,6 +12,7 @@ import { InputLabel, Input } from '@material-ui/core';
 import { Select } from '@material-ui/core';
 import { MenuItem} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import InviteUserButton from './Common/InviteUserButton.js'
 
 import './../styles/Users.css';
 import {Container, Row, Col } from 'react-bootstrap'
@@ -48,9 +49,11 @@ class Users extends React.Component {
           <Header handleLogout={() => this.handleLogout} pageName="Users"/>
           <div className="Users">
         
-        <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'left', 'grid-gap': '10px'}}>
+          
+        {/* <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '250px 250px 250px', 'justify-content':'center', 'grid-gap': '80px'}}> */}
 
-        <div className="input-bar">
+        <div className="flex-grid">
+        <div className="col">
         <Input
           type = "text"
           placeholder="Search for user"
@@ -58,7 +61,7 @@ class Users extends React.Component {
           />
         </div>
 
-        <div className="filter">
+        <div className="col">
           <InputLabel id="label">Filter by</InputLabel>
             <Select labelId="label" 
             id="select" 
@@ -71,7 +74,13 @@ class Users extends React.Component {
             <MenuItem value="Admin">Admin</MenuItem>
             </Select>
         </div>
-        </Container>
+
+        <div className ="col">
+            <InviteUserButton />
+          </div>
+
+        </div>
+        {/* </Container> */}
 
 
           <div className='tc'>

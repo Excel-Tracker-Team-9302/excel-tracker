@@ -60,9 +60,7 @@ function Header(props) {
           <Typography variant="h6" className={classes.title}>
             {props.pageName}
           </Typography>
-          <div style={{marginRight: 10}}>
-            <InviteUserButton />
-          </div>
+          
           
           <Button className={classes.menuButton} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>
           <Button className={classes.menuButton}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>Logout</Button>
