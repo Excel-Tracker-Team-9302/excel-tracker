@@ -63,9 +63,9 @@ class UserDetails extends Component {
             </div>
             <div className = "UD-body">
             {this.props.location.state.userType == "Student" &&
-                    <AssignMentor/>
+                    <AssignMentor studentEmail={this.props.location.state.email}/>
             }
-            <DeleteStudent/>
+            <DeleteStudent email={this.props.location.state.email}/>
 
               Role = {this.props.location.state.userType}
               {this.props.location.state.userType == "Student" &&

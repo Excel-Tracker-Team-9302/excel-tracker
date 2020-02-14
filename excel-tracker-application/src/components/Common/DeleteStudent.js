@@ -73,7 +73,7 @@ class DeleteStudent extends React.Component {
 
   handleSubmit = () => {
     this.props.history.push('/users');
-    UserServices.deleteStudent(this.props.studentEmail)
+    UserServices.deleteStudent(this.props.email)
     this.setOpen(false)
   }
 
@@ -97,6 +97,10 @@ class DeleteStudent extends React.Component {
     );
   }
   
+}
+
+DeleteStudent.propTypes = {
+  email: PropTypes.string.isRequired
 }
 
 
