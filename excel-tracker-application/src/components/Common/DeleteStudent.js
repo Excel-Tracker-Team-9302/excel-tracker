@@ -22,42 +22,33 @@ class DeleteStudent extends React.Component {
 
   }
 
-  setType(newType) {
+  openWindow = () => {
     this.setState({
-      type: newType
+      open: true
     })
   }
 
-
-  setOpen(newOpen) {
+  closeWindow = () => {
     this.setState({
-      open: newOpen
+      open: false
     })
-  }
-
-  handleClickOpen = () => {
-    this.setOpen(true);
-  };
-
-  handleClose = () => {
-    this.setOpen(false);
   };
 
   handleSubmit = () => {
     this.props.history.push('/users');
     UserServices.deleteStudent(this.props.email)
-    this.setOpen(false)
+    this.closeWindow()
   }
 
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Delete User</Button>
-        <Dialog open={this.state.open} onClose={this.handleClose}>
+        <Button onClick={this.openWindow} color='secondary'>Delete User</Button>
+        <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
 
           <DialogActions>
-            <Button onClick={this.handleClose} color="secondary">
+            <Button onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
             <Button onClick={this.handleSubmit} color="secondary">

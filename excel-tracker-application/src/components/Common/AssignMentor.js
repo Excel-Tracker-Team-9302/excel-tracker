@@ -46,23 +46,25 @@ class AssignMentor extends React.Component {
     })
   }
 
-
-
   handleChangeMentor = event => {
     this.setMentor(event.target.value || '');
   };
 
-  handleClickOpen = () => {
-    this.setOpen(true);
-  };
+  openWindow = () => {
+    this.setState({
+      open: true
+    })
+  }
 
-  handleClose = () => {
-    this.setOpen(false);
-  };
+  closeWindow = () => {
+    this.setState({
+      open: false
+    })
+  }
 
   handleSubmit = () => {
     UserServices.assignMentor(this.state.type, this.props.studentEmail)
-    this.setOpen(false)
+    this.closeWindow()
   }
 
   rendorMentorList() {
@@ -74,8 +76,8 @@ class AssignMentor extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Assign Mentor</Button>
-        <Dialog open={this.state.open} onClose={this.handleClose}>
+        <Button onClick={this.openWindow} color='secondary'>Assign Mentor</Button>
+        <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Assign a Mentor to Student</DialogTitle>
           <DialogContent>
                 <InputLabel>Mentor Name</InputLabel>
@@ -88,7 +90,7 @@ class AssignMentor extends React.Component {
                 </Select>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="secondary">
+            <Button onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
             <Button onClick={this.handleSubmit} color="secondary">

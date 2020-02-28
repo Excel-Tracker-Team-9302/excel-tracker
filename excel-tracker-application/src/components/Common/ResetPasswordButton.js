@@ -9,51 +9,68 @@ import TextField from '@material-ui/core/TextField';
 import UserServices from '../../services/UserServices';
 
 
-export default function InviteUserButton() {
-
-  const [open, setOpen] = React.useState(false);
-  const [email, setEmail] = React.useState('');
+class ResetPasswordButton extends React.Component {
 
 
-  const handleChangeEmail = event => {
-    setEmail(event.target.value || '');
-  };
+  constructor(props) {
+    super(props)
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleSubmit = () => {
-    if (email == '') {
-      alert('Please enter a valid email address.');
-    } else {
-      UserServices.sendResetPasswordLink(email);
-      alert('Sent link to ' + email + ' to reset your password' + '.');
-      setOpen(false);
+    this.state = {
+      open: false,
+      email: ''
     }
   }
 
-  return (
-    <div>
-      <Button onClick={handleClickOpen} color='secondary'>Reset Password</Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Enter your email to send a reset password link</DialogTitle>
-        <DialogContent>
-              <TextField onChange={handleChangeEmail} id="standard-basic" value={email} label="User Email" />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="secondary">
-            Cancel
-          </Button>
-          <Button onClick={handleSubmit} color="secondary">
-            Send Reset Link
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
+  handleChangeEmail = event => {
+    this.setState({
+      email: event.target.value
+    });
+  };
+
+  openWindow = () => {
+    this.setState({
+      open: true
+    })
+  };
+
+  closeWindow = () => {
+    this.setState({
+      open: false
+    })
+  };
+
+  handleSubmit = () => {
+    if (this.state.email == '') {
+      alert('Please enter a valid email address.');
+    } else {
+      UserServices.sendResetPasswordLink(this.state.email);
+      alert('Sent link to ' + this.state.email + ' to reset your password' + '.');
+      this.closeWindow()
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.openWindow} color='secondary'>Reset Password</Button>
+        <Dialog open={this.state.open} onClose={this.closeWindow}>
+          <DialogTitle>Enter your email to send a reset password link</DialogTitle>
+          <DialogContent>
+                <TextField onChange={this.handleChangeEmail} id="standard-basic" value={this.state.email} label="User Email" />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.closeWindow} color="secondary">
+              Cancel
+            </Button>
+            <Button onClick={this.handleSubmit} color="secondary">
+              Send Reset Link
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  }
+
 }
+
+export default ResetPasswordButton;
