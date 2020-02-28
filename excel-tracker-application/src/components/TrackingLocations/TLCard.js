@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import './../../styles/UserCard.css';
 
-const TLCard = ({name,instructors, prop}) => {
+const TLCard = ({name,instructors, id, prop}) => {
 
 	const gotodetails = event => {
 		if (prop){
 	    	prop.history.push({
 	          pathname : '/trackinglocationdetails',
 	          state :{
-	          name: name
+			  name: name,
+			  id: id,
 	          }
 	          } 
 	        );

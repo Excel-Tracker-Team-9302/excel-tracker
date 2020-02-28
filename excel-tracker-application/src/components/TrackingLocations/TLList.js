@@ -10,6 +10,7 @@ const TLList = ({TrackingLocations, prop}) => {
                     <TLCard 
                         name={TrackingLocations[i].name} 
                         instructors={TrackingLocations[i].instructors}
+                        id = {TrackingLocations[i].locationID}
                         prop = {prop}
                     />
                 ); 

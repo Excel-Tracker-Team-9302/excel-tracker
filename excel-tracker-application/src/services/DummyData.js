@@ -6,63 +6,72 @@ const dummyData = {
       domain: "Transportation",
       subcategory: "Uber/Lyft",
       difficulty: "I",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 1
     },
     {
       title: "Can cancel an Uber/Lyft",
       domain: "Transportation",
       subcategory: "Uber/Lyft",
       difficulty: "A",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 2
     },
     {
       title: "Is on time for work/internships",
       domain: "Employment/Careers",
       subcategory: "Planning and Preparation",
       difficulty: "I",
-      frequency: "Mnth"
+      frequency: "Mnth",
+      id: 3
     },
     {
       title: "Performs assigned tasks and follows directions on the job",
       domain: "Employment/Careers",
       subcategory: "Work Skills",
       difficulty: "I",
-      frequency: "Sem"
+      frequency: "Sem",
+      id:4
     },
     {
       title: "Understands and utilizes advanced benefits: health insurance, Employee Assistance Programs (EAP)",
       domain: "Employment/Careers",
       subcategory: "Work Skills",
       difficulty: "E",
-      frequency: "Yr"
+      frequency: "Yr",
+      id: 5
     },
     {
       title: "Addresses bullying through effective communication by discussing the situation with others, or asking for help if needed",
       domain: "Social and Leadership Development",
       subcategory: "General Social Skills",
       difficulty: "A",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 6
     },
     {
       title: "Presents clean, neat and appropriate attire / uniform ",
       domain: "Employment/Careers",
       subcategory: "Hygiene & Physical Presentation",
       difficulty: "B",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 7
     },
     {
       title: "Displays good hygiene and grooming: Including body, hair, nails, teeth",
       domain: "Employment/Careers",
       subcategory: "Hygiene & Physical Presentation",
       difficulty: "B",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 8
     },
     {
       title: "Utilizes and records an appropriate voicemail message",
       domain: "Employment/Careers",
       subcategory: "Job Search Skills (to get the job)",
       difficulty: "I",
-      frequency: "Sem"
+      frequency: "Sem",
+      id: 9
     }
   ],
 
@@ -108,7 +117,7 @@ const dummyData = {
     },
 
     {
-      name: "crands@gatech.edu",
+      email: "crands@gatech.edu",
       role: "Faculty/Staff",
       name: "Carly Rands"
     },
@@ -155,7 +164,7 @@ const dummyData = {
       name: "Workplace Management",
       competencies: [6, 7, 8],
       locationID: 2,
-      instructors: ["cking32@gatech.edu"],
+      instructors: ["cking32@gatech.edu", "crands@gatech.edu"],
       students: ['ctreaty77@gatech.edu', 'psullivan@gatech.edu']
 
     },
@@ -163,7 +172,7 @@ const dummyData = {
     {
       name: "Transportation 1",
       competencies: [1, 2, 3],
-      locationID: 2,
+      locationID: 1,
       instructors: ["crands@gatech.edu"],
       students: ['ctreaty77@gatech.edu', 'psullivan@gatech.edu']
 

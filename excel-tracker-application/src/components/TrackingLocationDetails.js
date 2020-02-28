@@ -15,6 +15,7 @@ import UserServices from '../services/UserServices';
 import AssignMentor from './Common/AssignMentor.js';
 import DeleteStudent from './Common/DeleteStudent.js';
 import UnAssignMentor from './Common/UnAssignMentor.js'
+import UserCard from './UserView/UserCard';
 
 import {
   withRouter
@@ -40,7 +41,15 @@ class TrackingLocationDetails extends Component {
 	  trackingLocations = UserServices.getTrackingLocations().filter(tl => {
 		return (tl);
 	  })
-	
+
+	  tl = UserServices.getTrackingLocation(this.props.location.state.id).filter(tl => {
+		  return (tl);
+	  })
+
+	instructors = UserServices.getInstructor(this.tl[0].instructors)
+	competencies = UserServices.tlToCompetency(this.tl[0].competencies)
+	students = UserServices.getInstructor(this.tl[0].students)
+	  
 	  assign = event => {
 		alert(event.target.text);
 	  };
@@ -55,46 +64,53 @@ class TrackingLocationDetails extends Component {
 			  <div className="UserDetails">
 				<div className ="UD-header" style={{color:Colors.blue}}>
 				  {this.props.location.state.name}
-	
-				</div>
-				<div className = "UD-body">
+				  {console.log(this.competencies)}
+				  {console.log(this.tl[0].competencies)}
+				  
+				  </div>
+				  Instructors
+					{
+						this.instructors.map((user, i) => {
+							return(
+								<UserCard 
+									name={this.instructors[i].name} 
+									userType={this.instructors[i].role}
+									email={this.instructors[i].email}
+									prop = {this.props}
+								/>
+							); 
+						})
+					}
 
-				{this.props.location.state.userType}
-	
-				  {this.props.location.state.userType == "Student" &&
-					<div>
-					  <div className='udtc'>
-	
-	
-						  <h1>Competencies</h1>
-						  <h1>Students</h1>
-						  <div>
-							  {this.competencies.map((competency, i) => {
-								  return( <CompetencyCard 
-											title={this.competencies[i].title} 
-											domain={this.competencies[i].domain}
-											subcategory={this.competencies[i].subcategory}
-											difficulty={this.competencies[i].difficulty}
-										  />
-								  ); 
-							  })}
-						  </div>
-						  <div>
-							  {this.students.map((tl, i) => {
-								  return( <TLCard 
-											name= {this.students[i].name}
-											// competencies= {this.trackingLocations[i].competencies}
-											// locationID= {this.trackingLocations[i].locationID}
-											// instructors= {this.trackingLocations[i].instructors}
-											// students= {this.trackingLocations[i].students}
-										  />
-								  ); 
-							  })}
-						  </div>
-					  </div>
-					</div>
-				  }
-				</div>
+				<div>
+
+					Competencies
+					{
+					this.competencies.map((competency, i) => {
+						return(
+							<CompetencyCard 
+								title={this.competencies[i].title} 
+								domain={this.competencies[i].domain}
+								subcategory={this.competencies[i].subcategory} 
+								prop = {this.props}
+							/>
+						); 
+					})
+					}
+				</div>	
+					Students
+				{
+						this.students.map((user, i) => {
+							return(
+								<UserCard 
+									name={this.students[i].name} 
+									userType={this.students[i].role}
+									email={this.students[i].email}
+									prop = {this.props}
+								/>
+							); 
+						})
+					}	
 			  </div>
 			</div>
 		  </div>
