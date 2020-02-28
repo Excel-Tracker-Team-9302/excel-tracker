@@ -11,68 +11,93 @@ import Select from '@material-ui/core/Select';
 
 import UserServices from '../../services/UserServices';
 
-export default function InviteUserButton() {
-  const [open, setOpen] = React.useState(false);
-  const [type, setType] = React.useState('');
-  const [email, setEmail] = React.useState('');
+class InviteUserButton extends React.Component {
 
-  const handleChangeType = event => {
-    setType(event.target.value || '');
-  };
+  constructor(props) {
+    super(props)
 
-  const handleChangeEmail = event => {
-    setEmail(event.target.value || '');
-  };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleSubmit = () => {
-    if (email == '' || type == '') {
-      alert('Please select a type and enter the user\'s email!');
-    } else {
-      UserServices.inviteNewUser(email, type);
-    alert('Invited ' + email + ' as a(n) ' + type + '.');
-    setOpen(false);
+    this.state = {
+      open: false,
+      email: '',
+      type: ''
     }
   }
 
-  const getUserTypes = () => {
+  handleChangeType = (event) => {
+    this.setState({
+      type: event.target.value
+    })
+  };
+
+  handleChangeEmail = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+  };
+
+  handleChangeOpen = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+  };
+
+  closeWindow = () => {
+    this.setState({
+      open: false
+    })
+  }
+
+  openWindow = () => {
+    this.setState({
+      open: true
+    })
+  };
+
+  handleSubmit = () => {
+    if (this.state.email == '' || this.state.type == '') {
+      alert('Please select a type and enter the user\'s email!');
+    } else {
+      UserServices.inviteNewUser(this.state.email, this.state.type);
+      alert('Invited ' + this.state.email + ' as a(n) ' + this.state.type + '.');
+      this.closeWindow();
+    }
+  }
+
+  getUserTypes = () => {
     let userTypes = ['Administrator', 'Instructor', 'Peer Coordinator', 'Student']
     return userTypes.map((item) => <option value={item}>{item}</option>)
   }
 
-  return (
-    <div>
-      <Button onClick={handleClickOpen} color='secondary'>Invite a New User</Button>
-      <Dialog open={open} onClose={handleClose}>
+  render() {
+    return (
+      <div>
+      <Button onClick={this.openWindow} color='secondary'>Invite a New User</Button>
+      <Dialog open={this.state.open} onClose={this.closeWindow}>
         <DialogTitle>Email Invite for New User to Join</DialogTitle>
         <DialogContent>
             <InputLabel>User Type</InputLabel>
             <Select
               native
-              value={type}
-              onChange={handleChangeType}
+              value={this.state.type}
+              onChange={this.handleChangeType}
             >
-              {getUserTypes()}
+              {this.getUserTypes()}
             </Select>
             <br/>
-            <TextField onChange={handleChangeEmail} id="standard-basic" value={email} label="User Email" />
+            <TextField onChange={this.handleChangeEmail} id="standard-basic" value={this.state.email} label="User Email" />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="secondary">
+          <Button onClick={this.closeWindow} color="secondary">
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="secondary">
+          <Button onClick={this.handleSubmit} color="secondary">
             Send Invite
           </Button>
         </DialogActions>
       </Dialog>
     </div>
-  );
+    )
+  }
 }
+
+export default InviteUserButton;
