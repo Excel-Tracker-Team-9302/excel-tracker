@@ -176,8 +176,6 @@ class CreateCompetencyButton extends React.Component {
     this.setNScale(event.target.value || '')
   }
 
-  
-
   handleChangeLevel = event => {
     this.setLevel(event.target.value || '');
   };

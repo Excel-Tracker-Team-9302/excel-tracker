@@ -17,24 +17,12 @@ import {
   withRouter
 } from "react-router-dom";
 
-const useStyles = makeStyles({
-  card: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
-});
 function ImgMediaCard(props) {
-
-  console.log(props);
-  const classes = props.classes;
-  console.log(classes);
-
-  const styles = useStyles();
 
   return (
     <div>
 
-    <Card className={styles.card}>
+    <Card>
       <CardActionArea style = {{height: '80%'}}>
         <CardMedia
           component="img"
@@ -55,4 +43,4 @@ function ImgMediaCard(props) {
   );
 }
 
-export default withStyles(useStyles)(withRouter(ImgMediaCard));
+export default (withRouter(ImgMediaCard));
