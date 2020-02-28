@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './../../styles/UserCard.css';
 
-const CompetencyCard = ({title, domain, subcategory, difficulty}) => {
+const CompetencyCard = ({title, domain, subcategory, prop}) => {
 
 return (
         <div className='userCard'>   

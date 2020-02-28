@@ -38,6 +38,14 @@ const UserServices = {
 
   unassignMentor(studentEmail) {
     return null
+  },
+
+  searchTrackingLocations(search) {
+    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.name.toLowerCase().includes(search.toLowerCase()))||search =='') 
+  },
+
+  searchCompetencies(search) {
+    return dummyData.competencies.filter((competency) => (competency.title.toLowerCase().includes(search.toLowerCase()))||search =='') 
   }
 }
 

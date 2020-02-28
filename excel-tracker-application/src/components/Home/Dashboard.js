@@ -35,10 +35,10 @@ class Dashboard extends React.Component {
           <Header handleLogout={() => this.handleLogout} pageName="Home"/>
           <div className="Dashboard">
             <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px', marginTop: '20px', marginBottom: '20px'}}>
-              <CoolCard pageName="Competencies" image={competencies}/>
+              <CoolCard pageName="Competencies" image={competencies} onClick={() => this.props.history.push('/competencies')}/>
               <CoolCard pageName="Users" image={users} onClick={() => this.props.history.push('/users')}/>
               <CoolCard pageName="Reports" image={reports}/>
-              <CoolCard pageName="Courses" image={courses}/>
+              <CoolCard pageName="Tracking Location" image={courses} onClick={() => this.props.history.push('/trackinglocations')}/>
             </Container>
           </div>
         </div>
