@@ -74,7 +74,7 @@ class TrackingLocations extends React.Component {
 
           <div className='tc'>
               
-          <h1>Tacking Location List</h1>
+          <h1>Tracking Location List</h1>
           <TLList TrackingLocations={UserServices.searchTrackingLocations(this.state.trackingLocation)} prop= {this.props}/> 
           </div>
           
