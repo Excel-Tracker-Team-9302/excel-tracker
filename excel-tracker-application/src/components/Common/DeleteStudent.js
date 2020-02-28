@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -8,23 +7,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import {
   withRouter
 } from 'react-router-dom'
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
-
-const useStyles = makeStyles(theme => ({
-
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-}));
-
 
 class DeleteStudent extends React.Component {
 
@@ -68,7 +53,7 @@ class DeleteStudent extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen} color='secondary'>Delete User</Button>
-        <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
+        <Dialog open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
 
           <DialogActions>
@@ -91,4 +76,4 @@ DeleteStudent.propTypes = {
 }
 
 
-export default withStyles(useStyles)(withRouter(DeleteStudent));
+export default withRouter(DeleteStudent);

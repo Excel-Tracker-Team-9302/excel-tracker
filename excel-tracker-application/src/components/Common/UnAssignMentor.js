@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -11,29 +10,21 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
-const useStyles = makeStyles(theme => ({
-
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-}));
-
-
 class UnAssignMentor extends React.Component {
 
   componentDidMount() {
-    console.log(UserServices.getMentors())
+    let mentors = UserServices.getMentors()
+    this.setState({
+      mentors:mentors
+    })
   }
+
   constructor(props) {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      mentors: []
     }
 
   }
@@ -68,7 +59,7 @@ class UnAssignMentor extends React.Component {
     return (
       <div className = 'UD-holder'>
         <Button onClick={this.handleClickOpen} color='secondary'>Unassign Mentor</Button>
-        <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
+        <Dialog open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Unassign this mentor from this student?</DialogTitle>
           <DialogActions>
             <Button onClick={this.handleClose} color="secondary">
@@ -89,4 +80,4 @@ UnAssignMentor.propTypes = {
   studentEmail: PropTypes.string.isRequired
 }
 
-export default withStyles(useStyles)(UnAssignMentor);
+export default (UnAssignMentor);
