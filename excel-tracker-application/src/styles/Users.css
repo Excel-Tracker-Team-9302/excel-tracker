@@ -1,0 +1,22 @@
+.tc {
+    display: flex grid;
+    justify-content: center;
+    grid-template-columns: 1000px;
+    margin: 10vh 18vw;
+    width: 80%;
+}
+
+h1 {
+    color: #003057;
+}
+
+.flex-grid {
+    display: flex;
+    justify-content: center;
+    margin: 35px 18vw;
+}
+
+.flex-grid .col {
+    width: 20%;
+    margin: 10px 5vw;
+  }

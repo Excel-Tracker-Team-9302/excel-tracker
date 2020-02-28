@@ -7,6 +7,14 @@ import {
 
 import './../../styles/Dashboard.css';
 import Header from './Header.js';
+import {dummyData} from './../../services/DummyData';
+import UserList from './../UserView/UserList';
+
+import competencies from './../../assets/images/competencies.png'
+import reports from './../../assets/images/reports.png'
+import users from './../../assets/images/users.png'
+import courses from './../../assets/images/courses.png'
+import {Container, Row, Col } from 'react-bootstrap'
 
 
 class Dashboard extends React.Component {
@@ -26,17 +34,12 @@ class Dashboard extends React.Component {
         <div>
           <Header handleLogout={() => this.handleLogout} pageName="Home"/>
           <div className="Dashboard">
-          
-    
-          <br></br>
-          <div style={{ height: '80%', display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}>
-           <CoolCard />
-          </div>
-          
-          <br></br>
-          
+            <Container fixed style = {{ alignItems: 'center', display: 'grid', 'grid-template-columns': '300px 300px', 'justify-content':'center', 'grid-gap': '10px', marginTop: '20px', marginBottom: '20px'}}>
+              <CoolCard pageName="Competencies" image={competencies}/>
+              <CoolCard pageName="Users" image={users} onClick={() => this.props.history.push('/users')}/>
+              <CoolCard pageName="Reports" image={reports}/>
+              <CoolCard pageName="Courses" image={courses}/>
+            </Container>
           </div>
         </div>
         

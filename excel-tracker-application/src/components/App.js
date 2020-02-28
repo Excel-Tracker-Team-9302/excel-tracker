@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import Header from './Home/Header.js';
 import Login from './Login/Login.js';
 import Dashboard from './Home/Dashboard.js'
+import Users from './Users.js'
+import UserDetails from './UserDetails.js'
 
 import Register from './Register.js';
 
@@ -39,6 +41,12 @@ class App extends Component {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
+          <Route path = "/users">
+              <Users/>
+            </Route>
+          <Route path = "/userdetails">
+              <UserDetails/>
+            </Route>
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -48,6 +56,7 @@ class App extends Component {
               <Route path="/">
               <Login />
             </Route>
+            
           </Switch>
         </div>
     </Router> 
