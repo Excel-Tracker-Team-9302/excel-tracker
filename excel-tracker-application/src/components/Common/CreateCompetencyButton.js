@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -15,21 +14,6 @@ import Select from '@material-ui/core/Select';
 
 import UserServices from '../../services/UserServices';
 import CompetencyServices from '../../services/CompetencyServices';
-
-const useStyles = makeStyles(theme => ({
-
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: 600,
-    fullWidth: true
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 500,
-    fullWidth: true
-  },
-}));
 
 
 class CreateCompetencyButton extends React.Component {
@@ -267,17 +251,16 @@ class CreateCompetencyButton extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen} color='secondary'>Create Competency</Button>
-        <Dialog maxWidth='lg' fullHeight={true} fullWidth={true} disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
+        <Dialog maxWidth='lg'fullWidth={true} open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Fill in the form to create the competency</DialogTitle>
           <DialogContent>
-            <form className={this.props.classes.container}>
-              <FormControl className={this.props.classes.formControl}>
+            <form>
+              <FormControl>
                 <Select
                   label="Level"
                   native
                   value={this.state.level}
                   onChange={this.handleChangeLevel}
-                  input={<Input id="demo-dialog-native" />}
                 >
                   {this.rendorLevelList()}
                 </Select>
@@ -287,7 +270,6 @@ class CreateCompetencyButton extends React.Component {
                   native
                   value={this.state.frequency}
                   onChange={this.handleChangeFrequency}
-                  input={<Input id="demo-dialog-native" />}
                 >
                   {this.rendorFrequencyList()}
                 </Select>
@@ -297,7 +279,6 @@ class CreateCompetencyButton extends React.Component {
                   native
                   value={this.state.domain}
                   onChange={this.handleChangeDomain}
-                  input={<Input id="demo-dialog-native" />}
                 >
                   {this.rendorDomainList()}
                 </Select>
@@ -307,7 +288,6 @@ class CreateCompetencyButton extends React.Component {
                   native
                   value={this.state.subcategory}
                   onChange={this.handleChangeSubcategory}
-                  input={<Input id="demo-dialog-native" />}
                 >
                   {this.rendorSubcategoryList()}
                 </Select>
@@ -400,8 +380,6 @@ class CreateCompetencyButton extends React.Component {
                   value={this.state.nScale}
                   onChange={this.handleChangeNScale}
                 />
-
-
               </FormControl>
             </form>
           </DialogContent>
@@ -420,4 +398,4 @@ class CreateCompetencyButton extends React.Component {
   
 }
 
-export default withStyles(useStyles)(CreateCompetencyButton);
+export default (CreateCompetencyButton);

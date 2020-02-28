@@ -1,5 +1,4 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -8,7 +7,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 
-import FormControl from '@material-ui/core/FormControl';
 
 import Select from '@material-ui/core/Select';
 
@@ -17,17 +15,6 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
-const useStyles = makeStyles(theme => ({
-
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-}));
 
 
 class AssignMentor extends React.Component {
@@ -35,19 +22,20 @@ class AssignMentor extends React.Component {
   componentDidMount() {
     console.log(UserServices.getMentors())
   }
+
   constructor(props) {
     super(props);
 
     this.state = {
-      type: '',
+      mentor: '',
       open: false
     }
 
   }
 
-  setType(newType) {
+  setMentor(newMentor) {
     this.setState({
-      type: newType
+      mentor: newMentor
     })
   }
 
@@ -60,8 +48,8 @@ class AssignMentor extends React.Component {
 
 
 
-  handleChangeType = event => {
-    this.setType(event.target.value || '');
+  handleChangeMentor = event => {
+    this.setMentor(event.target.value || '');
   };
 
   handleClickOpen = () => {
@@ -87,22 +75,17 @@ class AssignMentor extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen} color='secondary'>Assign Mentor</Button>
-        <Dialog disableBackdropClick disableEscapeKeyDown open={this.state.open} onClose={this.handleClose}>
+        <Dialog open={this.state.open} onClose={this.handleClose}>
           <DialogTitle>Assign a Mentor to Student</DialogTitle>
           <DialogContent>
-            <form className={this.props.classes.container}>
-              <FormControl className={this.props.classes.formControl}>
-                <InputLabel htmlFor="demo-dialog-native">Mentor Name</InputLabel>
+                <InputLabel>Mentor Name</InputLabel>
                 <Select
                   native
-                  value={this.state.type}
-                  onChange={this.handleChangeType}
-                  input={<Input id="demo-dialog-native" />}
+                  value={this.state.mentor}
+                  onChange={this.handleChangeMentor}
                 >
                   {this.rendorMentorList()}
                 </Select>
-              </FormControl>
-            </form>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="secondary">
@@ -123,4 +106,4 @@ AssignMentor.propTypes = {
   studentEmail: PropTypes.string.isRequired
 }
 
-export default withStyles(useStyles)(AssignMentor);
+export default (AssignMentor);
