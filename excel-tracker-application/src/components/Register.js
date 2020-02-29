@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './../styles/Login.css';
-import ResetPasswordButton from './Common/ResetPasswordButton.js';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import Colors from '../assets/text/Colors.js';
-import { makeStyles } from '@material-ui/core/styles';
 
 
 import {

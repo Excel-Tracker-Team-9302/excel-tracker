@@ -1,48 +1,47 @@
 
 import Button from '@material-ui/core/Button';
 
-
-import ACTIONS from '../../redux/action'
-import { connect } from 'react-redux';
-
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
   withRouter
 } from "react-router-dom";
 
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+
 
 import CreateCompetencyButton from './../Common/CreateCompetencyButton'
 
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
+
   menuButton: {
     marginRight: 2,
   },
+
   title: {
     flexGrow: 1,
   },
 };
 
 
-
+/**
+ * Header for the main application
+ * 
+ * Header created by referencing the Material UI App Bar
+ * outline here: https://material-ui.com/components/app-bar/
+ * (Febuary 2020)
+ * 
+ */
 function Header(props) {
  
   const classes = props.classes;
 
   return (
-
-      <div className={classes.root}>
+      <div>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
@@ -55,7 +54,6 @@ function Header(props) {
         </Toolbar>
       </AppBar>
     </div>
-
   );
 }
 

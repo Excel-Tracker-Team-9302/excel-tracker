@@ -9,6 +9,13 @@ import TextField from '@material-ui/core/TextField';
 import UserServices from '../../services/UserServices';
 
 
+/**
+ * Pop-up button used reset the password of a user
+ * 
+ * Dialogue created by referencing the Material UI Dialogue 
+ * outline here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class ResetPasswordButton extends React.Component {
 
 
@@ -56,7 +63,7 @@ class ResetPasswordButton extends React.Component {
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Enter your email to send a reset password link</DialogTitle>
           <DialogContent>
-                <TextField onChange={this.handleChangeEmail} id="standard-basic" value={this.state.email} label="User Email" />
+                <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
           </DialogContent>
           <DialogActions>
             <Button onClick={this.closeWindow} color="secondary">

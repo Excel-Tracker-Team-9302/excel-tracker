@@ -5,8 +5,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-
 
 import Select from '@material-ui/core/Select';
 
@@ -16,7 +14,13 @@ import PropTypes from 'prop-types';
 import UserServices from '../../services/UserServices';
 
 
-
+/**
+ * Pop-up button used to create a program competency
+ * 
+ * Dialogue created by referencing the Material UI Dialogue 
+ * outline here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class AssignMentor extends React.Component {
 
   componentDidMount() {

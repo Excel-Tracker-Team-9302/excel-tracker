@@ -11,6 +11,13 @@ import Select from '@material-ui/core/Select';
 
 import UserServices from '../../services/UserServices';
 
+/**
+ * Pop-up button used to invite a user to the program
+ * 
+ * Dialogue created by referencing the Material UI Dialogue 
+ * outline here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class InviteUserButton extends React.Component {
 
   constructor(props) {
@@ -30,12 +37,6 @@ class InviteUserButton extends React.Component {
   };
 
   handleChangeEmail = (event) => {
-    this.setState({
-      email: event.target.value
-    })
-  };
-
-  handleChangeOpen = (event) => {
     this.setState({
       email: event.target.value
     })
@@ -84,7 +85,7 @@ class InviteUserButton extends React.Component {
               {this.getUserTypes()}
             </Select>
             <br/>
-            <TextField onChange={this.handleChangeEmail} id="standard-basic" value={this.state.email} label="User Email" />
+            <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
         </DialogContent>
         <DialogActions>
           <Button onClick={this.closeWindow} color="secondary">

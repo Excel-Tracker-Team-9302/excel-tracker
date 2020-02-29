@@ -10,6 +10,14 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
+
+/**
+ * Pop-up button used to unassign a mentor from a specific student
+ * 
+ * Dialogue created by referencing the Material UI Dialogue 
+ * outline here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class UnAssignMentor extends React.Component {
 
   componentDidMount() {

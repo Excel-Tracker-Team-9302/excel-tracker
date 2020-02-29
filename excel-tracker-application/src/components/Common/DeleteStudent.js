@@ -11,6 +11,13 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
+/**
+ * Pop-up button used to delete a user from the program
+ * 
+ * Dialogue created by referencing the Material UI Dialogue 
+ * outline here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class DeleteStudent extends React.Component {
 
   constructor(props) {
