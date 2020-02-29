@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
               <CoolCard pageName="Competencies" image={competencies} onClick={() => this.props.history.push('/competencies')}/>
               <CoolCard pageName="Users" image={users} onClick={() => this.props.history.push('/users')}/>
               <CoolCard pageName="Reports" image={reports}/>
-              <CoolCard pageName="Tracking Location" image={courses} onClick={() => this.props.history.push('/trackinglocations')}/>
+              <CoolCard pageName="Tracking Locations" image={courses} onClick={() => this.props.history.push('/trackinglocations')}/>
             </Container>
           </div>
         </div>

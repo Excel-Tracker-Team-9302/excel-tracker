@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../styles/UserDetails.css';
+import './../styles/TrackingLocationDetails.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
@@ -12,9 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CompetencyCard from './Competencies/CompetencyCard';
 import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
-import AssignMentor from './Common/AssignMentor.js';
-import DeleteStudent from './Common/DeleteStudent.js';
-import UnAssignMentor from './Common/UnAssignMentor.js'
 import UserCard from './UserView/UserCard';
 
 import {
@@ -60,15 +57,20 @@ class TrackingLocationDetails extends Component {
 		return (
 		  <div>
 			<Header handleLogout={() => this.handleLogout} pageName="Tracking Location Details"/>
-			<div className="Users">
-			  <div className="UserDetails">
-				<div className ="UD-header" style={{color:Colors.blue}}>
-				  {this.props.location.state.name}
-				  {console.log(this.competencies)}
-				  {console.log(this.tl[0].competencies)}
-				  
-				  </div>
-				  Instructors
+			<div className="TL">
+			  <div className="TLDetails">
+				<div className="container">
+					<div className="left">
+						<div className ="TL-header" style={{color:Colors.blue}}>
+						{this.props.location.state.name}
+						{console.log(this.competencies)}
+						{console.log(this.tl[0].competencies)}
+						
+						
+						</div>
+					</div>
+				  <div className="right">
+				  <h2 style={{color:Colors.blue}}>Instructors</h2>
 					{
 						this.instructors.map((user, i) => {
 							return(
@@ -81,10 +83,12 @@ class TrackingLocationDetails extends Component {
 							); 
 						})
 					}
+				 </div>
+				</div>
+				<div className="container">
+				<div className="left"> 
 
-				<div>
-
-					Competencies
+					<h2 style={{color:Colors.blue}}>Competencies</h2>
 					{
 					this.competencies.map((competency, i) => {
 						return(
@@ -98,7 +102,8 @@ class TrackingLocationDetails extends Component {
 					})
 					}
 				</div>	
-					Students
+				<div className="right">
+					<h2 style={{color:Colors.blue}}>Students</h2>
 				{
 						this.students.map((user, i) => {
 							return(
@@ -113,21 +118,11 @@ class TrackingLocationDetails extends Component {
 					}	
 			  </div>
 			</div>
+			</div>
+		  </div>
 		  </div>
 		);
 	  }
-
-	// render() {
-
-	//     return (
-
-	//     	<div>
-	//     	{this.props.location.state.name}
-	//     	</div>
-
-
-	//     );
-	// }
 }
 
 const mapStateToProps = (state) => ({
