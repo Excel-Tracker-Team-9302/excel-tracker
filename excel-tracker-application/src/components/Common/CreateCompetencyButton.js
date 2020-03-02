@@ -536,7 +536,9 @@ CreateCompetencyButton.defaultProps = {
     fourScale: '',
     NScale: '',
 
-  }
+  },
+
+  buttonTitle: 'Create Competency'
 }
 
 export default withStyles(styles)(CreateCompetencyButton);

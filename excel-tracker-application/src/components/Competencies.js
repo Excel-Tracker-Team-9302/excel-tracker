@@ -17,7 +17,8 @@ import UserServices from '../services/UserServices';
 
 
 import './../styles/Users.css';
-import {Container, Row, Col } from 'react-bootstrap'
+import './Common/CreateCompetencyButton'
+import CreateCompetencyButton from './Common/CreateCompetencyButton';
 
 class Competencies extends React.Component {
 
@@ -64,8 +65,7 @@ class Competencies extends React.Component {
         </div>
 
         <div className ="col">
-            ///////////////////////////Charlie put your thing here/////////////////////////////////
-            <InviteUserButton />
+            <CreateCompetencyButton />
           </div>
 
         </div>
