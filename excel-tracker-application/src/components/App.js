@@ -4,6 +4,10 @@ import Login from './Login/Login.js';
 import Dashboard from './Home/Dashboard.js'
 import Users from './Users.js'
 import UserDetails from './UserDetails.js'
+import TrackingLocations from './TrackingLocations.js'
+import TrackingLocationDetails from './TrackingLocationDetails.js'
+import Competencies from './Competencies.js'
+
 
 import Register from './Register.js';
 
@@ -25,6 +29,15 @@ class App extends Component {
           <Route path = "/users">
               <Users/>
             </Route>
+          <Route path = "/trackinglocations">
+              <TrackingLocations/>
+          </Route>
+          <Route path = "/trackinglocationdetails">
+              <TrackingLocationDetails/>
+          </Route>
+          <Route path = "/competencies">
+              <Competencies/>
+          </Route>
           <Route path = "/userdetails">
               <UserDetails/>
             </Route>

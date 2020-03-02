@@ -38,7 +38,29 @@ const UserServices = {
 
   unassignMentor(studentEmail) {
     return null
-  }
+  },
+
+  searchTrackingLocations(search) {
+    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.name.toLowerCase().includes(search.toLowerCase()))||search =='') 
+  },
+
+  searchCompetencies(search) {
+    return dummyData.competencies.filter((competency) => (competency.title.toLowerCase().includes(search.toLowerCase()))||search =='') 
+  },
+
+  getTrackingLocation(tlid) {
+    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID == tlid))
+  },
+
+  getInstructor(emails) {
+    return dummyData.users.filter((user) => emails.includes(user.email))
+  }, 
+  tlToCompetency(cids) {
+    return dummyData.competencies.filter((competency) => cids.includes(competency.id))
+  },
+  getStudent(emails) {
+    return dummyData.users.filter((user) => emails.includes(user.email))
+  }, 
 }
 
 export default UserServices;
