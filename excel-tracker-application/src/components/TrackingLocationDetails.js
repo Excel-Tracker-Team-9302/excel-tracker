@@ -13,6 +13,7 @@ import CompetencyCard from './Competencies/CompetencyCard';
 import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import UserCard from './UserView/UserCard';
+import AddCompButton from './Common/AddCompButton';
 
 import {
   withRouter
@@ -87,11 +88,14 @@ class TrackingLocationDetails extends Component {
 				</div>
 				<div className="container">
 				<div className="left"> 
-
+				
 					<h2 style={{color:Colors.blue}}>Competencies</h2>
+					<AddCompButton>button</AddCompButton>
 					{
 					this.competencies.map((competency, i) => {
 						return(
+
+							
 							<CompetencyCard 
 								title={this.competencies[i].title} 
 								domain={this.competencies[i].domain}
