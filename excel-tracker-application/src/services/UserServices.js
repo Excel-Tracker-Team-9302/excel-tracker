@@ -52,6 +52,10 @@ const UserServices = {
     return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID == tlid))
   },
 
+  createTrackingLocation(name) {
+    return null
+  },
+
   getInstructor(emails) {
     return dummyData.users.filter((user) => emails.includes(user.email))
   }, 

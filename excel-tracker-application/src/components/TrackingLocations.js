@@ -14,6 +14,7 @@ import { MenuItem} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import InviteUserButton from './Common/InviteUserButton.js';
 import UserServices from '../services/UserServices';
+import CreateTrackingLocation from './TrackingLocations/CreateTrackingLocation'
 
 
 import './../styles/Users.css';
@@ -64,8 +65,7 @@ class TrackingLocations extends React.Component {
         </div>
 
         <div className ="col">
-            ///////////////////////////Charlie put your thing here/////////////////////////////////
-            <InviteUserButton />
+            <CreateTrackingLocation />
           </div>
 
         </div>
