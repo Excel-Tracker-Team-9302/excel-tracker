@@ -13,12 +13,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 
-import CreateCompetencyButton from './../Common/CreateCompetencyButton'
-
-
 const styles = {
 
-  menuButton: {
+  button: {
     marginRight: 2,
   },
 
@@ -27,13 +24,22 @@ const styles = {
   },
 };
 
+const competency = {
+  level: 'Beginner',
+  description: 'Really cool competency',
+  frequency: 'Semester',
+  title: 'Insert cool competency',
+  domain: 'Social and Leadership Development',
+  subcategory: 'Being Awesome',
+  details: 'Evaluation on the coolness scale',
+}
 
 /**
  * Header for the main application
  * 
- * Header created by referencing the Material UI App Bar
- * outline here: https://material-ui.com/components/app-bar/
- * (Febuary 2020)
+ * Header created using the Material UI App Bar
+ * demos here: https://material-ui.com/components/app-bar/
+ * (January 2020)
  * 
  */
 function Header(props) {
@@ -48,9 +54,12 @@ function Header(props) {
             {props.pageName}
           </Typography>
           
-          <Button className={classes.menuButton} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>
-          <Button className={classes.menuButton}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>Logout</Button>
-          <CreateCompetencyButton/>
+          <Button className={classes.button} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>
+            Home
+          </Button>
+          <Button className={classes.button}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

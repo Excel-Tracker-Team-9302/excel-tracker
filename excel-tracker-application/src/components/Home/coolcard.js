@@ -9,6 +9,13 @@ import {
   withRouter
 } from "react-router-dom";
 
+/**
+ * Image cards displayed on the dashboard of the application
+ * 
+ * Cards created using the Material UI Card
+ * demos here: https://material-ui.com/components/cards/
+ * (January 2020)
+ */
 function ImgMediaCard(props) {
 
   return (

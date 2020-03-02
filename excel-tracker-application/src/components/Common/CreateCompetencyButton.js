@@ -5,15 +5,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
-
+import PropTypes from 'prop-types';
 
 import Select from '@material-ui/core/Select';
-
-
-import UserServices from '../../services/UserServices';
 import CompetencyServices from '../../services/CompetencyServices';
 import Grid from '@material-ui/core/Grid';
-import { withStyles, FormControl, FormLabel } from '@material-ui/core';
+import { withStyles, FormLabel } from '@material-ui/core';
 
 const styles = {
   root: {
@@ -23,9 +20,10 @@ const styles = {
 
 /**
  * Pop-up button used to create a program competency
+ * or edit a pre-existing competency
  * 
- * Dialogue created by referencing the Material UI Dialogue 
- * outline here: https://material-ui.com/components/dialogs/
+ * Dialog created using the Material UI Dialog
+ * demos here: https://material-ui.com/components/dialogs/
  * (Febuary 2020)
  */
 class CreateCompetencyButton extends React.Component {
@@ -34,32 +32,36 @@ class CreateCompetencyButton extends React.Component {
     let competencyLevels = CompetencyServices.getCompetencyLevels();
     let competencyFrequencies = CompetencyServices.getEvaluationFrequencies();
     let competencyDomains = CompetencyServices.getCompetencyDomains();
+    let competencySubcategories = CompetencyServices.getCompetencySubCategories(this.state.domain)
 
     this.setState({
       levels: competencyLevels,
       frequencies: competencyFrequencies,
-      domains: competencyDomains
+      domains: competencyDomains,
+      subcategories: competencySubcategories
     })
   }
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      level: '',
-      description: '',
-      frequency: '',
-      title: '',
-      domain: '',
-      subcategory: 'Select Domain',
-      details: '',
+    let competency = props.competency
 
-      zeroScale: '',
-      oneScale: '',
-      twoScale: '',
-      threeScale: '',
-      fourScale: '',
-      NScale: '',
+    this.state = {
+      level: competency.level,
+      description: competency.description,
+      frequency: competency.frequency,
+      title: competency.title,
+      domain: competency.domain,
+      subcategory: competency.subcategory,
+      details: competency.details,
+
+      zeroScale: competency.zeroScale,
+      oneScale: competency.oneScale,
+      twoScale: competency.twoScale,
+      threeScale: competency.threeScale,
+      fourScale: competency.fourScale,
+      NScale: competency.NScale,
 
       subcategories: [],
       levels: [],
@@ -95,7 +97,6 @@ class CreateCompetencyButton extends React.Component {
       details: details
     })
   }
-
 
   setOpen(newOpen) {
     this.setState({
@@ -201,9 +202,9 @@ class CreateCompetencyButton extends React.Component {
 
   handleChangeDomain = event => {
     let subcategories = CompetencyServices.getCompetencySubCategories(event.target.value);
+    console.log(subcategories)
     this.setDomain(event.target.value);
     this.setSubCategories(subcategories);
-    this.setSubCategory('');
   }
 
   handleChangeSubcategory = event => {
@@ -287,10 +288,9 @@ class CreateCompetencyButton extends React.Component {
   }
 
   render() {
-    console.log(this.state.subcategory)
     return (
       <div>
-        <Button onClick={this.openWindow} color='secondary'>Create Competency</Button>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>{this.props.buttonTitle}</Button>
         <Dialog maxWidth='lg' fullWidth={true} open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Create Competency</DialogTitle>
           <DialogContent>
@@ -333,9 +333,7 @@ class CreateCompetencyButton extends React.Component {
                       <Select
                         label="Subcategory"
                         native
-                        displayEmpty={true}
                         defaultValue={this.state.subcategory}
-                        autoWidth={true}
                         value={this.state.subcategory}
                         onChange={this.handleChangeSubcategory}
 
@@ -508,16 +506,36 @@ class CreateCompetencyButton extends React.Component {
             </div>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.closeWindow} color="secondary">
+            <Button variant='contained' onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Create
             </Button>
           </DialogActions>
         </Dialog>
       </div >
     );
+  }
+}
+
+CreateCompetencyButton.defaultProps = {
+  competency: {
+    level: '',
+    description: '',
+    frequency: '',
+    title: '',
+    domain: 'Transportation',
+    subcategory: '',
+    details: '',
+
+    zeroScale: '',
+    oneScale: '',
+    twoScale: '',
+    threeScale: '',
+    fourScale: '',
+    NScale: '',
+
   }
 }
 

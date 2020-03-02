@@ -5,7 +5,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 
@@ -14,9 +13,10 @@ import UserServices from '../../services/UserServices';
 /**
  * Pop-up button used to invite a user to the program
  * 
- * Dialogue created by referencing the Material UI Dialogue 
- * outline here: https://material-ui.com/components/dialogs/
- * (Febuary 2020)
+ * Dialog created using the Material UI Dialog 
+ * demos here: https://material-ui.com/components/dialogs/
+ * and here: https://material-ui.com/components/selects/
+ * (January 2020)
  */
 class InviteUserButton extends React.Component {
 
@@ -72,7 +72,7 @@ class InviteUserButton extends React.Component {
   render() {
     return (
       <div>
-      <Button onClick={this.openWindow} color='secondary'>Invite a New User</Button>
+      <Button variant='contained' onClick={this.openWindow} color='secondary'>Invite a New User</Button>
       <Dialog open={this.state.open} onClose={this.closeWindow}>
         <DialogTitle>Email Invite for New User to Join</DialogTitle>
         <DialogContent>
@@ -88,10 +88,10 @@ class InviteUserButton extends React.Component {
             <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.closeWindow} color="secondary">
+          <Button variant='contained' onClick={this.closeWindow} color="secondary">
             Cancel
           </Button>
-          <Button onClick={this.handleSubmit} color="secondary">
+          <Button variant='contained' onClick={this.handleSubmit} color="secondary">
             Send Invite
           </Button>
         </DialogActions>
