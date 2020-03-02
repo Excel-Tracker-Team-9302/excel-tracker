@@ -44,9 +44,9 @@ function Header(props) {
             {props.pageName}
           </Typography>
           
-          <Button className={classes.button} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>
+          {props.pageName == 'Home' ? null : <Button className={classes.button} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>
             Home
-          </Button>
+          </Button>}
           <Button className={classes.button}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>
             Logout
           </Button>

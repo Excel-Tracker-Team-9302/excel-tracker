@@ -59,7 +59,7 @@ class ResetPasswordButton extends React.Component {
   render() {
     return (
       <div>
-        <Button variant='contained' onClick={this.openWindow} color='secondary'>Reset Password</Button>
+        <Button onClick={this.openWindow} color='secondary'>Reset Password</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Enter your email to send a reset password link</DialogTitle>
           <DialogContent>
