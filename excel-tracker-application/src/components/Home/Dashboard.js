@@ -7,13 +7,11 @@ import {
 
 import './../../styles/Dashboard.css';
 import Header from './Header.js';
-import {dummyData} from './../../services/DummyData';
-import UserList from './../UserView/UserList';
 
 import competencies from './../../assets/images/competencies.png'
 import reports from './../../assets/images/reports.png'
 import users from './../../assets/images/users.png'
-import courses from './../../assets/images/courses.png'
+import tl from './../../assets/images/tl.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 
@@ -38,7 +36,7 @@ class Dashboard extends React.Component {
               <CoolCard pageName="Competencies" image={competencies} onClick={() => this.props.history.push('/competencies')}/>
               <CoolCard pageName="Users" image={users} onClick={() => this.props.history.push('/users')}/>
               <CoolCard pageName="Reports" image={reports}/>
-              <CoolCard pageName="Tracking Locations" image={courses} onClick={() => this.props.history.push('/trackinglocations')}/>
+              <CoolCard pageName="Tracking Locations" image={tl} onClick={() => this.props.history.push('/trackinglocations')}/>
             </Container>
           </div>
         </div>
