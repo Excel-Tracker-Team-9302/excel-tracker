@@ -5,58 +5,71 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-
-import FormControl from '@material-ui/core/FormControl';
+import PropTypes from 'prop-types';
 
 import Select from '@material-ui/core/Select';
-
-
-import UserServices from '../../services/UserServices';
 import CompetencyServices from '../../services/CompetencyServices';
+import Grid from '@material-ui/core/Grid';
+import { withStyles, FormLabel } from '@material-ui/core';
 
+const styles = {
+  root: {
+    flexGrow: 1
+  },
+}
 
+/**
+ * Pop-up button used to create a program competency
+ * or edit a pre-existing competency
+ * 
+ * Dialog created using the Material UI Dialog
+ * demos here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class CreateCompetencyButton extends React.Component {
 
   componentDidMount() {
     let competencyLevels = CompetencyServices.getCompetencyLevels();
     let competencyFrequencies = CompetencyServices.getEvaluationFrequencies();
     let competencyDomains = CompetencyServices.getCompetencyDomains();
+    let competencySubcategories = CompetencyServices.getCompetencySubCategories(this.state.domain)
 
     this.setState({
       levels: competencyLevels,
       frequencies: competencyFrequencies,
-      domains: competencyDomains
+      domains: competencyDomains,
+      subcategories: competencySubcategories
     })
   }
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      name: '',
-      level: '',
-      description: '',
-      frequency: '',
-      title: '',
-      domain: '',
-      subcategory: '',
-      details: '',
+    let competency = props.competency
 
-      zeroScale: '',
-      oneScale: '',
-      twoScale: '',
-      threeScale: '',
-      fourScale: '',
-      NScale: '',
+    this.state = {
+      level: competency.level,
+      description: competency.description,
+      frequency: competency.frequency,
+      title: competency.title,
+      domain: competency.domain,
+      subcategory: competency.subcategory,
+      details: competency.details,
+
+      zeroScale: competency.zeroScale,
+      oneScale: competency.oneScale,
+      twoScale: competency.twoScale,
+      threeScale: competency.threeScale,
+      fourScale: competency.fourScale,
+      NScale: competency.NScale,
 
       subcategories: [],
       levels: [],
       frequencies: [],
       domains: [],
       open: false,
-      
-      
+
+
     }
 
   }
@@ -84,7 +97,6 @@ class CreateCompetencyButton extends React.Component {
       details: details
     })
   }
-
 
   setOpen(newOpen) {
     this.setState({
@@ -153,71 +165,98 @@ class CreateCompetencyButton extends React.Component {
   }
 
   handleChangeZeroScale = event => {
-    this.setZeroScale(event.target.value || '')
+    this.setZeroScale(event.target.value)
   }
 
   handleChangeOneScale = event => {
-    this.setOneScale(event.target.value || '')
+    this.setOneScale(event.target.value)
   }
 
   handleChangeTwoScale = event => {
-    this.setTwoScale(event.target.value || '')
+    this.setTwoScale(event.target.value)
   }
 
   handleChangeThreeScale = event => {
-    this.setThreeScale(event.target.value || '')
+    this.setThreeScale(event.target.value)
   }
 
   handleChangeFourScale = event => {
-    this.setFourScale(event.target.value || '')
+    this.setFourScale(event.target.value)
   }
 
   handleChangeNScale = event => {
-    this.setNScale(event.target.value || '')
+    this.setNScale(event.target.value)
   }
 
   handleChangeLevel = event => {
-    this.setLevel(event.target.value || '');
+    this.setLevel(event.target.value);
   };
 
   handleChangeDescription = event => {
-    this.setDescription(event.target.value || '');
+    this.setDescription(event.target.value);
   };
 
   handleChangeFrequency = event => {
-    this.setFrequency(event.target.value || '');
+    this.setFrequency(event.target.value);
   }
 
   handleChangeDomain = event => {
     let subcategories = CompetencyServices.getCompetencySubCategories(event.target.value);
-    this.setDomain(event.target.value || '');
+    console.log(subcategories)
+    this.setDomain(event.target.value);
     this.setSubCategories(subcategories);
-    this.setSubCategory('');
   }
 
   handleChangeSubcategory = event => {
-    this.setSubCategory(event.target.value || '')
+    this.setSubCategory(event.target.value)
   }
 
   handleChangeTitle = event => {
-    this.setTitle(event.target.value || '');
+    this.setTitle(event.target.value);
   }
 
   handleChangeDetails = event => {
-    this.setDetails(event.target.value || '');
+    this.setDetails(event.target.value);
   }
 
-  handleClickOpen = () => {
-    this.setOpen(true);
+  openWindow = () => {
+    this.setState({
+      open: true
+    });
   };
 
-  handleClose = () => {
-    this.setOpen(false);
+  closeWindow = () => {
+    this.setState({
+      open: false
+    });
   };
 
   handleSubmit = () => {
-    UserServices.assignMentor(this.state.type, this.props.studentEmail)
-    this.setOpen(false)
+    let competency = {
+      level: this.state.level,
+      description: this.state.description,
+      frequency: this.state.frequency,
+      title: this.state.title,
+      domain: this.state.domain,
+      subcategory: this.state.subcategory,
+      details: this.state.details,
+
+      zeroScale: this.state.zeroScale,
+      oneScale: this.state.oneScale,
+      twoScale: this.state.twoScale,
+      threeScale: this.state.threeScale,
+      fourScale: this.state.fourScale,
+      NScale: this.state.NScale
+    }
+
+    if (!(competency.level && competency.description
+        && competency.frequency && competency.title && competency.domain
+        && competency.subcategory)) {
+      alert("Please fill in all required fields (*)")
+    } else {
+      CompetencyServices.createCompetency(competency)
+      this.closeWindow()
+    }
   }
 
   rendorLevelList() {
@@ -242,158 +281,262 @@ class CreateCompetencyButton extends React.Component {
 
   rendorSubcategoryList() {
     const subcategories = this.state.subcategories.map((item) => <option value={item}>{item}</option>)
+    if (subcategories == []) {
+      return ['Select Domain']
+    }
     return subcategories
   }
 
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickOpen} color='secondary'>Create Competency</Button>
-        <Dialog maxWidth='lg'fullWidth={true} open={this.state.open} onClose={this.handleClose}>
-          <DialogTitle>Fill in the form to create the competency</DialogTitle>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>{this.props.buttonTitle}</Button>
+        <Dialog maxWidth='lg' fullWidth={true} open={this.state.open} onClose={this.closeWindow}>
+          <DialogTitle>Create Competency</DialogTitle>
           <DialogContent>
-            <form>
-              <FormControl>
-                <Select
-                  label="Level"
-                  native
-                  value={this.state.level}
-                  onChange={this.handleChangeLevel}
-                >
-                  {this.rendorLevelList()}
-                </Select>
+            <div className={styles.root}>
 
-                <Select
-                  label="Evaluation Frequency"
-                  native
-                  value={this.state.frequency}
-                  onChange={this.handleChangeFrequency}
-                >
-                  {this.rendorFrequencyList()}
-                </Select>
 
-                <Select
-                  label="Domain"
-                  native
-                  value={this.state.domain}
-                  onChange={this.handleChangeDomain}
-                >
-                  {this.rendorDomainList()}
-                </Select>
+              <Grid container spacing={4}>
 
-                <Select
-                  label="Subcategory"
-                  native
-                  value={this.state.subcategory}
-                  onChange={this.handleChangeSubcategory}
-                >
-                  {this.rendorSubcategoryList()}
-                </Select>
+                <Grid xs={12} item>
+                  <TextField
+                    label="Title"
+                    size='medium'
+                    fullWidth={true}
+                    variant='outlined'
+                    required={true}
+                    value={this.state.title}
+                    onChange={this.handleChangeTitle}
+                  />
+                </Grid>
 
-                <TextField
-                  id="standard-multiline-static"
-                  label="Description"
-                  rows="4"
-                  varient="filled"
-                  multiline
-                  size='medium'
-                  margin="2"
-         
-                  value={this.state.description}
-                  onChange={this.handleChangeDescription}
-                />
+                <Grid xs={7} item>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <FormLabel>Domain: </FormLabel>
+                    </Grid>
+                    <Grid item>
+                      <Select
+                        label="Domain"
+                        native
+                        value={this.state.domain}
+                        onChange={this.handleChangeDomain}
+                      >
+                        {this.rendorDomainList()}
+                      </Select>
+                    </Grid>
+                    <Grid item>
+                      <FormLabel>Subcategory: </FormLabel>
+                    </Grid>
+                    <Grid item>
+                      <Select
+                        label="Subcategory"
+                        native
+                        defaultValue={this.state.subcategory}
+                        value={this.state.subcategory}
+                        onChange={this.handleChangeSubcategory}
 
-                <TextField
-                  id="standard-multiline-static"
-                  label="Details Required"
-                  rows="4"
-                  varient="filled"
-                  multiline
-                  size='medium'
-                  margin="2"
-         
-                  value={this.state.details}
-                  onChange={this.handleChangeDetails}
-                />
+                      >
+                        {this.rendorSubcategoryList()}
+                      </Select>
+                    </Grid>
+                  </Grid>
+                </Grid>
 
-                <TextField
-                  id="standard-basic"
-                  label="Title"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.title}
-                  onChange={this.handleChangeTitle}
-                />
+                <Grid xs={5} item>
+                  <Grid container spacing={3}>
+                    <Grid item>
+                      <FormLabel>Level: </FormLabel>
+                    </Grid>
+                    <Grid item>
+                      <Select
+                        label="Level"
+                        native
+                        value={this.state.level}
+                        onChange={this.handleChangeLevel}
+                      >
+                        {this.rendorLevelList()}
+                      </Select>
+                    </Grid>
+                    <Grid item>
+                      <FormLabel>Frequency: </FormLabel>
+                    </Grid>
+                    <Grid item>
+                      <Select
+                        label="Evaluation Frequency"
+                        native
+                        value={this.state.frequency}
+                        onChange={this.handleChangeFrequency}
+                      >
+                        {this.rendorFrequencyList()}
+                      </Select>
+                    </Grid>
+                  </Grid>
+                </Grid>
 
-                <TextField
-                  id="standard-basic"
-                  label="Zero Scale"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.zeroScale}
-                  onChange={this.handleChangeZeroScale}
-                />
+                <Grid xs={12} item>
+                  <TextField
+                    label="Description"
+                    rows="4"
+                    variant='outlined'
+                    multiline
+                    size='medium'
+                    margin='normal'
+                    fullWidth={true}
+                    required={true}
 
-                <TextField
-                  id="standard-basic"
-                  label="Two Scale"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.twoScale}
-                  onChange={this.handleChangeTwoScale}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Three Scale"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.threeScale}
-                  onChange={this.handleChangeThreeScale}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Four Scale"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.fourScale}
-                  onChange={this.handleChangeFourScale}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="N Scale"
-                  varient="filled"
-                  size='medium'
-                  margin="2"
-      
-                  value={this.state.nScale}
-                  onChange={this.handleChangeNScale}
-                />
-              </FormControl>
-            </form>
+                    value={this.state.description}
+                    onChange={this.handleChangeDescription}
+                  />
+                </Grid>
+
+
+
+                <Grid xs={12} item>
+                  <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                      <TextField
+                        label="Zero Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.zeroScale}
+                        onChange={this.handleChangeZeroScale}
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField
+                        label="One Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.oneScale}
+                        onChange={this.handleChangeOneScale}
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField
+                        label="Two Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.twoScale}
+                        onChange={this.handleChangeTwoScale}
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+
+                <Grid xs={12} item>
+                  <Grid container spacing={2}>
+                    <Grid item xs={4}>
+                      <TextField
+                        label="Three Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.threeScale}
+                        onChange={this.handleChangeThreeScale}
+                      />
+                    </Grid>
+
+                    <Grid item xs={4}>
+                      <TextField
+                        label="Four Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.fourScale}
+                        onChange={this.handleChangeFourScale}
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <TextField
+                        label="N Scale"
+                        variant="outlined"
+                        size='medium'
+                        margin='normal'
+                        fullWidth={true}
+                        multiline={true}
+                        rows='1'
+                        rowsMax='3'
+                        value={this.state.nScale}
+                        onChange={this.handleChangeNScale}
+                      />
+                    </Grid>
+
+                  </Grid>
+                </Grid>
+
+                <Grid xs={12} item>
+                  <TextField
+                    label="Details Required"
+                    rows="4"
+                    variant="outlined"
+                    multiline={true}
+                    size='medium'
+                    margin='normal'
+                    fullWidth={true}
+                    value={this.state.details}
+                    onChange={this.handleChangeDetails}
+                  />
+                </Grid>
+              </Grid>
+            </div>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="secondary">
+            <Button variant='contained' onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Create
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </div >
     );
   }
-  
 }
 
-export default (CreateCompetencyButton);
+CreateCompetencyButton.defaultProps = {
+  competency: {
+    level: '',
+    description: '',
+    frequency: '',
+    title: '',
+    domain: 'Transportation',
+    subcategory: '',
+    details: '',
+
+    zeroScale: '',
+    oneScale: '',
+    twoScale: '',
+    threeScale: '',
+    fourScale: '',
+    NScale: '',
+
+  }
+}
+
+export default withStyles(styles)(CreateCompetencyButton);

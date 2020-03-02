@@ -10,6 +10,14 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
+
+/**
+ * Pop-up button used to unassign a mentor from a specific student
+ * 
+ * Dialog created using the Material UI Dialog 
+ * demos here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class UnAssignMentor extends React.Component {
 
   componentDidMount() {
@@ -35,37 +43,34 @@ class UnAssignMentor extends React.Component {
     })
   }
 
-
-  setOpen(newOpen) {
+  openWindow = () => {
     this.setState({
-      open: newOpen
+      open: true
     })
-  }
-
-  handleClickOpen = () => {
-    this.setOpen(true);
   };
 
-  handleClose = () => {
-    this.setOpen(false);
+  closeWindow = () => {
+    this.setState({
+      open: false
+    })
   };
 
   handleSubmit = () => {
     UserServices.unassignMentor(this.props.studentEmail)
-    this.setOpen(false)
+    this.closeWindow()
   }
 
   render() {
     return (
       <div className = 'UD-holder'>
-        <Button onClick={this.handleClickOpen} color='secondary'>Unassign Mentor</Button>
-        <Dialog open={this.state.open} onClose={this.handleClose}>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>Unassign Mentor</Button>
+        <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Unassign this mentor from this student?</DialogTitle>
           <DialogActions>
-            <Button onClick={this.handleClose} color="secondary">
+            <Button variant='contained' onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Unassign
             </Button>
           </DialogActions>

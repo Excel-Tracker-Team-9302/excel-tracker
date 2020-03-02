@@ -5,8 +5,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-
 
 import Select from '@material-ui/core/Select';
 
@@ -16,7 +14,14 @@ import PropTypes from 'prop-types';
 import UserServices from '../../services/UserServices';
 
 
-
+/**
+ * Pop-up button used to create a program competency
+ * 
+ * Dialog created using the Material UI Dialog
+ * demos here: https://material-ui.com/components/dialogs/
+ * and here: https://material-ui.com/components/selects/
+ * (Febuary 2020)
+ */
 class AssignMentor extends React.Component {
 
   componentDidMount() {
@@ -47,7 +52,7 @@ class AssignMentor extends React.Component {
   }
 
   handleChangeMentor = event => {
-    this.setMentor(event.target.value || '');
+    this.setMentor(event.target.value);
   };
 
   openWindow = () => {
@@ -76,7 +81,7 @@ class AssignMentor extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.openWindow} color='secondary'>Assign Mentor</Button>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>Assign Mentor</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Assign a Mentor to Student</DialogTitle>
           <DialogContent>
@@ -90,10 +95,10 @@ class AssignMentor extends React.Component {
                 </Select>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.closeWindow} color="secondary">
+            <Button variant='contained' onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Assign
             </Button>
           </DialogActions>

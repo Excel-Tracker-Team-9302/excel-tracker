@@ -11,6 +11,13 @@ import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
 
+/**
+ * Pop-up button used to delete a user from the program
+ * 
+ * Dialog created using the Material UI Dialog 
+ * demos here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class DeleteStudent extends React.Component {
 
   constructor(props) {
@@ -43,15 +50,15 @@ class DeleteStudent extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.openWindow} color='secondary'>Delete User</Button>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>Delete User</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
 
           <DialogActions>
-            <Button onClick={this.closeWindow} color="secondary">
+            <Button variant='contained' onClick={this.closeWindow} color="secondary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Delete
             </Button>
           </DialogActions>

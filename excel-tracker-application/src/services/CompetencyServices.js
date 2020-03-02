@@ -26,6 +26,10 @@ const ComptencyServices = {
   
   getEvaluationFrequencies: function() {
     return ["Month", "Semester", "Year"]
+  },
+
+  createCompetency: function(competency) {
+    return true
   }
 
 }
