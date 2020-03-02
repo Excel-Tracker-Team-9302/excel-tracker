@@ -24,16 +24,6 @@ const styles = {
   },
 };
 
-const competency = {
-  level: 'Beginner',
-  description: 'Really cool competency',
-  frequency: 'Semester',
-  title: 'Insert cool competency',
-  domain: 'Social and Leadership Development',
-  subcategory: 'Being Awesome',
-  details: 'Evaluation on the coolness scale',
-}
-
 /**
  * Header for the main application
  * 
