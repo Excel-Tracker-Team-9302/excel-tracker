@@ -1,7 +1,8 @@
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import React, { Component } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import AddBtn from './../../assets/images/Add.png';
+import DeleteIcon from '@material-ui/icons/Delete'
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -9,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     
   }));
 
-class AddButton extends React.Component {
+class DeleteButton extends React.Component {
 
     constructor(props) {
       super(props);
@@ -22,13 +23,13 @@ class AddButton extends React.Component {
     render() {
         return (
         <div classname = "cardStyle" style = {{height: '50%', maxWidth: '5%', margin: '0.8vh 4vw 1vh 0.1vw'}}>
-        <Button size = 'small'>
-            <img  src={AddBtn} width="22vw" height="50%"/>
-         </Button>
+        <IconButton aria-label="delete">
+            <DeleteIcon />
+        </IconButton>
         </div>
         );
     }
 
 }
 
-export default withStyles(useStyles)(AddButton);
+export default withStyles(useStyles)(DeleteButton);

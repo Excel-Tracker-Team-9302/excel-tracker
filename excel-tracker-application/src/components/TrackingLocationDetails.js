@@ -14,6 +14,7 @@ import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import UserCard from './UserView/UserCard';
 import AddButton from './Common/AddButton';
+import DeleteButton from './Common/DeleteButton';
 
 import {
   withRouter
@@ -78,12 +79,17 @@ class TrackingLocationDetails extends Component {
 					{
 						this.instructors.map((user, i) => {
 							return(
-								<UserCard 
+								<div className ="side-by-side-icons">
+									
+									<UserCard 
 									name={this.instructors[i].name} 
 									userType={this.instructors[i].role}
 									email={this.instructors[i].email}
 									prop = {this.props}
-								/>
+									/>
+									<DeleteButton></DeleteButton>
+								</div>
+								
 							); 
 						})
 					}
@@ -99,13 +105,15 @@ class TrackingLocationDetails extends Component {
 					this.competencies.map((competency, i) => {
 						return(
 
-							
+							<div className ="side-by-side-icons">
 							<CompetencyCard 
 								title={this.competencies[i].title} 
 								domain={this.competencies[i].domain}
 								subcategory={this.competencies[i].subcategory} 
 								prop = {this.props}
 							/>
+							<DeleteButton></DeleteButton>
+								</div>
 						); 
 					})
 					}
@@ -118,12 +126,15 @@ class TrackingLocationDetails extends Component {
 				{
 						this.students.map((user, i) => {
 							return(
+								<div className ="side-by-side-icons">
 								<UserCard 
 									name={this.students[i].name} 
 									userType={this.students[i].role}
 									email={this.students[i].email}
 									prop = {this.props}
 								/>
+								<DeleteButton></DeleteButton>
+								</div>
 							); 
 						})
 					}	
