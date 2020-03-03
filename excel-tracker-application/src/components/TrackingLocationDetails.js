@@ -88,9 +88,10 @@ class TrackingLocationDetails extends Component {
 				</div>
 				<div className="container">
 				<div className="left"> 
-				
-					<h2 style={{color:Colors.blue}}>Competencies</h2>
-					<AddCompButton>button</AddCompButton>
+					<div className="competencies-header">
+						<h2 style={{color:Colors.blue}}>Competencies</h2>
+						<AddCompButton>button</AddCompButton>
+					</div>
 					{
 					this.competencies.map((competency, i) => {
 						return(

@@ -37,3 +37,8 @@
     flex: 0 0 40%;
     width: 45%;
 }
+
+.competencies-header {
+    display: flex;
+    flex-direction: row;
+}

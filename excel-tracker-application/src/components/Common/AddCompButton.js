@@ -21,9 +21,9 @@ class AddComp extends React.Component {
     
     render() {
         return (
-        <div classname = "cardStyle" style = {{height: '10%', maxWidth: '20%'}}>
+        <div classname = "cardStyle" style = {{height: '50%', maxWidth: '5%', margin: '0.8vh 4vw 1vh 0.1vw'}}>
         <Button size = 'small'>
-            <img  src={AddBtn} width="10%" height="10%"/>
+            <img  src={AddBtn} width="22vw" height="50%"/>
          </Button>
         </div>
         );
