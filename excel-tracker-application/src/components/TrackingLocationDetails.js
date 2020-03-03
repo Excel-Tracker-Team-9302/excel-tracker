@@ -13,7 +13,7 @@ import CompetencyCard from './Competencies/CompetencyCard';
 import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import UserCard from './UserView/UserCard';
-import AddCompButton from './Common/AddCompButton';
+import AddButton from './Common/AddButton';
 
 import {
   withRouter
@@ -71,7 +71,10 @@ class TrackingLocationDetails extends Component {
 						</div>
 					</div>
 				  <div className="right">
-				  <h2 style={{color:Colors.blue}}>Instructors</h2>
+				  <div className="side-by-side-header">
+				  	<h2 style={{color:Colors.blue}}>Instructors</h2>
+					<AddButton>button</AddButton>
+				  </div>
 					{
 						this.instructors.map((user, i) => {
 							return(
@@ -88,9 +91,9 @@ class TrackingLocationDetails extends Component {
 				</div>
 				<div className="container">
 				<div className="left"> 
-					<div className="competencies-header">
+					<div className="side-by-side-header">
 						<h2 style={{color:Colors.blue}}>Competencies</h2>
-						<AddCompButton>button</AddCompButton>
+						<AddButton>button</AddButton>
 					</div>
 					{
 					this.competencies.map((competency, i) => {
@@ -108,7 +111,10 @@ class TrackingLocationDetails extends Component {
 					}
 				</div>	
 				<div className="right">
-					<h2 style={{color:Colors.blue}}>Students</h2>
+					<div className="side-by-side-header">
+						<h2 style={{color:Colors.blue}}>Students</h2>
+						<AddButton>button</AddButton>
+					</div>
 				{
 						this.students.map((user, i) => {
 							return(

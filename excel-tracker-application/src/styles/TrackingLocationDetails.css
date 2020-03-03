@@ -38,7 +38,7 @@
     width: 45%;
 }
 
-.competencies-header {
+.side-by-side-header {
     display: flex;
     flex-direction: row;
 }

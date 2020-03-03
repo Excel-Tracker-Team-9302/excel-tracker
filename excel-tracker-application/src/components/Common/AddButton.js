@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     
   }));
 
-class AddComp extends React.Component {
+class AddButton extends React.Component {
 
     constructor(props) {
       super(props);
@@ -31,4 +31,4 @@ class AddComp extends React.Component {
 
 }
 
-export default withStyles(useStyles)(AddComp);
+export default withStyles(useStyles)(AddButton);
