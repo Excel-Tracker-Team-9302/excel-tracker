@@ -37,3 +37,12 @@
     flex: 0 0 40%;
     width: 45%;
 }
+
+.side-by-side-header {
+    display: flex;
+    flex-direction: row;
+}
+.side-by-side-icons {
+    display: flex;
+    flex-direction: row;
+}

@@ -13,6 +13,8 @@ import CompetencyCard from './Competencies/CompetencyCard';
 import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import UserCard from './UserView/UserCard';
+import AddButton from './Common/AddButton';
+import DeleteButton from './Common/DeleteButton';
 
 import {
   withRouter
@@ -70,16 +72,24 @@ class TrackingLocationDetails extends Component {
 						</div>
 					</div>
 				  <div className="right">
-				  <h2 style={{color:Colors.blue}}>Instructors</h2>
+				  <div className="side-by-side-header">
+				  	<h2 style={{color:Colors.blue}}>Instructors</h2>
+					<AddButton>button</AddButton>
+				  </div>
 					{
 						this.instructors.map((user, i) => {
 							return(
-								<UserCard 
+								<div className ="side-by-side-icons">
+									
+									<UserCard 
 									name={this.instructors[i].name} 
 									userType={this.instructors[i].role}
 									email={this.instructors[i].email}
 									prop = {this.props}
-								/>
+									/>
+									<DeleteButton></DeleteButton>
+								</div>
+								
 							); 
 						})
 					}
@@ -87,32 +97,44 @@ class TrackingLocationDetails extends Component {
 				</div>
 				<div className="container">
 				<div className="left"> 
-
-					<h2 style={{color:Colors.blue}}>Competencies</h2>
+					<div className="side-by-side-header">
+						<h2 style={{color:Colors.blue}}>Competencies</h2>
+						<AddButton>button</AddButton>
+					</div>
 					{
 					this.competencies.map((competency, i) => {
 						return(
+
+							<div className ="side-by-side-icons">
 							<CompetencyCard 
 								title={this.competencies[i].title} 
 								domain={this.competencies[i].domain}
 								subcategory={this.competencies[i].subcategory} 
 								prop = {this.props}
 							/>
+							<DeleteButton></DeleteButton>
+								</div>
 						); 
 					})
 					}
 				</div>	
 				<div className="right">
-					<h2 style={{color:Colors.blue}}>Students</h2>
+					<div className="side-by-side-header">
+						<h2 style={{color:Colors.blue}}>Students</h2>
+						<AddButton>button</AddButton>
+					</div>
 				{
 						this.students.map((user, i) => {
 							return(
+								<div className ="side-by-side-icons">
 								<UserCard 
 									name={this.students[i].name} 
 									userType={this.students[i].role}
 									email={this.students[i].email}
 									prop = {this.props}
 								/>
+								<DeleteButton></DeleteButton>
+								</div>
 							); 
 						})
 					}	
