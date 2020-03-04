@@ -5,10 +5,6 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 
 
-const useStyles = makeStyles(theme => ({
-   
-    
-  }));
 
 class DeleteButton extends React.Component {
 
@@ -23,7 +19,7 @@ class DeleteButton extends React.Component {
     render() {
         return (
         <div classname = "cardStyle" style = {{height: '50%', maxWidth: '5%', margin: '0.8vh 4vw 1vh 0.1vw'}}>
-        <IconButton aria-label="delete">
+        <IconButton onClick={this.handleClick} aria-label="delete">
             <DeleteIcon />
         </IconButton>
         </div>
@@ -32,4 +28,4 @@ class DeleteButton extends React.Component {
 
 }
 
-export default withStyles(useStyles)(DeleteButton);
+export default (DeleteButton);

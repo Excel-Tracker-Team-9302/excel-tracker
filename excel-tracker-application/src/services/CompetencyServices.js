@@ -28,6 +28,10 @@ const ComptencyServices = {
     return ["Month", "Semester", "Year"]
   },
 
+  getCompetencies: function() {
+    return dummyData.competencies
+  },
+
   createCompetency: function(competency) {
     return true
   }

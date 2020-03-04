@@ -6,6 +6,14 @@ const UserServices = {
     return null;
   },
 
+  getStudents: function() {
+    return dummyData.users.filter((user) => (user.role && user.role == 'Student'))
+  },
+
+  getInstructors: function() {
+    return dummyData.users.filter((user) => (user.role && user.role == 'Faculty/Staff'))
+  },
+
   sendResetPasswordLink: function(userEmail) {
     return null;
   },
@@ -53,6 +61,21 @@ const UserServices = {
   },
 
   createTrackingLocation(name) {
+    return null
+  },
+
+  addCompToTL(compId, track) {
+    console.log(compId)
+    return null
+  },
+
+  addStudentToTL(studentEmail, track) {
+    console.log(studentEmail)
+    return null
+  },
+
+  addInstructorToTL(instructorEmail, track) {
+    console.log(instructorEmail)
     return null
   },
 
