@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
-
+import DeleteImage from './../../assets/images/Delete.png'
 import UserServices from '../../services/UserServices';
 
 
@@ -60,14 +60,17 @@ class CreateTrackingLocation extends React.Component {
       <div>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Create Tracking Location</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Create a New Tracking Location</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <DialogTitle>Create a New Tracking Location</DialogTitle>
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
+
           <DialogContent>
-                <TextField onChange={this.handleChangeName} value={this.state.email} label="Name" />
+            <TextField onChange={this.handleChangeName} value={this.state.email} label="Name" />
           </DialogContent>
           <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Create
             </Button>

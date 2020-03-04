@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
+import DeleteImage from './../../assets/images/Delete.png'
 
 import Select from '@material-ui/core/Select';
 
@@ -83,21 +84,23 @@ class AssignMentor extends React.Component {
       <div>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Assign Mentor</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Assign a Mentor to Student</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <DialogTitle>Assign a Mentor to Student</DialogTitle>
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
           <DialogContent>
-                <InputLabel>Mentor Name</InputLabel>
-                <Select
-                  native
-                  value={this.state.mentor}
-                  onChange={this.handleChangeMentor}
-                >
-                  {this.rendorMentorList()}
-                </Select>
+            <InputLabel>Mentor Name</InputLabel>
+            <Select
+              native
+              value={this.state.mentor}
+              onChange={this.handleChangeMentor}
+            >
+              {this.rendorMentorList()}
+            </Select>
           </DialogContent>
           <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Assign
             </Button>
@@ -106,7 +109,7 @@ class AssignMentor extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 AssignMentor.propTypes = {

@@ -9,6 +9,7 @@ import './../../styles/UserDetails.css';
 import PropTypes from 'prop-types';
 
 import UserServices from '../../services/UserServices';
+import DeleteImage from './../../assets/images/Delete.png'
 
 
 /**
@@ -23,7 +24,7 @@ class UnAssignMentor extends React.Component {
   componentDidMount() {
     let mentors = UserServices.getMentors()
     this.setState({
-      mentors:mentors
+      mentors: mentors
     })
   }
 
@@ -62,14 +63,19 @@ class UnAssignMentor extends React.Component {
 
   render() {
     return (
-      <div className = 'UD-holder'>
+      <div className='UD-holder'>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Unassign Mentor</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Unassign this mentor from this student?</DialogTitle>
-          <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 1 }}>
+              <DialogTitle>Unassign this mentor from this student?</DialogTitle>
+            </div>
+
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
             </Button>
+          </div>
+          <DialogActions>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Unassign
             </Button>
@@ -78,7 +84,7 @@ class UnAssignMentor extends React.Component {
       </div>
     );
   }
-  
+
 }
 
 UnAssignMentor.propTypes = {

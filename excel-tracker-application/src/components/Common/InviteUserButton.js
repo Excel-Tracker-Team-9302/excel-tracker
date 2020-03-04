@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
+import DeleteImage from './../../assets/images/Delete.png'
 
 import UserServices from '../../services/UserServices';
 
@@ -74,7 +75,13 @@ class InviteUserButton extends React.Component {
       <div>
       <Button variant='contained' onClick={this.openWindow} color='secondary'>Invite a New User</Button>
       <Dialog open={this.state.open} onClose={this.closeWindow}>
-        <DialogTitle>Email Invite for New User to Join</DialogTitle>
+        <div style={{display: 'flex', flexDirection: 'row'}}>
+          <DialogTitle>Email Invite for New User to Join</DialogTitle>
+          <Button onClick={this.closeWindow} size = 'small'>
+              <img  src={DeleteImage} width="22vw" height="50%"/>
+          </Button>
+        </div>
+        
         <DialogContent>
             <InputLabel>User Type</InputLabel>
             <Select
@@ -88,9 +95,6 @@ class InviteUserButton extends React.Component {
             <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
         </DialogContent>
         <DialogActions>
-          <Button variant='contained' onClick={this.closeWindow} color="secondary">
-            Cancel
-          </Button>
           <Button variant='contained' onClick={this.handleSubmit} color="secondary">
             Send Invite
           </Button>

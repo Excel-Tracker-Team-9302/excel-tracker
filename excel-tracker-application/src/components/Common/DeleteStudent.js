@@ -8,6 +8,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import DeleteImage from './../../assets/images/Delete.png'
 
 import UserServices from '../../services/UserServices';
 
@@ -52,12 +53,17 @@ class DeleteStudent extends React.Component {
       <div>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Delete User</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 1 }}>
+              <DialogTitle>Are you sure you would like to delete this student?</DialogTitle>
+            </div>
+
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
 
           <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Delete
             </Button>

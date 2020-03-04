@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
+import DeleteImage from './../../assets/images/Delete.png'
 
 import Select from '@material-ui/core/Select';
 import CompetencyServices from '../../services/CompetencyServices';
@@ -250,8 +250,8 @@ class CreateCompetencyButton extends React.Component {
     }
 
     if (!(competency.level && competency.description
-        && competency.frequency && competency.title && competency.domain
-        && competency.subcategory)) {
+      && competency.frequency && competency.title && competency.domain
+      && competency.subcategory)) {
       alert("Please fill in all required fields (*)")
     } else {
       CompetencyServices.createCompetency(competency)
@@ -292,7 +292,15 @@ class CreateCompetencyButton extends React.Component {
       <div>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>{this.props.buttonTitle}</Button>
         <Dialog maxWidth='lg' fullWidth={true} open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Create Competency</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 1 }}>
+              <DialogTitle>Create/Edit Competency</DialogTitle>
+            </div>
+
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
           <DialogContent>
             <div className={styles.root}>
 
@@ -506,9 +514,6 @@ class CreateCompetencyButton extends React.Component {
             </div>
           </DialogContent>
           <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Create
             </Button>

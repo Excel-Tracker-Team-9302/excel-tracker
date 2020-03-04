@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 
 import UserServices from '../../services/UserServices';
+import DeleteImage from './../../assets/images/Delete.png'
 
 
 /**
@@ -61,14 +62,19 @@ class ResetPasswordButton extends React.Component {
       <div>
         <Button onClick={this.openWindow} color='secondary'>Reset Password</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Enter your email to send a reset password link</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 1 }}>
+              <DialogTitle>Enter your email to send a reset password link</DialogTitle>
+            </div>
+
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
           <DialogContent>
-                <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
+            <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
           </DialogContent>
           <DialogActions>
-            <Button variant='contained' onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Send Reset Link
             </Button>
