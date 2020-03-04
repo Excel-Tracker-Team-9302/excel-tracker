@@ -8,8 +8,8 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
+    text-align: center;
     font-size: calc(30px + 5vmin);
-    text-align: left;
     height: 20%;
 }
 
@@ -31,6 +31,7 @@
 .left {
     flex: 0 0 60%;
     width: 45%;
+    margin: 10px;
 }
 
 .right {

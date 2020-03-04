@@ -89,7 +89,6 @@ class TrackingLocationDetails extends React.Component {
   }
 
   handleChangeCurrentInstructor = (event) => {
-    console.log(this.state.currInstructor)
     this.setState({
       currInstructor: event.target.value
     })
