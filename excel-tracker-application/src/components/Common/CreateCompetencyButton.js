@@ -11,6 +11,8 @@ import Select from '@material-ui/core/Select';
 import CompetencyServices from '../../services/CompetencyServices';
 import Grid from '@material-ui/core/Grid';
 import { FormLabel } from '@material-ui/core';
+import EditBtn from './../../assets/images/Edit.png';
+import ComptencyServices from '../../services/CompetencyServices';
 
 /**
  * Pop-up button used to create a program competency
@@ -26,36 +28,63 @@ class CreateCompetencyButton extends React.Component {
     let competencyLevels = CompetencyServices.getCompetencyLevels();
     let competencyFrequencies = CompetencyServices.getEvaluationFrequencies();
     let competencyDomains = CompetencyServices.getCompetencyDomains();
-    let competencySubcategories = CompetencyServices.getCompetencySubCategories(this.state.domain)
 
-    this.setState({
-      levels: competencyLevels,
-      frequencies: competencyFrequencies,
-      domains: competencyDomains,
-      subcategories: competencySubcategories
-    })
+    if (this.props.id) {
+      let competency = ComptencyServices.getCompetencyById(this.props.id)
+      let competencySubcategories = CompetencyServices.getCompetencySubCategories(competency.domain)
+      console.log("COMP", competency)
+      this.setState({
+        level: competency.difficulty,
+        description: competency.description,
+        frequency: competency.frequency,
+        title: competency.title,
+        domain: competency.domain,
+        subcategory: competency.subcategory,
+        details: competency.details,
+        zeroScale: competency.zeroScale,
+        oneScale: competency.oneScale,
+        twoScale: competency.twoScale,
+        threeScale: competency.threeScale,
+        fourScale: competency.fourScale,
+        NScale: competency.NScale,
+
+        levels: competencyLevels,
+        frequencies: competencyFrequencies,
+        domains: competencyDomains,
+        subcategories: competencySubcategories
+      })
+      console.log("STATE", this.state)
+    } else {
+      let competencySubcategories = CompetencyServices.getCompetencySubCategories(this.state.domain)
+      this.setState({
+        levels: competencyLevels,
+        frequencies: competencyFrequencies,
+        domains: competencyDomains,
+        subcategories: competencySubcategories
+      })
+    }
   }
+
 
   constructor(props) {
     super(props);
 
-    let competency = props.competency
-
     this.state = {
-      level: competency.level,
-      description: competency.description,
-      frequency: competency.frequency,
-      title: competency.title,
-      domain: competency.domain,
-      subcategory: competency.subcategory,
-      details: competency.details,
+      level: '',
+      description: '',
+      frequency: '',
+      title: '',
+      domain: 'Transportation',
+      subcategory: '',
+      details: '',
 
-      zeroScale: competency.zeroScale,
-      oneScale: competency.oneScale,
-      twoScale: competency.twoScale,
-      threeScale: competency.threeScale,
-      fourScale: competency.fourScale,
-      NScale: competency.NScale,
+      zeroScale: '',
+      oneScale: '',
+      twoScale: '',
+      threeScale: '',
+      fourScale: '',
+      NScale: '',
+
 
       subcategories: [],
       levels: [],
@@ -281,14 +310,28 @@ class CreateCompetencyButton extends React.Component {
     return subcategories
   }
 
+  renderButton() {
+    if (this.props.id || this.props.id == 0) {
+      return (<div classname="cardStyle" style={{ height: '50%', maxWidth: '5%', margin: '1.9vh 8vw 1vh 0.1vw' }}>
+        <Button onClick={this.openWindow} size='small'>
+          <img src={EditBtn} width="22vw" height="50%" />
+        </Button>
+      </div>)
+    } else {
+      return (<Button variant='contained' onClick={this.openWindow} color='secondary'>{this.props.buttonTitle}</Button>)
+    }
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div>
-        <Button variant='contained' onClick={this.openWindow} color='secondary'>{this.props.buttonTitle}</Button>
+
+        {this.renderButton()}
         <Dialog maxWidth='lg' fullWidth={true} open={this.state.open} onClose={this.closeWindow}>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
             <div style={{ flex: 1 }}>
-              <DialogTitle>Create/Edit Competency</DialogTitle>
+              <DialogTitle>{this.props.title}</DialogTitle>
             </div>
 
             <Button onClick={this.closeWindow} size='small'>
@@ -296,7 +339,7 @@ class CreateCompetencyButton extends React.Component {
             </Button>
           </div>
           <DialogContent>
-            <div style={{flex: 1}}>
+            <div style={{ flex: 1 }}>
 
 
               <Grid container spacing={4}>
@@ -509,7 +552,7 @@ class CreateCompetencyButton extends React.Component {
           </DialogContent>
           <DialogActions>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
-              Create
+              {this.props.buttonTitle}
             </Button>
           </DialogActions>
         </Dialog>
@@ -519,23 +562,6 @@ class CreateCompetencyButton extends React.Component {
 }
 
 CreateCompetencyButton.defaultProps = {
-  competency: {
-    level: '',
-    description: '',
-    frequency: '',
-    title: '',
-    domain: 'Transportation',
-    subcategory: '',
-    details: '',
-
-    zeroScale: '',
-    oneScale: '',
-    twoScale: '',
-    threeScale: '',
-    fourScale: '',
-    NScale: '',
-
-  },
 
   buttonTitle: 'Create Competency'
 }

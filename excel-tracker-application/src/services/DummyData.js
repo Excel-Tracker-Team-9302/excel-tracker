@@ -5,72 +5,72 @@ const dummyData = {
       title: "Can call an Uber/Lyft",
       domain: "Transportation",
       subcategory: "Uber/Lyft",
-      difficulty: "I",
-      frequency: "Sem",
+      difficulty: "Intermediate",
+      frequency: "Semester",
       id: 1
     },
     {
       title: "Can cancel an Uber/Lyft",
       domain: "Transportation",
       subcategory: "Uber/Lyft",
-      difficulty: "A",
-      frequency: "Sem",
+      difficulty: "Advanced",
+      frequency: "Semester",
       id: 2
     },
     {
       title: "Is on time for work/internships",
       domain: "Employment/Careers",
       subcategory: "Planning and Preparation",
-      difficulty: "I",
-      frequency: "Mnth",
+      difficulty: "Intermediate",
+      frequency: "Month",
       id: 3
     },
     {
       title: "Performs assigned tasks and follows directions on the job",
       domain: "Employment/Careers",
       subcategory: "Work Skills",
-      difficulty: "I",
-      frequency: "Sem",
+      difficulty: "Intermediate",
+      frequency: "Semester",
       id:4
     },
     {
       title: "Understands and utilizes advanced benefits: health insurance, Employee Assistance Programs (EAP)",
       domain: "Employment/Careers",
       subcategory: "Work Skills",
-      difficulty: "E",
-      frequency: "Yr",
+      difficulty: "Expert",
+      frequency: "Year",
       id: 5
     },
     {
       title: "Addresses bullying through effective communication by discussing the situation with others, or asking for help if needed",
       domain: "Social and Leadership Development",
       subcategory: "General Social Skills",
-      difficulty: "A",
-      frequency: "Sem",
+      difficulty: "Advanced",
+      frequency: "Semester",
       id: 6
     },
     {
       title: "Presents clean, neat and appropriate attire / uniform ",
       domain: "Employment/Careers",
       subcategory: "Hygiene & Physical Presentation",
-      difficulty: "B",
-      frequency: "Sem",
+      difficulty: "Beginner",
+      frequency: "Semester",
       id: 7
     },
     {
       title: "Displays good hygiene and grooming: Including body, hair, nails, teeth",
       domain: "Employment/Careers",
       subcategory: "Hygiene & Physical Presentation",
-      difficulty: "B",
-      frequency: "Sem",
+      difficulty: "Beginner",
+      frequency: "Semester",
       id: 8
     },
     {
       title: "Utilizes and records an appropriate voicemail message",
       domain: "Employment/Careers",
       subcategory: "Job Search Skills (to get the job)",
-      difficulty: "I",
-      frequency: "Sem",
+      difficulty: "Intermediate",
+      frequency: "Semester",
       id: 9
     }
   ],

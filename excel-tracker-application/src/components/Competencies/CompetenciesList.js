@@ -1,14 +1,14 @@
 import React from 'react';
 import CompetencyCard from './CompetencyCard';
 import DeleteButton from '../TrackingLocations/DeleteButton';
-import EditButton from '../TrackingLocations/EditButton';
+import CreateCompetencyButton from '../Common/CreateCompetencyButton';
 
 
 const CompetenciesList = ({Competencies, prop}) => {
     return(
         <div>
             {
-            Competencies.map((Competencie, i) => {
+            Competencies.map((Competency, i) => {
                 return(
                     <div className="side-by-side-icons">
                     <CompetencyCard 
@@ -18,7 +18,7 @@ const CompetenciesList = ({Competencies, prop}) => {
                         prop = {prop}
                     />
                     <DeleteButton></DeleteButton>
-                    <EditButton></EditButton>
+                    <CreateCompetencyButton buttonTitle="Confirm" title="Edit Competency" id={Competencies[i].id} />
         </div>
                 ); 
             })

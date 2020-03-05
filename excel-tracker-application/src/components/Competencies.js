@@ -58,7 +58,7 @@ class Competencies extends React.Component {
         </div>
 
         <div className ="col">
-            <CreateCompetencyButton />
+            <CreateCompetencyButton buttonTitle="Create" title="Create Competency"/>
           </div>
 
         </div>
