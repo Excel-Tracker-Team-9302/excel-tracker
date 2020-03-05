@@ -12,18 +12,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-
-const styles = {
-
-  button: {
-    marginRight: 2,
-  },
-
-  title: {
-    flexGrow: 1,
-  },
-};
-
 /**
  * Header for the main application
  * 
@@ -32,28 +20,32 @@ const styles = {
  * (January 2020)
  * 
  */
-function Header(props) {
- 
-  const classes = props.classes;
+class Header extends React.Component {
 
-  return (
+  render() {
+    return (
       <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h5" className={classes.title}>
-            {props.pageName}
-          </Typography>
-          
-          {props.pageName == 'Home' ? null : <Button className={classes.button} onClick={() => props.history.push('/dashboard')} color="secondary" variant='contained'>
-            Home
-          </Button>}
-          <Button className={classes.button}  onClick={() => props.history.push('/')} color="secondary" variant='contained'>
-            Logout
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+        <AppBar position="static">
+          <Toolbar>
+            <div style={{ flex: 1 }}>
+              <Typography variant="h5">
+                {this.props.pageName}
+              </Typography>
+            </div>
+
+            {this.props.pageName == 'Home' ? null : <Button onClick={() => this.props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>}
+            <div style={{marginLeft: 10}}>
+              <Button onClick={() => this.props.history.push('/')} color="secondary" variant='contained'>
+                Logout
+                </Button>
+            </div>
+
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
+
 }
 
-export default withStyles(styles)(withRouter(Header));
+export default (withRouter(Header));
