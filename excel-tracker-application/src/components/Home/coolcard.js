@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -16,30 +16,33 @@ import {
  * demos here: https://material-ui.com/components/cards/
  * (January 2020)
  */
-function ImgMediaCard(props) {
+class ImgMediaCard extends Component {
 
-  return (
-    <div>
 
-    <Card>
-      <CardActionArea style = {{height: '80%'}}>
-        <CardMedia
-          component="img"
-          alt={props.pageName}
-          height= "100%"
-          image={props.image}
-          title={props.pageName}
-          onClick={props.onClick}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.pageName}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  </div>
-  );
+  render() {
+    return (
+      <div>
+  
+      <Card>
+        <CardActionArea style = {{height: '80%'}}>
+          <CardMedia
+            component="img"
+            alt={this.props.pageName}
+            height= "100%"
+            image={this.props.image}
+            title={this.props.pageName}
+            onClick={this.props.onClick}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {this.props.pageName}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </div>
+    );
+  }
 }
 
 export default (withRouter(ImgMediaCard));
