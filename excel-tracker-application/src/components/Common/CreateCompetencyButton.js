@@ -10,13 +10,7 @@ import DeleteImage from './../../assets/images/Delete.png'
 import Select from '@material-ui/core/Select';
 import CompetencyServices from '../../services/CompetencyServices';
 import Grid from '@material-ui/core/Grid';
-import { withStyles, FormLabel } from '@material-ui/core';
-
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-}
+import { FormLabel } from '@material-ui/core';
 
 /**
  * Pop-up button used to create a program competency
@@ -302,7 +296,7 @@ class CreateCompetencyButton extends React.Component {
             </Button>
           </div>
           <DialogContent>
-            <div className={styles.root}>
+            <div style={{flex: 1}}>
 
 
               <Grid container spacing={4}>
@@ -546,4 +540,4 @@ CreateCompetencyButton.defaultProps = {
   buttonTitle: 'Create Competency'
 }
 
-export default withStyles(styles)(CreateCompetencyButton);
+export default (CreateCompetencyButton);
