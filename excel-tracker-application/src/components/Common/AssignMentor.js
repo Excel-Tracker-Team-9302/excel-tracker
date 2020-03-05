@@ -91,8 +91,8 @@ class AssignMentor extends React.Component {
             </Button>
           </div>
           <DialogContent>
-            <InputLabel>Mentor Name</InputLabel>
             <Select
+              label="Mentor Name"
               native
               value={this.state.mentor}
               onChange={this.handleChangeMentor}
