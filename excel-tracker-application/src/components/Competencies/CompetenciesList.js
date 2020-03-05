@@ -1,6 +1,7 @@
 import React from 'react';
 import CompetencyCard from './CompetencyCard';
 import DeleteButton from '../TrackingLocations/DeleteButton';
+import EditButton from '../TrackingLocations/EditButton';
 
 
 const CompetenciesList = ({Competencies, prop}) => {
@@ -17,6 +18,7 @@ const CompetenciesList = ({Competencies, prop}) => {
                         prop = {prop}
                     />
                     <DeleteButton></DeleteButton>
+                    <EditButton></EditButton>
         </div>
                 ); 
             })
