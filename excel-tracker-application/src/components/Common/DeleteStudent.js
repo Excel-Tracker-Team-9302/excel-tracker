@@ -8,8 +8,8 @@ import {
   withRouter
 } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import DeleteImage from './../../assets/images/Delete.png'
 
+import DeleteImage from './../../assets/images/Delete.png'
 import UserServices from '../../services/UserServices';
 
 /**

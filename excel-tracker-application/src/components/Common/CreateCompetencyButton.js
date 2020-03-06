@@ -32,7 +32,6 @@ class CreateCompetencyButton extends React.Component {
     if (this.props.id) {
       let competency = ComptencyServices.getCompetencyById(this.props.id)
       let competencySubcategories = CompetencyServices.getCompetencySubCategories(competency.domain)
-      console.log("COMP", competency)
       this.setState({
         level: competency.difficulty,
         description: competency.description,
@@ -53,7 +52,7 @@ class CreateCompetencyButton extends React.Component {
         domains: competencyDomains,
         subcategories: competencySubcategories
       })
-      console.log("STATE", this.state)
+
     } else {
       let competencySubcategories = CompetencyServices.getCompetencySubCategories(this.state.domain)
       this.setState({
@@ -225,7 +224,6 @@ class CreateCompetencyButton extends React.Component {
 
   handleChangeDomain = event => {
     let subcategories = CompetencyServices.getCompetencySubCategories(event.target.value);
-    console.log(subcategories)
     this.setDomain(event.target.value);
     this.setSubCategories(subcategories);
   }
@@ -323,7 +321,6 @@ class CreateCompetencyButton extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
 
