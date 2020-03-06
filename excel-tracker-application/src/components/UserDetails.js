@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import './../styles/UserDetails.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import Colors from '../assets/text/Colors.js';
-import { makeStyles } from '@material-ui/core/styles';
 import Header from './Home/Header.js';
-import dummyData from './../services/DummyData.js';
-import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CompetencyCard from './UserView/CompetencyCard';
-import TLCard from './UserView/TLCard';
+import CompetencyCard from './Competencies/CompetencyCard';
+import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import AssignMentor from './Common/AssignMentor.js';
 import DeleteStudent from './Common/DeleteStudent.js';

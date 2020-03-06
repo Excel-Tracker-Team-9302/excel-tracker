@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -7,8 +8,16 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 
 import UserServices from '../../services/UserServices';
+import DeleteImage from './../../assets/images/Delete.png'
 
 
+/**
+ * Pop-up button used reset the password of a user
+ * 
+ * Dialog created using the Material UI Dialog
+ * demos here: https://material-ui.com/components/dialogs/
+ * (Febuary 2020)
+ */
 class ResetPasswordButton extends React.Component {
 
 
@@ -54,15 +63,20 @@ class ResetPasswordButton extends React.Component {
       <div>
         <Button onClick={this.openWindow} color='secondary'>Reset Password</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
-          <DialogTitle>Enter your email to send a reset password link</DialogTitle>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ flex: 1 }}>
+              <DialogTitle>Enter your email to send a reset password link</DialogTitle>
+            </div>
+
+            <Button onClick={this.closeWindow} size='small'>
+              <img src={DeleteImage} width="22vw" height="50%" />
+            </Button>
+          </div>
           <DialogContent>
-                <TextField onChange={this.handleChangeEmail} id="standard-basic" value={this.state.email} label="User Email" />
+            <TextField onChange={this.handleChangeEmail} value={this.state.email} label="User Email" />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.closeWindow} color="secondary">
-              Cancel
-            </Button>
-            <Button onClick={this.handleSubmit} color="secondary">
+            <Button variant='contained' onClick={this.handleSubmit} color="secondary">
               Send Reset Link
             </Button>
           </DialogActions>

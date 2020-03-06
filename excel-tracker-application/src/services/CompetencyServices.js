@@ -26,6 +26,18 @@ const ComptencyServices = {
   
   getEvaluationFrequencies: function() {
     return ["Month", "Semester", "Year"]
+  },
+
+  getCompetencies: function() {
+    return dummyData.competencies
+  },
+
+  getCompetencyById: function(id) {
+    return dummyData.competencies.find((competency) => competency.id == id)
+  },
+
+  createCompetency: function(competency) {
+    return true
   }
 
 }

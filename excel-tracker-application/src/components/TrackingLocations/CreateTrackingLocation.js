@@ -2,45 +2,37 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import PropTypes from 'prop-types';
-
-import './../../styles/UserDetails.css';
-import UserServices from '../../services/UserServices';
+import TextField from '@material-ui/core/TextField';
 import DeleteImage from './../../assets/images/Delete.png'
+import UserServices from '../../services/UserServices';
 
 
 /**
- * Pop-up button used to unassign a mentor from a specific student
+ * Button to create a new tracking location
  * 
- * Dialog created using the Material UI Dialog 
+ * Dialog created using the Material UI Dialog
  * demos here: https://material-ui.com/components/dialogs/
  * (Febuary 2020)
  */
-class UnAssignMentor extends React.Component {
+class CreateTrackingLocation extends React.Component {
 
-  componentDidMount() {
-    let mentors = UserServices.getMentors()
-    this.setState({
-      mentors: mentors
-    })
-  }
 
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       open: false,
-      mentors: []
+      name: ''
     }
-
   }
 
-  setType(newType) {
+  handleChangeName = event => {
     this.setState({
-      type: newType
-    })
-  }
+      name: event.target.value
+    });
+  };
 
   openWindow = () => {
     this.setState({
@@ -55,27 +47,32 @@ class UnAssignMentor extends React.Component {
   };
 
   handleSubmit = () => {
-    UserServices.unassignMentor(this.props.studentEmail)
-    this.closeWindow()
+    if (this.state.name == '') {
+      alert('Please enter a name for the tracking location');
+    } else {
+      UserServices.createTrackingLocation(this.state.name);
+      this.closeWindow()
+    }
   }
 
   render() {
     return (
-      <div className='UD-holder'>
-        <Button variant='contained' onClick={this.openWindow} color='secondary'>Unassign Mentor</Button>
+      <div>
+        <Button variant='contained' onClick={this.openWindow} color='secondary'>Create Tracking Location</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div style={{ flex: 1 }}>
-              <DialogTitle>Unassign this mentor from this student?</DialogTitle>
-            </div>
-
+            <DialogTitle>Create a New Tracking Location</DialogTitle>
             <Button onClick={this.closeWindow} size='small'>
               <img src={DeleteImage} width="22vw" height="50%" />
             </Button>
           </div>
+
+          <DialogContent>
+            <TextField onChange={this.handleChangeName} value={this.state.email} label="Name" />
+          </DialogContent>
           <DialogActions>
             <Button variant='contained' onClick={this.handleSubmit} color="secondary">
-              Unassign
+              Create
             </Button>
           </DialogActions>
         </Dialog>
@@ -85,8 +82,4 @@ class UnAssignMentor extends React.Component {
 
 }
 
-UnAssignMentor.propTypes = {
-  studentEmail: PropTypes.string.isRequired
-}
-
-export default (UnAssignMentor);
+export default CreateTrackingLocation;
