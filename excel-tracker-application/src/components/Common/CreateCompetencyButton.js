@@ -310,7 +310,7 @@ class CreateCompetencyButton extends React.Component {
 
   renderButton() {
     if (this.props.id || this.props.id == 0) {
-      return (<div classname="cardStyle" style={{ height: '50%', maxWidth: '5%', margin: '1.9vh 8vw 1vh 0.1vw' }}>
+      return (<div classname="cardStyle" style={{ height: '50%', maxWidth: '5%', margin: '1.9vh 1vw 1vh 0.1vw' }}>
         <Button onClick={this.openWindow} size='small'>
           <img src={EditBtn} width="22vw" height="50%" />
         </Button>
