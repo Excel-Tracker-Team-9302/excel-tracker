@@ -15,7 +15,8 @@ import UserServices from '../../services/UserServices';
 
 
 /**
- * Pop-up button used to create a program competency
+ * Pop-up button used to Assign a mentor to a
+ * Student in the Excel Program
  * 
  * Dialog created using the Material UI Dialog
  * demos here: https://material-ui.com/components/dialogs/

@@ -16,7 +16,10 @@ import ComptencyServices from '../../services/CompetencyServices';
 
 /**
  * Pop-up button used to create a program competency
- * or edit a pre-existing competency
+ * or edit a pre-existing competency. If a prop
+ * competency id is passed in, the popup will
+ * prefill with that competencies data. Otherwise,
+ * a new one will be created.
  * 
  * Dialog created using the Material UI Dialog
  * demos here: https://material-ui.com/components/dialogs/

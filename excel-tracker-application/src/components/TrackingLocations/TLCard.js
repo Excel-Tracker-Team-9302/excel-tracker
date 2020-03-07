@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import './../../styles/UserCard.css';
 
+/**
+ * Tracking Location Card item displayedd on the tracking locations page
+ * Will navigate to the tracking locations details page when
+ * it is selected.
+ * 
+ * (Febuary 2020)
+ */
 const TLCard = ({name,instructors, id, prop}) => {
 
 	const gotodetails = event => {

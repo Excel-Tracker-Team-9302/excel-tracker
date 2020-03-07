@@ -12,7 +12,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 /**
- * Header for the main application
+ * Header for the main application. Has a Home button that 
+ * navigates to the main dashboard of the application
+ * (absent when on the home page). Has a logout button
+ * to exit the application. Expects a page title prop which
+ * is displayed in the upp-right corner of the page.
  * 
  * Header created using the Material UI App Bar
  * demos here: https://material-ui.com/components/app-bar/

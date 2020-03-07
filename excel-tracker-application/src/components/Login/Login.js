@@ -13,6 +13,12 @@ import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 
 
+/**
+ * Login component of the applicaiton. First screen
+ * user enters when navigating to application ('/').
+ * 
+ * (January 2020)
+ */
 class Login extends Component {
 
   username = '';

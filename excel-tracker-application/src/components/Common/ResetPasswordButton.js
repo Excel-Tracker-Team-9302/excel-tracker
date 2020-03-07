@@ -12,7 +12,9 @@ import DeleteImage from './../../assets/images/Delete.png'
 
 
 /**
- * Pop-up button used reset the password of a user
+ * Pop-up button used reset the password of a user. An
+ * email will be sent to the user where they will be directed
+ * to reset their own password.
  * 
  * Dialog created using the Material UI Dialog
  * demos here: https://material-ui.com/components/dialogs/

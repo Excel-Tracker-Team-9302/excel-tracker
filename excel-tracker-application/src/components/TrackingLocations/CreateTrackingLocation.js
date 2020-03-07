@@ -10,7 +10,10 @@ import UserServices from '../../services/UserServices';
 
 
 /**
- * Button to create a new tracking location
+ * Button to create a new tracking location. Tracking 
+ * locations only require a name. Once created, users can
+ * navigate to the tracking location's page to
+ * add the tracking locaiton.
  * 
  * Dialog created using the Material UI Dialog
  * demos here: https://material-ui.com/components/dialogs/

@@ -13,7 +13,10 @@ import DeleteImage from './../../assets/images/Delete.png'
 import UserServices from '../../services/UserServices';
 
 /**
- * Pop-up button used to delete a user from the program
+ * Pop-up button used to delete a user from the program.
+ * The user will be returned to the Users list after
+ * the user is deleted. The action cannot be easily 
+ * undone.
  * 
  * Dialog created using the Material UI Dialog 
  * demos here: https://material-ui.com/components/dialogs/

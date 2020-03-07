@@ -11,7 +11,9 @@ import DeleteImage from './../../assets/images/Delete.png'
 
 
 /**
- * Pop-up button used to unassign a mentor from a specific student
+ * Pop-up button used to unassign a mentor from a specific student.
+ * The student will no longer have a mentor, and thus their
+ * page will now display an Add Mentor button
  * 
  * Dialog created using the Material UI Dialog 
  * demos here: https://material-ui.com/components/dialogs/
