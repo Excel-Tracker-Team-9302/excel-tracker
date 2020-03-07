@@ -25,8 +25,8 @@ const CompetenciesList = ({Competencies, prop}) => {
                         subcategory={Competencies[i].subcategory} 
                         prop = {prop}
                     />
-                    <DeleteButton></DeleteButton>
                     <CreateCompetencyButton buttonTitle="Confirm" title="Edit Competency" id={Competencies[i].id} />
+                    <DeleteButton></DeleteButton>
         </div>
                 ); 
             })
