@@ -15,6 +15,11 @@ import tl from './../../assets/images/tl.png'
 import {Container, Row, Col } from 'react-bootstrap'
 
 
+/**
+ * Main dashboard of the entire application. User navigates here
+ * upon logging in. From here, they can select the media cards to enter
+ * the other parts of the application
+ */
 class Dashboard extends React.Component {
 
   constructor(props) {
@@ -23,6 +28,11 @@ class Dashboard extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+  /**
+   * History push pushes a path onto the stack
+   * of url navigations. Used to navigate to different endpoints
+   * in the applicaiton.
+   */
   handleLogout() {
     this.props.history.push('/');
   }

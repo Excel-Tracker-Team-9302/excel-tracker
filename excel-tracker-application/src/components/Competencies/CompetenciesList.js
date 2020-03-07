@@ -4,6 +4,14 @@ import DeleteButton from '../TrackingLocations/DeleteButton';
 import CreateCompetencyButton from '../Common/CreateCompetencyButton';
 
 
+/**
+ * Renderos a list of competencies for the Competency page.
+ * The Competency cards display basic information about the caompetency and
+ * have the option to edit of delete the competency. 
+ * 
+ * (March 2020)
+ *
+ */
 const CompetenciesList = ({Competencies, prop}) => {
     return(
         <div>

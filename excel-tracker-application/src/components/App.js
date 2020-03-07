@@ -18,6 +18,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ResetPassword from './Login/ResetPassword';
 
 class App extends Component {
 
@@ -26,34 +27,37 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-          <Route path = "/users">
-              <Users/>
+            <Route path="/users">
+              <Users />
             </Route>
-          <Route path = "/trackinglocations">
-              <TrackingLocations/>
-          </Route>
-          <Route path = "/trackinglocationdetails">
-              <TrackingLocationDetails/>
-          </Route>
-          <Route path = "/competencies">
-              <Competencies/>
-          </Route>
-          <Route path = "/userdetails">
-              <UserDetails/>
+            <Route path="/trackinglocations">
+              <TrackingLocations />
+            </Route>
+            <Route path="/trackinglocationdetails">
+              <TrackingLocationDetails />
+            </Route>
+            <Route path="/competencies">
+              <Competencies />
+            </Route>
+            <Route path="/userdetails">
+              <UserDetails />
             </Route>
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-             <Route path="/register">
+            <Route path="/register">
               <Register />
-              </Route>
-              <Route path="/">
+            </Route>
+            <Route path="/resetpassword">
+              <ResetPassword />
+            </Route>
+            <Route path="/">
               <Login />
             </Route>
-            
+
           </Switch>
         </div>
-    </Router> 
+      </Router>
     );
   }
 }

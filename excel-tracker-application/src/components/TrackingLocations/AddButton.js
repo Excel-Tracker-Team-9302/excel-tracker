@@ -4,13 +4,19 @@ import AddBtn from './../../assets/images/Add.png';
 
 
 
+/**
+ * Styled button with a plus icon. Expects a
+ * prop with the onClick method to properly function
+ * 
+ * (March 2020)
+ */
 class AddButton extends React.Component {
 
     constructor(props) {
       super(props);
     }
 
-    handleClick = (name) => {
+    handleClick = () => {
         this.props.handleClick()
     }
     

@@ -10,7 +10,9 @@ import {
 } from "react-router-dom";
 
 /**
- * Image cards displayed on the dashboard of the application
+ * Image cards displayed on the dashboard of the application. Expects
+ * the title, image, and onclick functionality to be passed
+ * in through props.
  * 
  * Cards created using the Material UI Card
  * demos here: https://material-ui.com/components/cards/

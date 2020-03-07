@@ -12,7 +12,10 @@ import DeleteImage from './../../assets/images/Delete.png'
 import UserServices from '../../services/UserServices';
 
 /**
- * Pop-up button used to invite a user to the program
+ * Pop-up button used to invite a user to the program. The
+ * user must provide an email of the user and a user
+ * type for the user. An email will be sent to the
+ * user where they will be able to set up their account.
  * 
  * Dialog created using the Material UI Dialog 
  * demos here: https://material-ui.com/components/dialogs/

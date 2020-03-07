@@ -1,14 +1,10 @@
 
 import React, { Component } from 'react';
-import './../styles/ResetPassword.css'
+import './../../styles/ResetPassword.css'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import Colors from '../../assets/text/Colors.js';
 
-import { 
-  createMuiTheme, 
-  ThemeProvider } from '@material-ui/core/styles';
 
 
 
@@ -16,6 +12,12 @@ import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 
 
+/**
+ * Component used to reset a users password. Users will navigate to
+ * this page when they are sent the reset password link.
+ * 
+ * (January 2020)
+ */
 class ResetPassword extends Component {
 
   password = '';
@@ -42,7 +44,6 @@ class ResetPassword extends Component {
 
 
     return (
-      <ThemeProvider theme={theme}>
       <div className="Login">
         <header className="Login-header">
           <div style={{color:Colors.blue}}>
@@ -81,21 +82,10 @@ class ResetPassword extends Component {
         </div>
 
       </div>
-      </ThemeProvider>
     );
   }
 }
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: Colors.white,
-    }, 
-    secondary: {
-      main: Colors.blue
-    } 
-  }
-})
 
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser
