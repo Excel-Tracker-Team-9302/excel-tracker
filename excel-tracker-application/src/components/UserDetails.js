@@ -8,7 +8,8 @@ import TLCard from './TrackingLocations/TLCard';
 import UserServices from '../services/UserServices';
 import AssignMentor from './Common/AssignMentor.js';
 import DeleteStudent from './Common/DeleteStudent.js';
-import UnAssignMentor from './Common/UnAssignMentor.js'
+import UnAssignMentor from './Common/UnAssignMentor.js';
+import EvaluateButton from './Evaluation/EvaluateButton.js';
 
 
 
@@ -44,6 +45,17 @@ class UserDetails extends Component {
     alert(event.target.text);
   };
 
+  evaluate = event => {
+
+    this.props.history.push({
+            pathname : '/evaluations',
+            state :{
+              studentEmail: this.props.location.state.email,
+              }
+            } 
+          );
+  };
+
   getMentor() {
     let mentor = UserServices.getMentor(this.props.location.state.email);
     if (mentor) {
@@ -74,13 +86,18 @@ class UserDetails extends Component {
             </div>
             <div className = "UD-body">
             {this.props.location.state.userType}
-            {this.props.location.state.userType == "Student" ?
+            {this.props.location.state.userType === "Student" ?
                   
                     this.getMentor() : null
             }
-
+            
             <DeleteStudent email={this.props.location.state.email}/>
-              {this.props.location.state.userType == "Student" &&
+
+            {this.props.location.state.userType === "Student" ?
+                  
+                    <EvaluateButton onClick={this.evaluate}/> : null
+            }
+              {this.props.location.state.userType === "Student" &&
                 <div>
                   <div className='udtc'>
 

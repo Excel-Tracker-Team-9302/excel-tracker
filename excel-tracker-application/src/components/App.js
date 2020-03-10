@@ -7,6 +7,7 @@ import UserDetails from './UserDetails.js'
 import TrackingLocations from './TrackingLocations.js'
 import TrackingLocationDetails from './TrackingLocationDetails.js'
 import Competencies from './Competencies.js'
+import Evaluations from './Evaluation/Evaluations.js'
 
 
 import Register from './Register.js';
@@ -44,6 +45,9 @@ class App extends Component {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/evaluations">
+              <Evaluations />
             </Route>
             <Route path="/register">
               <Register />
