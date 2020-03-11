@@ -6,6 +6,7 @@ import {
 import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 import Header from './../Home/Header.js';
+import EvaluationForm from './EvaluationForm.js';
 
 class Evaluations extends Component {
 
@@ -22,6 +23,7 @@ class Evaluations extends Component {
           <div>
             Evaluations for {this.student}
           </div>
+          <EvaluationForm/>
         </div>
         
       );
