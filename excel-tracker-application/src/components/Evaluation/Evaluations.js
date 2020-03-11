@@ -23,7 +23,13 @@ class Evaluations extends Component {
           <div>
             Evaluations for {this.student}
           </div>
-          <EvaluationForm/>
+          <EvaluationForm
+            eval4 = "4: Student consistently performs this skill independently and in proper settings. They understand this concept without further assistance or explanation required. Student is aware of the importance of this competency."
+            eval3 = "3: Student is able to perform this skill or can do most of the skill with some basic prompting or reminders from others."
+            eval2 = "2: Student attempts to perform this skill independently, but requires assistance, support or reminders from others to execute accurately. Student is unlikely to perform this skill without assistance from others. "
+            eval1 = "1: Student requires support from start to finish of the skill. Student does not understand the skill or why it is necessary. A student earns a 1 instead of a 0 in this category if they continue to attempt this skill with help from others."
+            eval0 = "0: Student is completely unwilling to learn this skill. Student expresses no interest in performing even with supports. Or, student does not have the opportunity to perform this skill (ex. Driving a car, paying 100% of expenses to live independently, or physical limitations prohibit somebody from cooking or working out properly)."
+          />
         </div>
         
       );
