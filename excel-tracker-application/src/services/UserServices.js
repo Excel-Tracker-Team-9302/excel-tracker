@@ -1,4 +1,5 @@
 import dummyData from './DummyData'
+import Config from './../Config'
 
 
 const UserServices = {
@@ -60,8 +61,24 @@ const UserServices = {
     return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID == tlid))
   },
 
-  createTrackingLocation(name) {
-    return null
+  async createTrackingLocation(name) {
+    let data = {
+      "LocationName": name,
+      "CompetencyIds": "[]"
+    }
+
+    let url = Config.baseAPI + 'tracking-location-to-competencies'
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+
+    return response
+
   },
 
   addCompToTL(compId, track) {
