@@ -45,13 +45,6 @@ class AssignMentor extends React.Component {
     })
   }
 
-
-  setOpen(newOpen) {
-    this.setState({
-      open: newOpen
-    })
-  }
-
   handleChangeMentor = event => {
     this.setMentor(event.target.value);
   };
