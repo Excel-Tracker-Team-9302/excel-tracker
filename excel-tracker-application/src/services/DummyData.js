@@ -194,12 +194,12 @@ const dummyData = {
   evaluations: [
     {
       userID: "masontaylor",
-      competencyID: "1",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 1,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "coleking",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -207,12 +207,12 @@ const dummyData = {
 
     {
       userID: "masontaylor",
-      competencyID: "2",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 4,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "coleking",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -220,12 +220,12 @@ const dummyData = {
 
     {
       userID: "andysullivan",
-      competencyID: "1",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 1,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "coleking",
-      evaluationScore: "3",
+      evaluationScore: 3,
       evidence: "Assessment",
       approved: "False"
 
@@ -233,12 +233,12 @@ const dummyData = {
 
     {
       userID: "andysullivan",
-      competencyID: "2",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 2,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "coleking",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -246,12 +246,12 @@ const dummyData = {
 
     {
       userID: "perrysullivan",
-      competencyID: "1",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 1,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "carlyrands",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -259,12 +259,12 @@ const dummyData = {
 
     {
       userID: "perrysullivan",
-      competencyID: "2",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 2,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "carlyrands",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -272,12 +272,12 @@ const dummyData = {
 
     {
       userID: "courtneytreaty",
-      competencyID: "1",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 1,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "carlyrands",
-      evaluationScore: "4",
+      evaluationScore: 4,
       evidence: "Assessment",
       approved: "False"
 
@@ -285,12 +285,12 @@ const dummyData = {
 
     {
       userID: "courtneytreaty",
-      competencyID: "2",
-      year: "2020",
-      month: "3",
-      day: "24",
+      competencyID: 2,
+      year: 2020,
+      month: 3,
+      day: 24,
       evaluatorID: "carlyrands",
-      evaluationScore: "3",
+      evaluationScore: 3,
       evidence: "Assessment",
       approved: "False"
 
@@ -298,7 +298,7 @@ const dummyData = {
 
   ]
 
-  
+
 }
 
 
