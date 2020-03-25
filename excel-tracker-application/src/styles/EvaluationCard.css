@@ -1,0 +1,12 @@
+.EvaluationCard {
+    min-height: 10vh;
+    border: 3px solid #003057;
+    padding: 5px;
+    margin: 10px;
+    font-size: calc(5px + 1vmin);
+
+}
+
+p {
+    margin: 10px;
+}

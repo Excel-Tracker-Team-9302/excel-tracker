@@ -207,6 +207,19 @@ const dummyData = {
 
     {
       userID: "masontaylor",
+      competencyID: 1,
+      year: 2019,
+      month: 3,
+      day: 24,
+      evaluatorID: "coleking",
+      evaluationScore: 3,
+      evidence: "Assessment",
+      approved: "False"
+
+    },
+
+    {
+      userID: "masontaylor",
       competencyID: 4,
       year: 2020,
       month: 3,
