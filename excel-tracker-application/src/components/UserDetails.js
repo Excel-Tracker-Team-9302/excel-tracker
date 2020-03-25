@@ -36,6 +36,7 @@ class UserDetails extends Component {
 
   })
  
+  thisUser = UserServices.getUser(this.props.location.state.email);
 
   trackingLocations = UserServices.getTrackingLocations().filter(tl => {
     return (tl);
@@ -50,7 +51,7 @@ class UserDetails extends Component {
     this.props.history.push({
             pathname : '/evaluations',
             state :{
-                studentEmail: this.props.location.state.email,
+                studentId: this.thisUser.userID,
                 competencyId: competencyId
               }
             } 
@@ -93,7 +94,6 @@ class UserDetails extends Component {
             }
             
             <DeleteStudent email={this.props.location.state.email}/>
-
               {this.props.location.state.userType === "Student" &&
                 <div>
                   <div className='udtc'>
@@ -112,7 +112,7 @@ class UserDetails extends Component {
                                         difficulty={this.competencies[i].difficulty}
                                       />
 
-                              <EvaluateButton competencyId={1} onClick={this.evaluate}/>
+                              <EvaluateButton competencyId={competency.id} onClick={this.evaluate}/>
                               </div>
                               ); 
                           })}

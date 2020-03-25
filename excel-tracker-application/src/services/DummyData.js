@@ -194,7 +194,7 @@ const dummyData = {
   evaluations: [
     {
       userID: "masontaylor",
-      competencyID: 1,
+      competencyID: 9,
       year: 2020,
       month: 3,
       day: 24,
@@ -207,13 +207,13 @@ const dummyData = {
 
     {
       userID: "masontaylor",
-      competencyID: 1,
+      competencyID: 9,
       year: 2019,
       month: 3,
       day: 24,
       evaluatorID: "coleking",
       evaluationScore: 3,
-      evidence: "Assessment",
+      evidence: "Interview",
       approved: "False"
 
     },
