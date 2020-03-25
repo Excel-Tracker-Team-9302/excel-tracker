@@ -23,7 +23,7 @@ class Evaluations extends Component {
           <div>
             Evaluations for {this.student}
           </div>
-          <EvaluationForm
+          <EvaluationForm onSubmit={e => { e.preventDefault(); }}
             eval4 = "4: Student consistently performs this skill independently and in proper settings. They understand this concept without further assistance or explanation required. Student is aware of the importance of this competency."
             eval3 = "3: Student is able to perform this skill or can do most of the skill with some basic prompting or reminders from others."
             eval2 = "2: Student attempts to perform this skill independently, but requires assistance, support or reminders from others to execute accurately. Student is unlikely to perform this skill without assistance from others. "

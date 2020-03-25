@@ -39,7 +39,7 @@ class EvaluationForm extends Component {
 
     render () {
         return (
-            <form>
+            <form onSubmit={e => { e.preventDefault(); }}>
                 <div class="grid-container">
                     <div id="performanceColumn" class="sub-grid">
                         <div class="header"><strong>Evaluation Score</strong></div>
