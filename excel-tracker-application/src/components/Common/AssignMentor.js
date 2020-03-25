@@ -81,7 +81,7 @@ class AssignMentor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: '1vh', marginBottom: '1vh'}}>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Assign Mentor</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <div style={{ display: 'flex', flexDirection: 'row' }}>

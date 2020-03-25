@@ -7,14 +7,16 @@ import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 import Header from './../Home/Header.js';
 import EvaluationForm from './EvaluationForm.js';
+import EvaluationServices from './../../services/EvaluationServices.js';
+import HistoryList from './HistoryList.js'
 
 class Evaluations extends Component {
 
   student = this.props.location.state.studentEmail;
-
+  history = EvaluationServices.getHistoryforUserComp('masontaylor', 1)
   
   render() {
-
+    console.log(this.props)
 
       return (
         
@@ -30,6 +32,9 @@ class Evaluations extends Component {
             eval1 = "1: Student requires support from start to finish of the skill. Student does not understand the skill or why it is necessary. A student earns a 1 instead of a 0 in this category if they continue to attempt this skill with help from others."
             eval0 = "0: Student is completely unwilling to learn this skill. Student expresses no interest in performing even with supports. Or, student does not have the opportunity to perform this skill (ex. Driving a car, paying 100% of expenses to live independently, or physical limitations prohibit somebody from cooking or working out properly)."
           />
+          Previous Evaluations:
+          <HistoryList history = {this.history}/>
+
         </div>
         
       );
