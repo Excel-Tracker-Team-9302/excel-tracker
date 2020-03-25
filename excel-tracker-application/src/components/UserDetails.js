@@ -45,12 +45,13 @@ class UserDetails extends Component {
     alert(event.target.text);
   };
 
-  evaluate = event => {
-
+  evaluate = (competencyId) => {
+    console.log(this.props)
     this.props.history.push({
             pathname : '/evaluations',
             state :{
-              studentEmail: this.props.location.state.email,
+                studentEmail: this.props.location.state.email,
+                competencyId: competencyId
               }
             } 
           );
@@ -95,7 +96,7 @@ class UserDetails extends Component {
 
             {this.props.location.state.userType === "Student" ?
                   
-                    <EvaluateButton onClick={this.evaluate}/> : null
+                    <EvaluateButton competencyId={1} onClick={this.evaluate}/> : null
             }
               {this.props.location.state.userType === "Student" &&
                 <div>

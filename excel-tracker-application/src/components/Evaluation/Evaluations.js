@@ -16,7 +16,7 @@ class Evaluations extends Component {
   history = EvaluationServices.getHistoryforUserComp('masontaylor', 1)
   
   render() {
-
+    console.log(this.props)
 
       return (
         

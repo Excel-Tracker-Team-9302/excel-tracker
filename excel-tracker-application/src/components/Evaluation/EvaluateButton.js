@@ -18,7 +18,7 @@ class EvaluateButton extends Component {
   render() {  
     return (  
       <ThemeProvider theme={theme}> 
-        <Button  size='medium' color='secondary' variant='contained' onClick={ this.props.onClick }>  
+        <Button  size='medium' color='secondary' variant='contained' onClick={ () => this.props.onClick(this.props.competencyId) }>  
           Evaluate  
         </Button> 
       </ThemeProvider>  
