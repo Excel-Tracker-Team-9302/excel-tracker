@@ -94,10 +94,6 @@ class UserDetails extends Component {
             
             <DeleteStudent email={this.props.location.state.email}/>
 
-            {this.props.location.state.userType === "Student" ?
-                  
-                    <EvaluateButton competencyId={1} onClick={this.evaluate}/> : null
-            }
               {this.props.location.state.userType === "Student" &&
                 <div>
                   <div className='udtc'>
@@ -107,12 +103,17 @@ class UserDetails extends Component {
                       <h1>Tracking Locations</h1>
                       <div>
                           {this.competencies.map((competency, i) => {
-                              return( <CompetencyCard 
+                              return( 
+                              <div class="side-by-side-icons">
+                              <CompetencyCard 
                                         title={this.competencies[i].title} 
                                         domain={this.competencies[i].domain}
                                         subcategory={this.competencies[i].subcategory}
                                         difficulty={this.competencies[i].difficulty}
                                       />
+
+                              <EvaluateButton competencyId={1} onClick={this.evaluate}/>
+                              </div>
                               ); 
                           })}
                       </div>
