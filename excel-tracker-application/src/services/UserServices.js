@@ -64,10 +64,10 @@ const UserServices = {
   async createTrackingLocation(name) {
     let data = {
       "LocationName": name,
-      "CompetencyIds": "[]"
+      "CompetencyIds": "[]",
     }
 
-    let url = Config.baseAPI + 'tracking-location-to-competencies'
+    let url = Config.baseAPI + '/tracking-locations-to-competencies'
 
     const response = await fetch(url, {
       method: 'POST',
