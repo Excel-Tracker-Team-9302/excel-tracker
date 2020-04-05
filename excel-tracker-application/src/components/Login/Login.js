@@ -35,12 +35,12 @@ class Login extends Component {
 
   handleLogin = event => {
     this.props.setCurrentUser(this.username);
+    this.props.setAuthToken('asdasdasdasdasd')
     this.props.history.push('/dashboard');
-
   };
 
   render() {
-
+    console.log(this.props)
     return (
       <div className="Login">
         <header className="Login-header">
@@ -66,11 +66,14 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  authToken: state.user.authToken,
+  auth: state.user.auth
 });
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser : (currentUser) => dispatch(ACTIONS.setCurrentUser(currentUser))
+    setCurrentUser : (currentUser) => dispatch(ACTIONS.setCurrentUser(currentUser)),
+    setAuthToken: (authToken) => dispatch(ACTIONS.setAuthToken(authToken))
   }
 }
 
