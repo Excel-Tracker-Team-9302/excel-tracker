@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './../styles/Login.css';
+import '../../styles/Login.css';
 import Button from '@material-ui/core/Button';
-import Colors from '../assets/text/Colors.js';
+import Colors from '../../assets/text/Colors.js';
 
 
 import {
   withRouter
 } from 'react-router-dom'
 
-import ACTIONS from '../redux/action'
+import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 
 

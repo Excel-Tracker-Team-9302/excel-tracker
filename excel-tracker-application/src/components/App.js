@@ -10,7 +10,7 @@ import Competencies from './Competencies.js'
 import Evaluations from './Evaluation/Evaluations.js'
 
 
-import Register from './Register.js';
+import Register from './Register/Register.js';
 
 
 import {

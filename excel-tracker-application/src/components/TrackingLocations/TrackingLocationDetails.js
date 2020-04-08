@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import './../styles/TrackingLocationDetails.css';
-import Colors from '../assets/text/Colors.js';
-import Header from './Home/Header.js';
+import '../../styles/TrackingLocationDetails.css';
+import Colors from '../../assets/text/Colors.js';
+import Header from '../Home/Header.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CompetencyCard from './Competencies/CompetencyCard';
-import UserServices from '../services/UserServices';
+import CompetencyCard from '../Competencies/CompetencyCard';
+import UserServices from '../../services/UserServices';
 import Select from '@material-ui/core/Select';
-import UserCard from './UserView/UserCard';
-import AddButton from './TrackingLocations/AddButton';
-import DeleteButton from './TrackingLocations/DeleteButton';
+import UserCard from '../UserView/UserCard';
+import AddButton from './AddButton';
+import DeleteButton from './DeleteButton';
 
 import {
   withRouter
 } from 'react-router-dom'
 
-import ACTIONS from '../redux/action'
+import ACTIONS from '../../redux/action'
 import { connect } from 'react-redux';
 
 
