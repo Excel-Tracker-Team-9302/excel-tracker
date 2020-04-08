@@ -3,15 +3,15 @@ import {
   withRouter
 } from 'react-router-dom'
 
-import Header from './Home/Header.js';
-import CompetenciesList from './Competencies/CompetenciesList.js';
+import Header from '../Home/Header.js';
+import CompetenciesList from './CompetenciesList.js';
 import { Input } from '@material-ui/core';
-import UserServices from '../services/UserServices';
+import UserServices from '../../services/UserServices';
 
 
-import './../styles/Users.css';
-import './Common/CreateCompetencyButton'
-import CreateCompetencyButton from './Common/CreateCompetencyButton';
+import '../../styles/Users.css';
+import '../Common/CreateCompetencyButton'
+import CreateCompetencyButton from '../Common/CreateCompetencyButton';
 
 class Competencies extends React.Component {
 

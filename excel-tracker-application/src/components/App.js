@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './../styles/App.css';
 import Login from './Login/Login.js';
 import Dashboard from './Home/Dashboard.js'
-import Users from './Users.js'
-import UserDetails from './UserDetails.js'
-import TrackingLocations from './TrackingLocations.js'
-import TrackingLocationDetails from './TrackingLocationDetails.js'
-import Competencies from './Competencies.js'
+import Users from './UserView/Users.js'
+import UserDetails from './UserView/UserDetails.js'
+import TrackingLocations from './TrackingLocations/TrackingLocations.js'
+import TrackingLocationDetails from './TrackingLocations/TrackingLocationDetails.js'
+import Competencies from './Competencies/Competencies.js'
 
 
-import Register from './Register.js';
+import Register from './Register/Register.js';
 
 
 import {
