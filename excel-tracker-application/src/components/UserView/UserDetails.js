@@ -3,13 +3,13 @@ import '../../styles/UserDetails.css';
 import Colors from '../../assets/text/Colors.js';
 import Header from '../Home/Header.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CompetencyCard from './Competencies/CompetencyCard';
-import TLCard from './TrackingLocations/TLCard';
-import UserServices from '../services/UserServices';
-import AssignMentor from './Common/AssignMentor.js';
-import DeleteStudent from './Common/DeleteStudent.js';
-import UnAssignMentor from './Common/UnAssignMentor.js';
-import EvaluateButton from './Evaluation/EvaluateButton.js';
+import CompetencyCard from './../Competencies/CompetencyCard';
+import TLCard from './../TrackingLocations/TLCard';
+import UserServices from '../../services/UserServices';
+import AssignMentor from './../Common/AssignMentor.js';
+import DeleteStudent from './../Common/DeleteStudent.js';
+import UnAssignMentor from './../Common/UnAssignMentor.js';
+import EvaluateButton from './../Evaluation/EvaluateButton.js';
 
 
 import {
