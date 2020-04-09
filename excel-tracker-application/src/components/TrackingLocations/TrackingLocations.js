@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 
-import CoolCard from './Home/coolcard.js';
+import CoolCard from '../Home/coolcard.js';
 import {
   withRouter
 } from 'react-router-dom'
 
-import Header from './Home/Header.js';
-import dummyData from './../services/DummyData';
-import TLList from './TrackingLocations/TLList.js';
+import Header from '../Home/Header.js';
+import dummyData from '../../services/DummyData';
+import TLList from './TLList.js';
 import { InputLabel, Input } from '@material-ui/core';
 import { Select } from '@material-ui/core';
 import { MenuItem} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import InviteUserButton from './Common/InviteUserButton.js';
-import UserServices from '../services/UserServices';
-import CreateTrackingLocation from './TrackingLocations/CreateTrackingLocation'
+import InviteUserButton from '../Common/InviteUserButton.js';
+import UserServices from '../../services/UserServices';
+import CreateTrackingLocation from './CreateTrackingLocation'
 
 
-import './../styles/Users.css';
+import '../../styles/Users.css';
 import {Container, Row, Col } from 'react-bootstrap'
 
 class TrackingLocations extends React.Component {
