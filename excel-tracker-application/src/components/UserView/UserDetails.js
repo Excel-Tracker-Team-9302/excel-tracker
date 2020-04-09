@@ -3,12 +3,14 @@ import '../../styles/UserDetails.css';
 import Colors from '../../assets/text/Colors.js';
 import Header from '../Home/Header.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CompetencyCard from '../Competencies/CompetencyCard';
-import TLCard from '../TrackingLocations/TLCard';
+import CompetencyCard from './../Competencies/CompetencyCard';
+import TLCard from './../TrackingLocations/TLCard';
 import UserServices from '../../services/UserServices';
-import AssignMentor from '../Common/AssignMentor.js';
-import DeleteStudent from '../Common/DeleteStudent.js';
-import UnAssignMentor from '../Common/UnAssignMentor.js'
+import AssignMentor from './../Common/AssignMentor.js';
+import DeleteStudent from './../Common/DeleteStudent.js';
+import UnAssignMentor from './../Common/UnAssignMentor.js';
+import EvaluateButton from './../Evaluation/EvaluateButton.js';
+
 
 import {
   withRouter
@@ -37,6 +39,18 @@ class UserDetails extends Component {
 
   assign = event => {
     alert(event.target.text);
+  };
+
+  evaluate = (competencyId) => {
+    console.log(this.props)
+    this.props.history.push({
+            pathname : '/evaluations',
+            state :{
+                studentEmail: this.props.location.state.email,
+                competencyId: competencyId
+              }
+            } 
+          );
   };
 
   getMentor() {
@@ -69,13 +83,14 @@ class UserDetails extends Component {
             </div>
             <div className = "UD-body">
             {this.props.location.state.userType}
-            {this.props.location.state.userType == "Student" ?
+            {this.props.location.state.userType === "Student" ?
                   
                     this.getMentor() : null
             }
-
+            
             <DeleteStudent email={this.props.location.state.email}/>
-              {this.props.location.state.userType == "Student" &&
+
+              {this.props.location.state.userType === "Student" &&
                 <div>
                   <div className='udtc'>
 
@@ -84,12 +99,17 @@ class UserDetails extends Component {
                       <h1>Tracking Locations</h1>
                       <div>
                           {this.competencies.map((competency, i) => {
-                              return( <CompetencyCard 
+                              return( 
+                              <div class="side-by-side-icons">
+                              <CompetencyCard 
                                         title={this.competencies[i].title} 
                                         domain={this.competencies[i].domain}
                                         subcategory={this.competencies[i].subcategory}
                                         difficulty={this.competencies[i].difficulty}
                                       />
+
+                              <EvaluateButton competencyId={1} onClick={this.evaluate}/>
+                              </div>
                               ); 
                           })}
                       </div>
