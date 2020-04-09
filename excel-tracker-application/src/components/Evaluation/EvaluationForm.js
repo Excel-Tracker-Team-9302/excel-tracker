@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import './../../styles/EvaluationForm.css';
 import Button from '@material-ui/core/Button';
-
+import { Input } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 
 class EvaluationForm extends Component {
     constructor(props) {
         super(props);
+
+        var today = new Date(),
+        date =  (today.getMonth() + 1) + '-' + today.getDate()  + '-' + today.getFullYear();
+
         this.state = {
-            selectedOption: "4"
+            selectedOption: "4",
+            comments: "",
+            date:date
         };
     }
+
 
     handleOptionChange = changeEvent => {
         this.setState({
@@ -17,9 +25,21 @@ class EvaluationForm extends Component {
         });
     };
 
+    handleChangeText(value) {
+        this.setState({comments: value})
+        console.log(this.state.comments)
+      };
+
+    handleChangeDate(value) {
+        console.log(value)
+        this.setState({date: value})
+    
+      };
+
+
     render () {
         return (
-            <form>
+            <form onSubmit={e => { e.preventDefault(); }}>
                 <div class="grid-container">
                     <div id="performanceColumn" class="sub-grid">
                         <div class="header"><strong>Evaluation Score</strong></div>
@@ -92,10 +112,31 @@ class EvaluationForm extends Component {
                         <div>{this.props.eval1}</div>
                         <div>{this.props.eval0}</div>
                     </div>
-                    <div>
-                        <Button variant='contained' onClick={this.onClick} color='secondary'>Submit</Button>
-                    </div>
+                    
+                    <div class="header"><strong>General Comments</strong></div>
+                        <div>
+                        <Input
+                            type = "text"
+                            placeholder="Enter comments"
+                            onChange={event => this.handleChangeText(event.target.value) } 
+                        />
+                        </div>
+
+                        <div class="header"><strong>Date of Entry</strong></div>
+                        <TextField
+                            id="date"
+                            type="date"
+                            defaultValue= {this.state.date}
+                            onChange={event => this.handleChangeDate(event.target.value) } 
+                        />
+                        
                 </div>
+
+                <div>
+                        <Button variant='contained' onClick={this.onClick} color='secondary'>Submit</Button>
+                </div>
+              
+
             </form>
         );
     }

@@ -107,6 +107,10 @@ const UserServices = {
   getStudent(emails) {
     return dummyData.users.filter((user) => emails.includes(user.email))
   }, 
+  
+  getUser(email) {
+    return dummyData.users.filter((user) => email == (user.email))[0]
+  }, 
 }
 
 export default UserServices;

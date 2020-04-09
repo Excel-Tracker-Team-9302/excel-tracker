@@ -1,6 +1,7 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 20% 70% 5%;
+    /* grid-template-columns: 20% 70% 5%; */
+    grid-template-columns: 20% 70%;
     grid-gap: 10px;
 
     border: 2px solid black;
