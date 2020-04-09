@@ -123,12 +123,6 @@ class CreateCompetencyButton extends React.Component {
     })
   }
 
-  setOpen(newOpen) {
-    this.setState({
-      open: newOpen
-    })
-  }
-
   setDescription(newDescription) {
     this.setState({
       description: newDescription
