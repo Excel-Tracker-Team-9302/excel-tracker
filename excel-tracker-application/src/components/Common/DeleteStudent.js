@@ -53,7 +53,7 @@ class DeleteStudent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: '1vh', marginBottom: '1vh' }}>
         <Button variant='contained' onClick={this.openWindow} color='secondary'>Delete User</Button>
         <Dialog open={this.state.open} onClose={this.closeWindow}>
           <div style={{ display: 'flex', flexDirection: 'row' }}>

@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    /* grid-template-columns: 20% 70% 5%; */
+    grid-template-columns: 20% 70%;
+    grid-gap: 10px;
+
+    border: 2px solid black;
+    margin: 2px 2px 2px 2px;
+}
+
+.sub-grid {
+    display: grid;
+}
+
+.sub-grid > div {
+    height: 10vh;
+}
+
+.header {
+    height: 2vh;
+    text-decoration: underline;
+}

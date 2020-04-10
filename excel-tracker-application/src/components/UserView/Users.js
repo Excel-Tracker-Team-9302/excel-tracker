@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-
-import CoolCard from './Home/coolcard.js';
 import {
   withRouter
 } from 'react-router-dom'
 
-import Header from './Home/Header.js';
-import dummyData from './../services/DummyData';
-import UserList from './UserView/UserList';
+import Header from '../Home/Header.js';
+import dummyData from '../../services/DummyData';
+import UserList from './UserList';
 import { InputLabel, Input } from '@material-ui/core';
 import { Select } from '@material-ui/core';
 import { MenuItem} from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import InviteUserButton from './Common/InviteUserButton.js'
+import InviteUserButton from '../Common/InviteUserButton.js'
 
-import './../styles/Users.css';
-import {Container, Row, Col } from 'react-bootstrap'
+import '../../styles/Users.css';
+import TextField from '@material-ui/core/TextField';
+
 
 class Users extends React.Component {
 
