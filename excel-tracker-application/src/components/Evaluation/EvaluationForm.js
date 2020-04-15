@@ -118,6 +118,7 @@ class EvaluationForm extends Component {
                         <Input
                             type = "text"
                             placeholder="Enter comments"
+                            fullWidth = "true"
                             onChange={event => this.handleChangeText(event.target.value) } 
                         />
                         </div>
