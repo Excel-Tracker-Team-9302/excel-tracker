@@ -1,0 +1,26 @@
+.grid-mini {
+    display: grid;
+    /* grid-template-columns: 20% 70% 5%; */
+    grid-template-columns: 30% 30% 30% 5%;
+    grid-gap: 10px;
+}
+.container-mini {
+    width: 80%;
+    min-height: 10vh;
+    border: 3px solid #b3a369;
+    padding: 5px;
+    margin: 0px 5px 2px 30px;
+    font-size: calc(5px + 1vmin);
+}
+
+.sub-grid-mini {
+    display: grid;
+}
+
+.sub-grid-mini > div {
+    height: 40px;
+}
+
+.header-mini {
+    text-decoration: underline;
+}
