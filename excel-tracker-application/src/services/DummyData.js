@@ -190,6 +190,29 @@ const dummyData = {
     
 
   ],
+  domains: [
+    {
+      name: "Transportaion",
+      domainID: 1
+    },
+    {
+      name: "Employment/Careers",
+      domainID: 2
+    },
+    {
+      name: "Health and Wellness",
+      domainID: 3
+    },
+    {
+      name: "Financial Literacy",
+      domainID: 4
+    },
+    {
+      name: "Housing",
+      domainID: 5
+    },
+    
+   ]
 
   evaluations: [
     {
