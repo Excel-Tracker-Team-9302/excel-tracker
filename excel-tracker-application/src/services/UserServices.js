@@ -1,7 +1,28 @@
 import dummyData from './DummyData'
+import Config from './../Config'
 
+const key = 'eyJraWQiOiIxY1VGTnVraGl6eEFEQjVlQUR0dUQ0WlhBMGE5eVNWVTNDa1RmZTF4cGlVPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiMGQyYzYxMC1mMmJhLTQ4OTQtYTJlMS0yMTY0ZGJkYTgzMzAiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfYTVlWjQ0ZFh4IiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6InRlc3RhZG1pbiIsImF1ZCI6IjR2cm8wNTJ1M2xjdWkxZGJmN29oYjU0b2k3IiwiZXZlbnRfaWQiOiJlZTFlZTBmZC00ZjZjLTQwMTctYWVkMS04NGY2MjFhNjU1NjIiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTU4NjIxNDg4MSwibmFtZSI6IkphY29iIEFsbGVuIiwiZXhwIjoxNTg2MjE4NDgxLCJjdXN0b206cm9sZSI6IkFkbWluIiwiaWF0IjoxNTg2MjE0ODgxLCJlbWFpbCI6ImV4YW1wbGVAZXhhbXBsZS5jb20ifQ.We9EzNv9p3T4QszpZFWGUWRNd8qAlFarLlyc6LZsbT4eLI5tI9IJ5pcCnmZdZDr9T6ALPvOxtsBCVoobUeQCUqW41U9Of-L-ER8ciQ-_y40yrtu6n1Kr2VlcmmH8L79TqwXhrIGik3rqwuhziLVmXkCd4frQepelWdUhTXRcOFPsEqJd4XK64_90oG3732UW95g6fQ0zGFqbLMP8hYcVPPa6NGZj2SUUccrW7zSrXbU3i2oZQa9OxxCouJZxwuTEPCoBGlo-AusI3tmrENV7Hq1iWNFTe79GgbEJzt4BAsx8I8HA2eSu2id0p3LIm_6haMpivAtv6mzE7ENHn3_QnQ'
 
 const UserServices = {
+  login: async function(username, password) {
+    let data = {
+      "Username": username,
+      "Password": password,
+    }
+
+    let url = Config.baseAPI + '/login'
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+
+    return response
+  },
+
   inviteNewUser: function(userId, type) {
     return null;
   },
@@ -60,8 +81,25 @@ const UserServices = {
     return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID == tlid))
   },
 
-  createTrackingLocation(name) {
-    return null
+  async createTrackingLocation(name) {
+    let data = {
+      "LocationName": name,
+      "CompetencyIds": "[]",
+    }
+
+    let url = Config.baseAPI + '/tracking-locations-to-competencies'
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': key
+      },
+      body: JSON.stringify(data)
+    })
+
+    return response
+
   },
 
   addCompToTL(compId, track) {
@@ -87,6 +125,14 @@ const UserServices = {
   },
   getStudent(emails) {
     return dummyData.users.filter((user) => emails.includes(user.email))
+  }, 
+  
+  getUser(email) {
+    return dummyData.users.filter((user) => email == (user.email))[0]
+  }, 
+
+  getUserByID(userID) {
+    return dummyData.users.filter((user) => userID == (user.userID))[0]
   }, 
 }
 

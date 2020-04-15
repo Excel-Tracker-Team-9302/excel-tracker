@@ -16,6 +16,14 @@ const userReducer = (state = defaultState, action) => {
       newState.currentUser = currentUser;
       return newState;
     }
+    case ACTIONS.Types.SET_AUTH_TOKEN: {
+      console.log("ACTION: ", action);
+      let newAuth = action.payload;
+      let newState = _.cloneDeep(state);
+      newState.authToken = newAuth
+      newState.auth = true
+      return newState
+    }
 
     default:
       return state;
