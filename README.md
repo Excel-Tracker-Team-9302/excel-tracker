@@ -1,6 +1,6 @@
-# Excel Tracker Front End Applcation: Team 9302
+# Excel Tracker Front End Application: Team 9302
 
-Web application aiding in the tracking of the Georgia Tech Excel Program's competency metrics. The application is built using the ReactJS framework. Additionally, many UI elements are created using the Material UI library. 
+Web application aiding in the tracking of the Georgia Tech Excel Program's competency metrics. The application is built using the ReactJS framework. Additionally, many UI elements are created using the [Material UI library](https://material-ui.com/). Please see the detailed design document for more information regarding the application's architecture. 
 
 ## Release Notes
 
@@ -17,7 +17,7 @@ The following is a lsit of requirements for running the application from your lo
 You must have the following libraries installed in order to properly run the application on localhost.  
    * Node.js (see [Node Install Guide](https://nodejs.org/en/download/))  
    * npm (installed with Node.js)  
-   * Git (this is dependent on your platform, but is required to read and modify code on a GitHub repository)
+   * git (this is dependent on your platform, but is required to read and modify code on a GitHub repository)
 
 #### DOWNLOAD/INSTALL
 To download the repository on your computer, use the `git clone <repository_url>` to clone the repository onto a directory in your computer.
