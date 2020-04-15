@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './../../styles/EvaluationCard.css';
+import './../../styles/HistoryCard.css';
 
 /**
  * Card used to display the information about past

@@ -129,12 +129,13 @@ class EvaluationForm extends Component {
                             type="date"
                             defaultValue= {this.state.date}
                             onChange={event => this.handleChangeDate(event.target.value) } 
+                            class = "needMargin"
                         />
                         
                 </div>
 
                 <div>
-                        <Button variant='contained' onClick={this.onClick} color='secondary'>Submit</Button>
+                        <Button variant='contained' onClick={this.onClick} color='secondary' id="submitButton">Submit</Button>
                 </div>
               
 
