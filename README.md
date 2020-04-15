@@ -7,10 +7,10 @@ Web application aiding in the tracking of the Georgia Tech Excel Program's compe
 
 ## Install Guide
 
-### INSTAlLATION FOR LIVE APPLICATION USE
-To interact with the live application, simply navigate to the applications url in a web browser. No additional libraries or downloads should be necessary to interact with the system in its deployed state.
+### Installation of Live Application
+To use the live application, simply navigate to the application's url in a web browser. No additional libraries or downloads should be necessary to interact with the system in its deployed state.
 
-### INSTALLATION FOR DEVELOPMENT
+### Installation for Development
 The following is a lsit of requirements for running the application from your localhost. This would be useful for development or debugging purposes for a future development team.
 
 #### PREREQUISITES 
