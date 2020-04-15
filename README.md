@@ -14,10 +14,10 @@ To use the live application, simply navigate to the application's url in a web b
 The following is a lsit of requirements for running the application from your localhost. This would be useful for development or debugging purposes for a future development team. It would also be useful to refernce the [general React guide](https://reactjs.org/docs/getting-started.html) to become more familiar with starting a React application.
 
 #### PREREQUISITES 
-You must have the following libraries installed in order to properly run the application on localhost.
-*Node.js (see [Node Install Guide](https://nodejs.org/en/download/))
-*npm (installed with Node.js)
-*Git (this is dependent on your platform, but is required to read and modify code on a GitHub repository)
+You must have the following libraries installed in order to properly run the application on localhost.  
+Node.js (see [Node Install Guide](https://nodejs.org/en/download/))  
+npm (installed with Node.js)  
+Git (this is dependent on your platform, but is required to read and modify code on a GitHub repository)
 
 #### DOWNLOAD/INSTALL
 To download the repository on your computer, use the `git clone <repository_url>` to clone the repository onto a directory in your computer.
