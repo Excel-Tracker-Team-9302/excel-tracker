@@ -10,11 +10,12 @@ import EvaluationForm from './EvaluationForm.js';
 import EvaluationServices from './../../services/EvaluationServices.js';
 import HistoryList from './HistoryList.js'
 import CompetencyServices from './../../services/CompetencyServices.js';
+import UserServices from './../../services/UserServices.js';
 
 
 class Evaluations extends Component {
 
-  student = this.props.location.state.studentId;
+  student = UserServices.getUserByID(this.props.location.state.studentId);
   history = EvaluationServices.getHistoryforUserComp(this.props.location.state.studentId, this.props.location.state.competencyId)
   competency = CompetencyServices.getCompetencyById(this.props.location.state.competencyId)
   render() {
@@ -25,7 +26,7 @@ class Evaluations extends Component {
         <div>
           <Header handleLogout={() => this.handleLogout} pageName="Evaluations"/>
           <div>
-            Evaluations for <b>{this.student}</b> on the competency <b>{this.competency.title}</b>
+            <h2>Evaluations for <b>{this.student.name}</b> on the competency <b>{this.competency.title}</b></h2>
           </div>
           <EvaluationForm onSubmit={e => { e.preventDefault(); }}
             eval4 = "4: Student consistently performs this skill independently and in proper settings. They understand this concept without further assistance or explanation required. Student is aware of the importance of this competency."

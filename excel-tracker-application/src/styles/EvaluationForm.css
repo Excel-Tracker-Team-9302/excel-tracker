@@ -13,7 +13,8 @@
 }
 
 .sub-grid > div {
-    height: 10vh;
+    font-size: calc(5px + 1vmin);
+    height: 5vh;
 }
 
 .header {

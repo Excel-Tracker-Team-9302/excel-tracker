@@ -18,7 +18,7 @@ const HistoryCard = ({day, month, year, evaluationScore, evaluator, evidence, ap
     return (
         <div className='EvaluationCard' onClick = {gotodetails}>   
             <p>Evaluation on {month}/{day}/{year} by {evaluator}</p>
-            <p>Score: {evaluationScore}   Proven By: {evidence}</p>
+            <p>Score: {evaluationScore}   Comments: {evidence}</p>
         </div>
     );
 }

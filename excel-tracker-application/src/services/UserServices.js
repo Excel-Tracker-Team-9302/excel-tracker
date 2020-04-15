@@ -130,6 +130,10 @@ const UserServices = {
   getUser(email) {
     return dummyData.users.filter((user) => email == (user.email))[0]
   }, 
+
+  getUserByID(userID) {
+    return dummyData.users.filter((user) => userID == (user.userID))[0]
+  }, 
 }
 
 export default UserServices;
