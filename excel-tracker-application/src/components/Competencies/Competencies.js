@@ -71,7 +71,6 @@ class Competencies extends React.Component {
             id="select" 
             value={this.state.selected}
             onChange={event => this.handleChange(event.target.value)}>
-            <option>something</option>
             {this.state.domains.map(domain => (
              <MenuItem value = {domain}>{domain}</MenuItem>
             ))}
