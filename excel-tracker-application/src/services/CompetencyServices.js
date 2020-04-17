@@ -33,7 +33,7 @@ const ComptencyServices = {
   },
 
   getCompetencyById: function(id) {
-    return dummyData.competencies.find((competency) => competency.id == id)
+    return dummyData.competencies.find((competency) => competency.id === id)
   },
 
   createCompetency: function(competency) {

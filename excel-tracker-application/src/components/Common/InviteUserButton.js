@@ -59,7 +59,7 @@ class InviteUserButton extends React.Component {
   };
 
   handleSubmit = () => {
-    if (this.state.email == '' || this.state.type == '') {
+    if (this.state.email === '' || this.state.type === '') {
       alert('Please select a type and enter the user\'s email!');
     } else {
       UserServices.inviteNewUser(this.state.email, this.state.type);
@@ -81,7 +81,7 @@ class InviteUserButton extends React.Component {
         <div style={{display: 'flex', flexDirection: 'row'}}>
           <DialogTitle>Email Invite for New User to Join</DialogTitle>
           <Button onClick={this.closeWindow} size = 'small'>
-              <img  src={DeleteImage} width="22vw" height="50%"/>
+              <img  src={DeleteImage} width="22vw" height="50%" alt = "Delete"/>
           </Button>
         </div>
         

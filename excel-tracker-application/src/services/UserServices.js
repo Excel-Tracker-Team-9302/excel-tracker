@@ -28,11 +28,11 @@ const UserServices = {
   },
 
   getStudents: function() {
-    return dummyData.users.filter((user) => (user.role && user.role == 'Student'))
+    return dummyData.users.filter((user) => (user.role && user.role === 'Student'))
   },
 
   getInstructors: function() {
-    return dummyData.users.filter((user) => (user.role && user.role == 'Faculty/Staff'))
+    return dummyData.users.filter((user) => (user.role && user.role === 'Faculty/Staff'))
   },
 
   sendResetPasswordLink: function(userEmail) {
@@ -40,7 +40,7 @@ const UserServices = {
   },
 
   getMentors: function() {
-    return dummyData.users.filter((user) => (user.role && user.role == 'Mentor'))
+    return dummyData.users.filter((user) => (user.role && user.role === 'Mentor'))
   },
 
   assignMentor: function(studentEmail, mentorEmail) {
@@ -60,7 +60,7 @@ const UserServices = {
   },
 
   getMentor(studentEmail) {
-    let student = dummyData.users.filter((user) => user.email == studentEmail);
+    let student = dummyData.users.filter((user) => user.email === studentEmail);
     console.log("GOODBYE", student)
     return student[0].mentor;
   },
@@ -70,15 +70,15 @@ const UserServices = {
   },
 
   searchTrackingLocations(search) {
-    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.name.toLowerCase().includes(search.toLowerCase()))||search =='') 
+    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.name.toLowerCase().includes(search.toLowerCase()))||search ==='') 
   },
 
   searchCompetencies(search) {
-    return dummyData.competencies.filter((competency) => (competency.title.toLowerCase().includes(search.toLowerCase()))||search =='') 
+    return dummyData.competencies.filter((competency) => (competency.title.toLowerCase().includes(search.toLowerCase()))||search ==='') 
   },
 
   getTrackingLocation(tlid) {
-    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID == tlid))
+    return dummyData.trackingLocations.filter((trackingLocation) => (trackingLocation.locationID === tlid))
   },
 
   async createTrackingLocation(name) {
@@ -128,11 +128,11 @@ const UserServices = {
   }, 
   
   getUser(email) {
-    return dummyData.users.filter((user) => email == (user.email))[0]
+    return dummyData.users.filter((user) => email === (user.email))[0]
   }, 
 
   getUserByID(userID) {
-    return dummyData.users.filter((user) => userID == (user.userID))[0]
+    return dummyData.users.filter((user) => userID === (user.userID))[0]
   }, 
 }
 

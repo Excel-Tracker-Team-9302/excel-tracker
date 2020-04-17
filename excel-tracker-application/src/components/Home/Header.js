@@ -2,7 +2,6 @@
 import Button from '@material-ui/core/Button';
 
 import {
-  BrowserRouter as Router,
   withRouter
 } from "react-router-dom";
 
@@ -36,7 +35,7 @@ class Header extends React.Component {
               </Typography>
             </div>
 
-            {this.props.pageName == 'Home' ? null : <Button onClick={() => this.props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>}
+            {this.props.pageName === 'Home' ? null : <Button onClick={() => this.props.history.push('/dashboard')} color="secondary" variant='contained'>Home</Button>}
             <div style={{marginLeft: 10}}>
               <Button onClick={() => this.props.history.push('/')} color="secondary" variant='contained'>
                 Logout

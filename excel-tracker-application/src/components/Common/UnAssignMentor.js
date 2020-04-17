@@ -72,7 +72,7 @@ class UnAssignMentor extends React.Component {
             </div>
 
             <Button onClick={this.closeWindow} size='small'>
-              <img src={DeleteImage} width="22vw" height="50%" />
+              <img src={DeleteImage} width="22vw" height="50%" alt = "Delete" />
             </Button>
           </div>
           <DialogActions>

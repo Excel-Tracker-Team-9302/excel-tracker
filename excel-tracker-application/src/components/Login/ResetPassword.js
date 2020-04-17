@@ -31,7 +31,7 @@ class ResetPassword extends Component {
   };
 
   resetPassword = event => {
-    if (this.password == this.passwordConfirm && this.password.length > 6) {
+    if (this.password === this.passwordConfirm && this.password.length > 6) {
       alert('Password Reset to ' + this.password);
     } else {
       alert("Passwords do not match or are shorter than six characters!");

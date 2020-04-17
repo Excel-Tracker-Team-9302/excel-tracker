@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   withRouter
 } from 'react-router-dom'
@@ -90,7 +90,7 @@ class Competencies extends React.Component {
               
           <h1>Competencies List</h1>
           <CompetenciesList Competencies={UserServices.searchCompetencies(this.state.competencies).filter(competency => {
-            return competency.domain == this.state.selected || this.state.selected == "All";
+            return competency.domain === this.state.selected || this.state.selected === "All";
           })}
            prop= {this.props}/> 
           </div>

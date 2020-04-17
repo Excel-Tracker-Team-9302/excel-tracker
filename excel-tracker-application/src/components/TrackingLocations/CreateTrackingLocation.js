@@ -50,7 +50,7 @@ class CreateTrackingLocation extends React.Component {
   };
 
   handleSubmit = () => {
-    if (this.state.name == '') {
+    if (this.state.name === '') {
       alert('Please enter a name for the tracking location');
     } else {
       UserServices.createTrackingLocation(this.state.name).then((response) => {
@@ -68,7 +68,7 @@ class CreateTrackingLocation extends React.Component {
           <div style={{ display: 'flex', flexDirection: 'row' }}>
             <DialogTitle>Create a New Tracking Location</DialogTitle>
             <Button onClick={this.closeWindow} size='small'>
-              <img src={DeleteImage} width="22vw" height="50%" />
+              <img src={DeleteImage} width="22vw" height="50%" alt="Delete"/>
             </Button>
           </div>
 
