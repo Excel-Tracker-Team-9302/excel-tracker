@@ -80,7 +80,7 @@ class AssignMentor extends React.Component {
           <div style={{ display: 'flex', flexDirection: 'row' }}>
             <DialogTitle>Assign a Mentor to Student</DialogTitle>
             <Button onClick={this.closeWindow} size='small'>
-              <img src={DeleteImage} width="22vw" height="50%" />
+              <img src={DeleteImage} width="22vw" height="50%" alt ="Delete" />
             </Button>
           </div>
           <DialogContent>

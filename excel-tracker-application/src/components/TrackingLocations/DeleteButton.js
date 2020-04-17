@@ -1,5 +1,5 @@
 import IconButton from '@material-ui/core/IconButton';
-import React, { Component } from 'react';
+import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete'
 
 
@@ -11,10 +11,6 @@ import DeleteIcon from '@material-ui/icons/Delete'
  * (March 2020)
  */
 class DeleteButton extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   handleClick = () => {
     if (this.props.handleClick) {

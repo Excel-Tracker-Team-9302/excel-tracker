@@ -32,10 +32,10 @@ class Register extends Component {
   };
 
   handleRegister = event => {
-    if (this.username == '') {
+    if (this.username === '') {
       alert('Username cannot be empty');
     }
-    else if (this.password == this.passwordConfirm && this.password.length > 6) {
+    else if (this.password === this.passwordConfirm && this.password.length > 6) {
       this.props.history.push('/login');
     } else {
       alert("Passwords do not match or are shorter than six characters!");

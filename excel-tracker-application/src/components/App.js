@@ -16,8 +16,7 @@ import Register from './Register/Register.js';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import ResetPassword from './Login/ResetPassword';
 

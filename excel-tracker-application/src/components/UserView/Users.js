@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   withRouter
 } from 'react-router-dom'
@@ -12,7 +12,6 @@ import { MenuItem} from '@material-ui/core';
 import InviteUserButton from '../Common/InviteUserButton.js'
 
 import '../../styles/Users.css';
-import TextField from '@material-ui/core/TextField';
 
 
 class Users extends React.Component {
@@ -85,7 +84,7 @@ class Users extends React.Component {
               
           <h1>User List</h1>
           <UserList users={dummyData.users.filter(user => {
-    return (user.role === this.state.selected || this.state.selected == "All") 
+    return (user.role === this.state.selected || this.state.selected === "All") 
     && (user.name.toLowerCase().includes(this.state.username.toLowerCase()) || this.state.username === "");
 })} prop= {this.props}/> 
           </div>

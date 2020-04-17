@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../styles/TrackingLocationDetails.css';
 import Colors from '../../assets/text/Colors.js';
 import Header from '../Home/Header.js';

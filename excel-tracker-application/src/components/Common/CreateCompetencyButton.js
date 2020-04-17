@@ -292,24 +292,20 @@ class CreateCompetencyButton extends React.Component {
     return domains
   }
 
-  rendorFrequencyList() {
-    const frequencies = this.state.frequencies.map((item) => <option value={item}>{item}</option>)
-    return frequencies
-  }
 
   rendorSubcategoryList() {
     const subcategories = this.state.subcategories.map((item) => <option value={item}>{item}</option>)
-    if (subcategories == []) {
+    if (subcategories === []) {
       return ['Select Domain']
     }
     return subcategories
   }
 
   renderButton() {
-    if (this.props.id || this.props.id == 0) {
+    if (this.props.id || this.props.id === 0) {
       return (<div classname="cardStyle" style={{ height: '50%', maxWidth: '5%', margin: '1.9vh 1vw 1vh 0.1vw' }}>
         <Button onClick={this.openWindow} size='small'>
-          <img src={EditBtn} width="22vw" height="50%" />
+          <img src={EditBtn} width="22vw" height="50%" alt="Edit" />
         </Button>
       </div>)
     } else {
@@ -329,7 +325,7 @@ class CreateCompetencyButton extends React.Component {
             </div>
 
             <Button onClick={this.closeWindow} size='small'>
-              <img src={DeleteImage} width="22vw" height="50%" />
+              <img src={DeleteImage} width="22vw" height="50%" alt="Delete" />
             </Button>
           </div>
           <DialogContent>

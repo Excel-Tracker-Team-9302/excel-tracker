@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import CoolCard from './coolcard.js';
 import {
@@ -12,7 +12,7 @@ import competencies from './../../assets/images/competencies.png'
 import reports from './../../assets/images/reports.png'
 import users from './../../assets/images/users.png'
 import tl from './../../assets/images/tl.png'
-import {Container, Row, Col } from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 
 
 /**

@@ -1,5 +1,5 @@
 import IconButton from '@material-ui/core/IconButton';
-import React, { Component } from 'react';
+import React from 'react';
 import ReviewIcon from '@material-ui/icons/RateReview'
 
 
@@ -11,10 +11,6 @@ import ReviewIcon from '@material-ui/icons/RateReview'
  * (April 2020)
  */
 class ListEvaluationButton extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   handleClick = () => {
     if (this.props.handleClick) {
