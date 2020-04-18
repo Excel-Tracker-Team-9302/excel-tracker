@@ -8,9 +8,16 @@ Web application aiding in the tracking of the Georgia Tech Excel Program's compe
    * Add ability to complete evaluations from the tracking locations page
    * Restyle the evaluations page to make formatting more clear
    * Add field for authorization token in redux that will be set on login
+   * Add ability to filter through the Competencies on the Competency Page
 
 ### Bug Fixes
-   * 
+   * Increased size of general comments box on Evaluations page so the entire page was visible
+   * Made some small changes to the dummy data to ensure it was consistently used across application
+
+### Known Bugs
+   * Currently all calls to the backend API are being rejected due to CORS issues
+   * There is no access control based on user type (unable to log in a user due to CORS issue)
+   * Due to lack of integration, there is no checks on pages to ensure user is properly authroized to view client (no check to ensure API key is still valid)
 
 ## Install Guide
 
@@ -37,4 +44,7 @@ To run the application, execute the `npm start` command from the excel-tracker-a
 
 
 #
+
+
+
 
