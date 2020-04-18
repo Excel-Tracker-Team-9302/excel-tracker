@@ -22,7 +22,7 @@ Web application aiding in the tracking of the Georgia Tech Excel Program's compe
 ## Install Guide
 
 ### Installation of Live Application
-To use the live application, simply navigate to the application's url in a web browser. No additional libraries or downloads should be necessary to interact with the system in its deployed state.
+To use the live application, simply navigate to the application's url in a web browser (url is to be configured by the client after application handoff). No additional libraries or downloads should be necessary to interact with the system in its deployed state.
 
 ### Installation for Development
 The following is a lsit of requirements for running the application from your localhost. This would be useful for development or debugging purposes for a future development team. It would also be useful to refernce the [general React guide](https://reactjs.org/docs/getting-started.html) to become more familiar with starting a React application.
