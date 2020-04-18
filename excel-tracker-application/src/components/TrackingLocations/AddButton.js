@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button';
-import React, { Component } from 'react';
+import React from 'react';
 import AddBtn from './../../assets/images/Add.png';
 
 
@@ -12,10 +12,6 @@ import AddBtn from './../../assets/images/Add.png';
  */
 class AddButton extends React.Component {
 
-    constructor(props) {
-      super(props);
-    }
-
     handleClick = () => {
         this.props.handleClick()
     }
@@ -24,7 +20,7 @@ class AddButton extends React.Component {
         return (
         <div classname = "cardStyle" style = {{height: '50%', maxWidth: '5%', margin: '0.8vh 4vw 1vh 0.1vw'}}>
         <Button onClick={this.handleClick} size = 'small'>
-            <img  src={AddBtn} width="22vw" height="50%"/>
+            <img  src={AddBtn} width="22vw" height="50%" alt="Add"/>
          </Button>
         </div>
         );

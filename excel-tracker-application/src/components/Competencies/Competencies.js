@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   withRouter
 } from 'react-router-dom'
@@ -7,7 +7,10 @@ import Header from '../Home/Header.js';
 import CompetenciesList from './CompetenciesList.js';
 import { Input } from '@material-ui/core';
 import UserServices from '../../services/UserServices';
-
+import { InputLabel } from '@material-ui/core';
+import { Select } from '@material-ui/core';
+import { MenuItem} from '@material-ui/core';
+import CompetencyServices from '../../services/CompetencyServices';
 
 import '../../styles/Users.css';
 import '../Common/CreateCompetencyButton'
@@ -20,24 +23,29 @@ class Competencies extends React.Component {
 
     this.state = {
         selected: "All",
-        competencies: ""
+        competencies: "",
+        domains: ["All", ...CompetencyServices.getCompetencyDomains()]
     }
 
     this.handleLogout = this.handleLogout.bind(this);
     this.handleChangeTL = this.handleChangeCompetencies.bind(this);
   }
 
+
   handleLogout() {
     this.props.history.push('/');
   }
   handleChange(value) {
     this.setState({selected: value });
+
   }
 
   handleChangeCompetencies(value) {
     this.setState({competencies: value})
     console.log(this.state.competencies)
   };
+
+
   render() {
       return (
         
@@ -56,6 +64,19 @@ class Competencies extends React.Component {
           onChange={ event => this.handleChangeCompetencies(event.target.value) } 
           />
         </div>
+        
+        <div className="col">
+          <InputLabel id="label">Filter by</InputLabel>
+            <Select labelId="label" 
+            id="select" 
+            value={this.state.selected}
+            onChange={event => this.handleChange(event.target.value)}>
+            {this.state.domains.map(domain => (
+             <MenuItem value = {domain}>{domain}</MenuItem>
+            ))}
+
+            </Select>
+        </div>
 
         <div className ="col">
             <CreateCompetencyButton buttonTitle="Create" title="Create Competency"/>
@@ -68,7 +89,10 @@ class Competencies extends React.Component {
           <div className='tc'>
               
           <h1>Competencies List</h1>
-          <CompetenciesList Competencies={UserServices.searchCompetencies(this.state.competencies)} prop= {this.props}/> 
+          <CompetenciesList Competencies={UserServices.searchCompetencies(this.state.competencies).filter(competency => {
+            return competency.domain === this.state.selected || this.state.selected === "All";
+          })}
+           prop= {this.props}/> 
           </div>
           
           <br></br>

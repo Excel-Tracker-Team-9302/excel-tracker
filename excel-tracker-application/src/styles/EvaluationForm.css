@@ -5,7 +5,8 @@
     grid-gap: 10px;
 
     border: 2px solid black;
-    margin: 2px 2px 2px 2px;
+    margin: 50px;
+    padding: 30px 30px 30px 30px;
 }
 
 .sub-grid {
@@ -13,10 +14,19 @@
 }
 
 .sub-grid > div {
-    height: 10vh;
+    font-size: calc(5px + 1vmin);
+    height: 5vh;
 }
 
 .header {
     height: 2vh;
     text-decoration: underline;
+}
+/* 
+.needMargin {
+    margin-bottom: 10px;
+} */
+
+#submitButton {
+    margin: -40px 0px 30px 50px;
 }

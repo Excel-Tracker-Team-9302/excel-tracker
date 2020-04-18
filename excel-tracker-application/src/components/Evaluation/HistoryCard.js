@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './../../styles/EvaluationCard.css';
+import './../../styles/HistoryCard.css';
 
 /**
  * Card used to display the information about past
@@ -18,7 +19,7 @@ const HistoryCard = ({day, month, year, evaluationScore, evaluator, evidence, ap
     return (
         <div className='EvaluationCard' onClick = {gotodetails}>   
             <p>Evaluation on {month}/{day}/{year} by {evaluator}</p>
-            <p>Score: {evaluationScore}   Proven By: {evidence}</p>
+            <p>Score: {evaluationScore}   Comments: {evidence}</p>
         </div>
     );
 }

@@ -118,6 +118,7 @@ class EvaluationForm extends Component {
                         <Input
                             type = "text"
                             placeholder="Enter comments"
+                            fullWidth = "true"
                             onChange={event => this.handleChangeText(event.target.value) } 
                         />
                         </div>
@@ -128,12 +129,13 @@ class EvaluationForm extends Component {
                             type="date"
                             defaultValue= {this.state.date}
                             onChange={event => this.handleChangeDate(event.target.value) } 
+                            class = "needMargin"
                         />
                         
                 </div>
 
                 <div>
-                        <Button variant='contained' onClick={this.onClick} color='secondary'>Submit</Button>
+                        <Button variant='contained' onClick={this.onClick} color='secondary' id="submitButton">Submit</Button>
                 </div>
               
 

@@ -51,11 +51,11 @@ class ResetPasswordButton extends React.Component {
   };
 
   handleSubmit = () => {
-    if (this.state.email == '') {
+    if (this.state.email === '') {
       alert('Please enter a valid email address.');
     } else {
       UserServices.sendResetPasswordLink(this.state.email);
-      alert('Sent link to ' + this.state.email + ' to reset your password' + '.');
+      alert('Sent link to ' + this.state.email + ' to reset your password.');
       this.closeWindow()
     }
   }
@@ -71,7 +71,7 @@ class ResetPasswordButton extends React.Component {
             </div>
 
             <Button onClick={this.closeWindow} size='small'>
-              <img src={DeleteImage} width="22vw" height="50%" />
+              <img src={DeleteImage} width="22vw" height="50%" alt="Delete" />
             </Button>
           </div>
           <DialogContent>

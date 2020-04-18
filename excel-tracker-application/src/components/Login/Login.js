@@ -3,6 +3,7 @@ import './../../styles/Login.css';
 import ResetPasswordButton from './../Common/ResetPasswordButton.js';
 import Button from '@material-ui/core/Button';
 import Colors from '../../assets/text/Colors.js';
+import UserServices from '../../services/UserServices.js';
 
 
 import {
@@ -34,6 +35,7 @@ class Login extends Component {
   };
 
   handleLogin = event => {
+    console.log(UserServices.login(this.username, this.password));
     this.props.setCurrentUser(this.username);
     this.props.setAuthToken('asdasdasdasdasd')
     this.props.history.push('/dashboard');

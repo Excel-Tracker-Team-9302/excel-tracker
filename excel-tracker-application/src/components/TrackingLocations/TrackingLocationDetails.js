@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../styles/TrackingLocationDetails.css';
 import Colors from '../../assets/text/Colors.js';
 import Header from '../Home/Header.js';
@@ -9,6 +9,8 @@ import Select from '@material-ui/core/Select';
 import UserCard from '../UserView/UserCard';
 import AddButton from './AddButton';
 import DeleteButton from './DeleteButton';
+import ListEvaluationButton from './ListEvaluationButton';
+import MiniEvaluationCard from '../Evaluation/MiniEvaluationCard.js'
 
 import {
   withRouter
@@ -26,20 +28,12 @@ class TrackingLocationDetails extends React.Component {
     this.state = {
       currCompetency: '',
       currStudent: '',
-      currInstructor: ''
+      currInstructor: '',
+      showEval: [],
     }
   }
 
-  competencies = UserServices.getCompetencies().filter(competency => {
-    return (competency);
-  }).sort(function (a, b) {
-    if (a.domain > b.domain) {
-      return 1;
-    }
-    return -1;
-
-  })
-
+  showEval = [];   
 
   trackingLocations = UserServices.getTrackingLocations().filter(tl => {
     return (tl);
@@ -51,11 +45,34 @@ class TrackingLocationDetails extends React.Component {
 
   instructors = UserServices.getInstructor(this.tl[0].instructors)
   competencies = UserServices.tlToCompetency(this.tl[0].competencies)
+                              .filter(competency => {
+                                this.showEval = this.showEval.concat(false);
+                                return (
+                                  competency);
+                                })
+                              .sort(function (a, b) {
+                                if (a.domain > b.domain) {
+                                  return 1;
+                                }
+                                return -1;
+                              })
+
   students = UserServices.getInstructor(this.tl[0].students)
 
   allInstructors = UserServices.getInstructors()
   allSudents = UserServices.getStudents()
   allCompetencies = UserServices.getCompetencies()
+                                .filter(competency => {
+                                  this.showEval = this.showEval.concat(false);
+                                  return (
+                                    competency);
+                                  })
+                                .sort(function (a, b) {
+                                  if (a.domain > b.domain) {
+                                    return 1;
+                                  }
+                                  return -1;
+                                })
 
   assign = event => {
     alert(event.target.text);
@@ -92,6 +109,20 @@ class TrackingLocationDetails extends React.Component {
     })
   }
 
+  EvaluateComp = i => {
+    this.setState(state => {
+      const showEval = this.showEval.map((item, j) => {
+        if (j === i) {
+          return true;
+        } else {
+          return item;
+        }
+      });
+      return {
+        showEval,
+      };
+    });
+  };
 
   render() {
 
@@ -163,15 +194,28 @@ class TrackingLocationDetails extends React.Component {
                 {
                   this.competencies.map((competency, i) => {
                     return (
+                      <div>
+                        <div className="side-by-side-icons">
+                          <CompetencyCard
+                            title={this.competencies[i].title}
+                            domain={this.competencies[i].domain}
+                            subcategory={this.competencies[i].subcategory}
+                            prop={this.props}
+                          /> 
+                          <div className= "top-to-bottom-icons">
+                            <DeleteButton></DeleteButton>
+                            <ListEvaluationButton handleClick = {() => this.EvaluateComp(i)}/>
+                          </div>
+                        </div>
 
-                      <div className="side-by-side-icons">
-                        <CompetencyCard
-                          title={this.competencies[i].title}
-                          domain={this.competencies[i].domain}
-                          subcategory={this.competencies[i].subcategory}
-                          prop={this.props}
-                        />
-                        <DeleteButton></DeleteButton>
+                         {this.state.showEval[i] ? (
+                              <div className="menu">
+                                {this.students.map((student, h) => {
+                                  return (
+                                    <MiniEvaluationCard studentName = {student.name}/>
+                                  );})}
+                              </div>
+                            ) : (null)}
                       </div>
                     );
                   })

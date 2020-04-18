@@ -1,16 +1,16 @@
 import IconButton from '@material-ui/core/IconButton';
 import React from 'react';
-import DeleteIcon from '@material-ui/icons/Delete'
+import ReviewIcon from '@material-ui/icons/RateReview'
 
 
 
 /**
- * Stylized delete button icon. Uses the passed in function prop
+ * Stylized evaluation button icon. Uses the passed in function prop
  * to determine functionality
  * 
- * (March 2020)
+ * (April 2020)
  */
-class DeleteButton extends React.Component {
+class ListEvaluationButton extends React.Component {
 
   handleClick = () => {
     if (this.props.handleClick) {
@@ -23,7 +23,7 @@ class DeleteButton extends React.Component {
     return (
       <div classname="cardStyle" style={{ height: '50%', maxWidth: '5%', margin: '0.8vh 1vw 1vh 0.1vw' }}>
         <IconButton onClick={this.handleClick}>
-          <DeleteIcon />
+          <ReviewIcon />
         </IconButton>
       </div>
     );
@@ -31,4 +31,4 @@ class DeleteButton extends React.Component {
 
 }
 
-export default (DeleteButton);
+export default (ListEvaluationButton);

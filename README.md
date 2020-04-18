@@ -38,6 +38,3 @@ To run the application, execute the `npm start` command from the excel-tracker-a
 
 #
 
-
-
-
