@@ -2,8 +2,15 @@
 
 Web application aiding in the tracking of the Georgia Tech Excel Program's competency metrics. The application is built using the ReactJS framework. Additionally, many UI elements are created using the [Material UI library](https://material-ui.com/). Please see the detailed design document for more information regarding the application's architecture. 
 
-## Release Notes
+## Release Notes (v. 1.0)
 
+### New Features
+   * Add ability to complete evaluations from the tracking locations page
+   * Restyle the evaluations page to make formatting more clear
+   * Add field for authorization token in redux that will be set on login
+
+### Bug Fixes
+   * 
 
 ## Install Guide
 
