@@ -42,6 +42,48 @@ To download the necessary dependencies to run the application, navigate to the e
 #### RUNNING APPLICATION
 To run the application, execute the `npm start` command from the excel-tracker-application directory. This will start the application on localhost endpoint on your computer. Navigate to localhost in your browser with the provided port number to view the application (this is uaually opened by default when you run npm start).
 
+## Deploying to AWS
+
+### PREREQUISITES
+   * Must have administrative access to this repository, and a member of the organization (Excel-Tracker-Team-9302). Contact an admin to get the permissions. 
+   * An AWS account (Free tier ok)
+   
+### SETTING UP APPLICATION
+In AWS navigate to AWS Amplify. Click Connect App and select Github under "From your existing code". Log in with Github credentials, and allow any permissions that are requested. At "Add repository branch" screen, select Excel-Tracker-Team-9302/excel-tracker and master branch. 
+
+#### If the repository does not show up:
+  * Go to github.com, go to setting, applications, then Authorized OAuth Apps, AWS Amplify, and make sure the organization is selected
+  * Go to github and make a commit, and this may allow the repository to show up.
+
+#### If the repository is not selectable:
+  * Make sure you are a member of the organization (Excel-Tracker-Team-9302) and an admin for the repo (have admin on repo page select settings, Manage Access, and find name to change access)
+
+Under build settings, you can leave the app name default. Under build and test settings, replace with: 
+
+```
+version: 0.1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd excel-tracker-application
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: excel-tracker-application/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+```
+
+Click Next, and Save and Deploy. The app should begin to build.
+
+### MAINTAINING  APPLICATION
+When new changes are made to the master branch through Github, the site should automatically redeploy the site without having to touch it. You can deploy sites for any branch that you wish. 
 
 #
 
