@@ -44,7 +44,7 @@ To download the necessary dependencies to run the application, navigate to the e
 #### RUNNING APPLICATION
 To run the application, execute the `npm start` command from the excel-tracker-application directory. This will start the application on localhost endpoint on your computer. Navigate to localhost in your browser with the provided port number to view the application (this is uaually opened by default when you run npm start).
 
-#### Troubleshooting
+#### TROUBLESHOOTING
 ##### The application says that no React Project is found when running 'npm run'.
    * Ensure that you are within the excel-tracker-application directory in the terminal before running the 'npm run' command
 
