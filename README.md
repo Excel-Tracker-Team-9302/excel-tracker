@@ -47,6 +47,7 @@ To run the application, execute the `npm start` command from the excel-tracker-a
 #### Troubleshooting
 The application says that no React Project is found when running 'npm run'.
    * Ensure that you are within the excel-tracker-application directory in the terminal before running the 'npm run' command
+<a/>
 After running 'npm run' command, the terminal indicates that the necessary dependencies are not installed.
    * Your computer is missing the necessary packages that the application relies on to run. Run the 'npm install' within the same directory to install the necesssary packages automatically.
 After navigating to the url in the web browser, the application is not properly displayed.
