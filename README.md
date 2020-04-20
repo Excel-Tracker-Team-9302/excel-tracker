@@ -20,6 +20,7 @@ Web application aiding in the tracking of the Georgia Tech Excel Program's compe
    * Due to lack of integration, there is no checks on pages to ensure user is properly authroized to view client (no check to ensure API key is still valid)
    * The current application only interacts with static data. Requests submitted to application will not be reflected in the AWS database.
    * Occasionally, navigating to the previous page using the browsers back arrow may cause the screen to appear blank. Refreshing the page or re-entering the url will usually resolve this issue.
+   * Some of the buttons do not render properly on the Safari web browser
 
 ## Install Guide
 
