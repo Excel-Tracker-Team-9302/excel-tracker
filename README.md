@@ -27,7 +27,7 @@ Web application aiding in the tracking of the Georgia Tech Excel Program's compe
 To use the live application, simply navigate to the application's url in a web browser (url is to be configured by the client after application handoff). No additional libraries or downloads should be necessary to interact with the system in its deployed state.
 
 ### Installation for Development
-The following is a lsit of requirements for running the application from your localhost. This would be useful for development or debugging purposes for a future development team. It would also be useful to refernce the [general React guide](https://reactjs.org/docs/getting-started.html) to become more familiar with starting a React application.
+The following is a list of requirements for running the application from your localhost. This would be useful for development or debugging purposes for a future development team. It would also be useful to reference the [general React guide](https://reactjs.org/docs/getting-started.html) to become more familiar with starting a React application.
 
 #### PREREQUISITES 
 You must have the following libraries installed in order to properly run the application on localhost.  
@@ -42,14 +42,14 @@ To download the repository on your computer, use the `git clone <repository_url>
 To download the necessary dependencies to run the application, navigate to the excel-tracker-application directory of the repository. Then execute the `npm install` command to automatically install the dependencies for the applicaiton.
 
 #### RUNNING APPLICATION
-To run the application, execute the `npm start` command from the excel-tracker-application directory. This will start the application on localhost endpoint on your computer. Navigate to localhost in your browser with the provided port number to view the application (this is uaually opened by default when you run npm start).
+To run the application, execute the `npm start` command from the excel-tracker-application directory. This will start the application on localhost endpoint on your computer. Navigate to localhost in your browser with the provided port number to view the application (this is usually opened by default when you run `npm start`).
 
 #### TROUBLESHOOTING
 ##### The application says that no React Project is found when running 'npm run'.
    * Ensure that you are within the excel-tracker-application directory in the terminal before running the 'npm run' command
 
-##### After running 'npm run' command, the terminal indicates that the necessary dependencies are not installed.
-   * Your computer is missing the necessary packages that the application relies on to run. Run the 'npm install' within the same directory to install the necesssary packages automatically.
+##### After running `npm run` command, the terminal indicates that the necessary dependencies are not installed.
+   * Your computer is missing the necessary packages that the application relies on to run. Run the `npm install` command within the same directory to install the necesssary packages automatically.
 ##### After navigating to the url in the web browser, the application is not properly displayed.
    * If running locally, ensure that you are navigating to the correct localhost port.
    * If trying to accessed the deployed applicaiton, ensure you are navigating to the proper url and that the application is properly deployed on AWS (see guide below)
